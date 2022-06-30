@@ -1,0 +1,74 @@
+{
+	"env": {
+		"browser": true,
+		"es2022": true
+	},
+	"extends": ["next/core-web-vitals", "airbnb", "airbnb/hooks", "prettier"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"plugins": ["react"],
+	"rules": {
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-props-no-spreading": "off",
+		"camelcase": [1],
+		"no-trailing-spaces": [1],
+		"spaced-comment": [0],
+		"padded-blocks": [0],
+		"prefer-template": [0],
+		"max-len": [0],
+		"no-else-return": [0],
+		"func-names": [0],
+		"object-shorthand": [0],
+		"space-before-function-paren": 0,
+		"no-tabs": 0,
+		"prefer-destructuring": 0,
+		"no-undef": 0,
+		"no-param-reassign": 0,
+		"comma-dangle": 0,
+		"lines-around-comment": 0,
+		"template-curly-spacing": "off",
+		"arrow-body-style": ["error", "as-needed"],
+		"import/no-unresolved": [0],
+		"react/function-component-definition": [
+			2,
+			{
+				"namedComponents": "arrow-function",
+				"unnamedComponents": "arrow-function"
+			}
+		],
+		"react/require-default-props": [
+			2,
+			{
+				"forbidDefaultForRequired": false,
+				"ignoreFunctionalComponents": false
+			}
+		],
+		"import/no-anonymous-default-export": [
+			"error",
+			{
+				"allowArray": false,
+				"allowArrowFunction": false,
+				"allowAnonymousClass": false,
+				"allowAnonymousFunction": false,
+				"allowCallExpression": true, // The true value here is for backward compatibility
+				"allowLiteral": false,
+				"allowObject": true
+			}
+		],
+		"import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"typescript": {}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo 'Check formating and building project before commiting'
+
+# Check Prettier standards
+yarn format:check ||
+(
+  echo 'Aborting Commit: Prettier check failed. Run yarn format:fix and try again'
+  false;
+)
+
+# Check ESLint Standards
+yarn lint:check ||
+(
+  echo 'Aborting Commit: Eslint check failed. Run yarn lint:fix and try again'
+  false;
+)
+
+# Building Project
+yarn build ||
+(
+  echo 'Aborting Commit: Build failed. View the errors above to see why'
+  false;
+)
+
+# If everything passes, Then we can commit
+echo 'All looks OK. Committing now'

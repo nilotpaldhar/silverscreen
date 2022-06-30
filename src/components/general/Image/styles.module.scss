@@ -1,0 +1,9 @@
+.image {
+	& > span {
+		display: block !important;
+	}
+
+	img {
+		@apply object-contain select-none;
+	}
+}
