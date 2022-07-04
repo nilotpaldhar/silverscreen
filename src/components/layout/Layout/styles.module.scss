@@ -1,0 +1,7 @@
+.layout {
+	@apply min-h-full flex flex-col;
+
+	.content {
+		@apply flex-1;
+	}
+}

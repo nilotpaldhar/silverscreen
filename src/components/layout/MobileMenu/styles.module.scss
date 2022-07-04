@@ -1,0 +1,59 @@
+.mobile_menu {
+	// Mobile Menu Toggle Button.
+	&_toggle {
+		@apply flex justify-center items-center w-8 h-8 border border-transparent rounded-sm text-gray-300;
+
+		&:hover {
+			@apply text-gray-100;
+		}
+
+		&:active,
+		&:focus,
+		&:focus-visible {
+			@apply border-dark-gray-700 border-opacity-40 outline-none;
+		}
+
+		span svg {
+			@apply h-5 w-5;
+		}
+	}
+
+	// Mobile Menu Drawer.
+	&_drawer {
+		@apply py-8;
+	}
+
+	// Mobile Menu Nav.
+	&_nav {
+		&_link {
+			&,
+			&:link,
+			&:visited {
+				@apply block w-full p-5 text-gray-100 text-base font-normal capitalize border-b border-gray-800 border-opacity-30 leading-none;
+			}
+		}
+	}
+
+	// Menu Disclosure.
+	.menu_disclosure {
+		&_btn {
+			@apply flex items-center justify-between w-full p-5 text-gray-100 text-base font-normal capitalize leading-none border-b border-gray-800 border-opacity-30;
+		}
+
+		&_panel {
+			@apply py-3 border-b border-gray-800 border-opacity-30;
+
+			a,
+			a:link,
+			a:visited {
+				@apply block font-light text-gray-400 py-2 px-6 capitalize;
+
+				&:active,
+				&:focus,
+				&:focus-visible {
+					@apply bg-dark-gray-700 bg-opacity-10 text-gray-100;
+				}
+			}
+		}
+	}
+}

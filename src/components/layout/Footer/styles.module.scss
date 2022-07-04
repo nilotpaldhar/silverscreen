@@ -1,0 +1,62 @@
+.footer {
+	// Root Styles.
+	@apply bg-dark-gray-900 py-12;
+
+	// Footer Body.
+	&_body {
+		@apply flex flex-col gap-6;
+
+		@screen xl {
+			@apply flex-row;
+		}
+	}
+
+	// Footer Menu.
+	&_menu {
+		@apply mb-4;
+
+		ul {
+			@apply flex flex-wrap items-center gap-x-5 gap-y-0.5;
+		}
+
+		a,
+		a:link,
+		a:visited {
+			@apply font-medium text-gray-300 capitalize leading-none;
+
+			&:hover {
+				@apply text-gray-100;
+			}
+		}
+	}
+
+	// Footer Credits.
+	&_credits {
+		@apply text-xs leading-loose max-w-3xl;
+
+		a,
+		a:link,
+		a:visited {
+			@apply font-medium text-gray-300 px-1;
+
+			&:hover {
+				@apply text-gray-100;
+			}
+		}
+	}
+
+	.tmdb_link {
+		@apply inline-flex flex-wrap items-center gap-1;
+	}
+
+	// Footer Social.
+	&_social {
+		h4 {
+			@apply font-medium text-gray-300 capitalize leading-none mb-4;
+
+			@screen xl {
+				@apply text-right;
+			}
+		}
+	}
+}

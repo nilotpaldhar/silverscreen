@@ -14,7 +14,7 @@ const getImageDomains = (str = '') => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	trailingSlash: true,
+	trailingSlash: false,
 	images: {
 		domains: getImageDomains(process.env.NEXT_PUBLIC_IMAGE_DOMAINS),
 	},

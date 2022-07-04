@@ -1,0 +1,46 @@
+.pagination {
+	// Root Styles.
+	@apply flex items-center flex-wrap gap-1 max-w-max;
+
+	li {
+		@apply flex items-center justify-center;
+	}
+
+	// Break Link.
+	li.break {
+		a,
+		a:link,
+		a:visited {
+			@apply border-none text-gray-400;
+
+			&:hover {
+				@apply bg-transparent text-gray-100;
+			}
+		}
+	}
+
+	// Pagination Links.
+	a,
+	a:link,
+	a:visited {
+		@apply block px-3 py-2 text-sm text-gray-300 font-normal text-center leading-none bg-transparent border border-gray-50 border-opacity-5 rounded-sm;
+
+		&:hover {
+			@apply bg-dark-gray-900 text-gray-100 bg-opacity-20;
+		}
+
+		// Active Link.
+		&.active {
+			@apply bg-primary-500 text-gray-300;
+
+			&:hover {
+				@apply bg-primary-400 text-gray-100;
+			}
+		}
+
+		// Disabled Link.
+		&.disabled {
+			@apply cursor-not-allowed pointer-events-none select-none bg-dark-gray-700 text-gray-400 border-transparent opacity-60;
+		}
+	}
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "62be94bbd0090d39430a82fa",
+    "label": "Home",
+    "href": "/"
+  },
+  {
+    "id": "62be94bb6b60d37ac1c10c28",
+    "label": "Movies",
+    "href": "/movies",
+    "submenus": [
+      {
+        "id": "62be94bba6ca59d6e4877b41",
+        "label": "Popular",
+        "href": "/movies/popular"
+      },
+      {
+        "id": "62be94bb3aa9851f459f9683",
+        "label": "Now Playing",
+        "href": "/movies/now-playing"
+      },
+      {
+        "id": "62be94bb342035980a48fbde",
+        "label": "Upcomming",
+        "href": "/movies/upcomming"
+      },
+      {
+        "id": "62be94bbb3a13d3e2f82731f",
+        "label": "Top Rated",
+        "href": "/movies/top-rated"
+      }
+    ]
+  },
+  {
+    "id": "62be94bb39ca606c8ee804f4",
+    "label": "TV Shows",
+    "href": "/tv-shows",
+    "submenus": [
+      {
+        "id": "62be94bbbebbc578ca363db0",
+        "label": "Popular",
+        "href": "/tv-shows/popular"
+      },
+      {
+        "id": "62be94bb2c42b71429ac4199",
+        "label": "Airing Today",
+        "href": "/tv-shows/air-today"
+      },
+      {
+        "id": "62be94bb7c5097b5ee7eb7ef",
+        "label": "On Tv",
+        "href": "/tv-shows/on-tv"
+      },
+      {
+        "id": "62be94bb8f54a99f74279005",
+        "label": "Top Rated",
+        "href": "/tv-shows/top-rated"
+      }
+    ]
+  },
+  {
+    "id": "62be94bbe62d1bd0bd4532dd",
+    "label": "Genres",
+    "href": "/genres"
+  }
+]

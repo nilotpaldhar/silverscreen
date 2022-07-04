@@ -1,0 +1,37 @@
+.drawer {
+	// Root Styles.
+	@apply fixed overflow-hidden z-50 bg-dark-gray-800 bg-opacity-50 inset-0 transform ease-in-out;
+
+	// Drawer Open.
+	&.open {
+		@apply transition-opacity opacity-100 duration-300 visible pointer-events-auto;
+	}
+
+	&.open &_body {
+		@apply translate-x-0;
+	}
+
+	// Drawer Close.
+	&.close {
+		@apply transition-all duration-500 delay-300 opacity-0 invisible pointer-events-none;
+	}
+
+	&.close &_body {
+		@apply -translate-x-full delay-[0];
+	}
+
+	// Drawer Body.
+	&_body {
+		@apply absolute w-screen max-w-xs left-0 bg-dark-gray-900 h-full delay-200 duration-300 ease-in-out transition-all transform;
+	}
+
+	// Drawer Content.
+	&_content {
+		@apply relative max-w-xs h-full overflow-y-auto;
+	}
+
+	// Drawer Close Handler.
+	&_close {
+		@apply w-screen h-full cursor-pointer select-none;
+	}
+}

@@ -1,0 +1,117 @@
+.navbar {
+	// Root Styles.
+	@apply h-20 border-b border-dark-gray-700 border-opacity-40;
+
+	// Navbar Body.
+	&_body {
+		@apply flex items-center h-full;
+	}
+
+	// Nav Menu.
+	.nav_menu {
+		@apply ml-24 hidden;
+
+		@screen lg {
+			@apply block;
+		}
+
+		ul {
+			@apply flex items-center flex-wrap gap-12;
+		}
+
+		&_link {
+			&,
+			&:link,
+			&:visited {
+				@apply text-base font-normal text-gray-300 capitalize;
+
+				&:hover {
+					@apply text-gray-100;
+				}
+			}
+		}
+	}
+
+	// Nav Search.
+	.nav_search {
+		@apply hidden flex-1 h-full items-center justify-end;
+
+		@screen lg {
+			@apply flex;
+		}
+
+		&_wrapper {
+			@apply flex-1 max-w-lg;
+		}
+	}
+
+	// Toggle Mobile Menu.
+	.toggle_m_menu {
+		@apply mr-5;
+
+		@screen lg {
+			@apply hidden;
+		}
+	}
+
+	// Toggle Search.
+	.toggle_search {
+		@apply flex justify-center items-center w-8 h-8 ml-auto border border-transparent rounded-sm text-gray-300;
+
+		&:hover {
+			@apply text-gray-100;
+		}
+
+		&:active,
+		&:focus,
+		&:focus-visible {
+			@apply border-dark-gray-700 border-opacity-40 outline-none;
+		}
+
+		span svg {
+			@apply h-5 w-5;
+		}
+
+		@screen lg {
+			@apply hidden;
+		}
+	}
+
+	// Menu Dropdown.
+	.menu_dropdown {
+		@apply relative;
+
+		&_btn {
+			@apply flex items-center gap-2 text-base font-normal text-gray-300 capitalize;
+
+			&:hover {
+				@apply text-gray-100;
+			}
+
+			span[role='img'] {
+				svg {
+					@apply w-[10px] h-[10px];
+				}
+			}
+		}
+
+		&_items {
+			@apply absolute top-[160%] -left-2 z-10 w-52 bg-dark-gray-800 border border-dark-gray-700 border-opacity-30 rounded-sm;
+		}
+
+		&_item {
+			&,
+			&:link,
+			&:visited {
+				@apply block py-3 px-4 text-sm font-light text-gray-300 bg-transparent;
+
+				&:hover,
+				&:active,
+				&:focus,
+				&:focus-visible {
+					@apply bg-dark-gray-700 bg-opacity-10 text-gray-100;
+				}
+			}
+		}
+	}
+}

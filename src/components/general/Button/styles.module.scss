@@ -1,0 +1,43 @@
+button.button,
+a.button {
+	@apply inline-flex justify-center items-center gap-2 text-sm font-normal leading-6 bg-primary-500 text-gray-100 rounded-sm border border-transparent py-0 px-4 transition;
+
+	&:hover {
+		@apply bg-primary-400 text-gray-100;
+	}
+
+	&:active {
+		@apply transform translate-y-1;
+	}
+
+	&:focus,
+	&:focus-visible {
+		@apply outline-dotted outline-1 outline-gray-50 bg-primary-400;
+	}
+
+	span,
+	span.icon,
+	span[role='img'] {
+		@apply text-inherit inline-block;
+	}
+
+	&.icon {
+		@apply min-h-[40px];
+	}
+
+	&.circle {
+		@apply min-w-[40px] min-h-[40px] rounded-full p-0;
+	}
+
+	&.loading {
+		@apply min-h-[40px] cursor-default pointer-events-none opacity-80;
+	}
+
+	&.block {
+		@apply w-full min-h-[40px];
+	}
+
+	&[disabled] {
+		@apply cursor-not-allowed pointer-events-none select-none bg-dark-gray-600 text-gray-400 border-solid border-gray-500 opacity-60;
+	}
+}

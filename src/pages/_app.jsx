@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Layout } from '@components/layout';
 import { RouteProgress } from '@components/feedback';
 
 /** Root Styles */
@@ -13,7 +14,9 @@ import '@styles/global.scss';
 const App = ({ Component, pageProps }) => (
 	<>
 		<RouteProgress />
-		<Component {...pageProps} />
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
 	</>
 );
 

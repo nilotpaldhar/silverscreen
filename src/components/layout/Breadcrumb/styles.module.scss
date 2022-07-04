@@ -1,0 +1,63 @@
+.breadcrumb {
+	// Root Styles.
+	@apply relative h-40 flex justify-center items-center bg-cover bg-no-repeat bg-center;
+
+	@screen md {
+		@apply h-48;
+	}
+
+	&::after {
+		@apply block absolute inset-0 z-10 w-full h-full;
+
+		content: '';
+		background: linear-gradient(360deg, #131720 0%, rgba(19, 23, 32, 0) 241.24%);
+	}
+
+	// Breadcrumb Content.
+	&_content {
+		@apply relative z-20 flex flex-col justify-center gap-4 items-center text-center;
+
+		@screen md {
+			@apply gap-5;
+		}
+	}
+
+	// Breadcrumb Heading.
+	&_heading {
+		@apply text-center text-lg text-gray-100 font-normal leading-none tracking-wide;
+
+		@screen md {
+			@apply text-2xl tracking-wider;
+		}
+	}
+
+	// Breadcrumb Links.
+	.breadcrumb_links {
+		ul,
+		ol {
+			@apply flex flex-wrap justify-center items-center gap-2;
+		}
+
+		a,
+		a:link,
+		a:visited {
+			@apply inline-flex items-center gap-2 text-sm font-light text-gray-300 capitalize;
+
+			&:hover {
+				@apply text-gray-100;
+			}
+
+			@screen md {
+				@apply text-base;
+			}
+		}
+
+		li.active {
+			a,
+			a:link,
+			a:visited {
+				@apply font-medium text-primary-500 pointer-events-none select-none;
+			}
+		}
+	}
+}

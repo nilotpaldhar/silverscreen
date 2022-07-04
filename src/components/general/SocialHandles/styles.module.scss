@@ -1,0 +1,14 @@
+.social_handles {
+	// Root Styles.
+	@apply flex flex-wrap items-center gap-3;
+
+	a,
+	a:link,
+	a:visited {
+		@apply inline-flex justify-center items-center w-8 h-8 rounded-full bg-dark-gray-800 text-gray-300;
+
+		&:hover {
+			@apply bg-primary-500 text-gray-50;
+		}
+	}
+}

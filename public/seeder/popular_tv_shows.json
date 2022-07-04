@@ -1,0 +1,115 @@
+[
+  {
+    "adult": false,
+    "backdrop_path": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+    "genre_ids": [
+      18,
+      10765,
+      9648
+    ],
+    "id": 66732,
+    "media_type": "tv",
+    "name": "Stranger Things",
+    "origin_country": [
+      "US"
+    ],
+    "original_language": "en",
+    "original_name": "Stranger Things",
+    "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+    "popularity": 7667.218,
+    "poster_path": "/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+    "first_air_date": "2016-07-15",
+    "vote_average": 8.621,
+    "vote_count": 11628
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/yQTQL9pliY6vpRt8HkjUJrKymBb.jpg",
+    "genre_ids": [
+      10759,
+      18
+    ],
+    "id": 120911,
+    "media_type": "tv",
+    "name": "The Terminal List",
+    "origin_country": [
+      "US"
+    ],
+    "original_language": "en",
+    "original_name": "The Terminal List",
+    "overview": "Navy SEAL Commander James Reece turns to vengeance as he investigates the mysterious forces behind the murder of his entire platoon. Free from the military’s command structure, Reece applies the lessons he’s learned from nearly two decades of warfare to hunt down the people responsible.",
+    "popularity": 435.694,
+    "poster_path": "/71f3JHlJCP6V7LhHHiKZgjtFxZw.jpg",
+    "first_air_date": "2022-06-30",
+    "vote_average": 8.977,
+    "vote_count": 64
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg",
+    "genre_ids": [
+      10765,
+      10759
+    ],
+    "id": 76479,
+    "media_type": "tv",
+    "name": "The Boys",
+    "origin_country": [
+      "US"
+    ],
+    "original_language": "en",
+    "original_name": "The Boys",
+    "overview": "A group of vigilantes known informally as “The Boys” set out to take down corrupt superheroes with no more than blue-collar grit and a willingness to fight dirty.",
+    "popularity": 3994.771,
+    "poster_path": "/stTEycfG9928HYGEISBFaG1ngjM.jpg",
+    "first_air_date": "2019-07-25",
+    "vote_average": 8.447,
+    "vote_count": 6420
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/vHTuFN4uN1jD1xQWHnOft5dLvL5.jpg",
+    "genre_ids": [
+      10765,
+      37
+    ],
+    "id": 63247,
+    "media_type": "tv",
+    "name": "Westworld",
+    "origin_country": [
+      "US"
+    ],
+    "original_language": "en",
+    "original_name": "Westworld",
+    "overview": "A dark odyssey about the dawn of artificial consciousness and the evolution of sin. Set at the intersection of the near future and the reimagined past, it explores a world in which every human appetite, no matter how noble or depraved, can be indulged.",
+    "popularity": 214.985,
+    "poster_path": "/8MfgyFHf7XEboZJPZXCIDqqiz6e.jpg",
+    "first_air_date": "2016-10-02",
+    "vote_average": 8.121,
+    "vote_count": 4178
+  },
+  {
+    "adult": false,
+    "backdrop_path": "/4BlS2ojR7ueEYsBUNi6reY4livW.jpg",
+    "genre_ids": [
+      16,
+      10759,
+      35,
+      10762
+    ],
+    "id": 114466,
+    "media_type": "tv",
+    "name": "Baymax!",
+    "origin_country": [
+      "US"
+    ],
+    "original_language": "en",
+    "original_name": "Baymax!",
+    "overview": "Return to the fantastical city of San Fransokyo where the affable, inflatable, inimitable healthcare companion robot, Baymax, sets out to do what he was programmed to do: help others.",
+    "popularity": 235.992,
+    "poster_path": "/muzgYvvFniQnwiTdAvfMCEkHsT4.jpg",
+    "first_air_date": "2022-06-29",
+    "vote_average": 8.1,
+    "vote_count": 37
+  }
+]
