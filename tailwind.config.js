@@ -1,5 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const tailwindbootstrapgrid = require('tailwind-bootstrap-grid');
+const tailwindBoottrapGrid = require('tailwind-bootstrap-grid');
 
 /**
  * Tailwind config object.
@@ -67,5 +67,5 @@ module.exports = {
 	corePlugins: {
 		container: false,
 	},
-	plugins: [tailwindbootstrapgrid()],
+	plugins: [tailwindBoottrapGrid()],
 };
