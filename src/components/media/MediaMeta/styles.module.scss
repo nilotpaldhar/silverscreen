@@ -1,0 +1,45 @@
+.media_meta {
+	// Meta List.
+	&_list {
+		@apply flex items-center flex-wrap gap-3;
+
+		li {
+			@apply flex items-center text-sm text-gray-300 font-light leading-none;
+
+			&:not(:last-child)::after {
+				content: '';
+
+				@apply w-1 h-1 rounded-full bg-gray-300 ml-3;
+			}
+		}
+	}
+
+	// Meta Language.
+	&_lang {
+		&::after {
+			@apply hidden;
+		}
+
+		span {
+			@apply inline-block py-1 px-2 bg-primary-500 text-[10px] font-bold uppercase rounded-sm leading-none;
+		}
+	}
+
+	// Meta Rating.
+	&_rating {
+		span[role='img'] {
+			@apply mr-1 text-yellow-500;
+
+			svg {
+				@apply w-5 h-5;
+			}
+		}
+	}
+
+	// Meta Runtime.
+	&_runtime {
+		span:not(:last-child) {
+			@apply mr-1;
+		}
+	}
+}

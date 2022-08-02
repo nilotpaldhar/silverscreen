@@ -1,0 +1,25 @@
+.single_media_tmpl {
+	// Root Styles.
+	@apply mb-14;
+
+	@screen md {
+		@apply mb-16;
+	}
+
+	@screen xl {
+		@apply mb-20;
+	}
+
+	// Media Tabs.
+	&_tabs {
+		@apply mt-10;
+
+		@screen md {
+			@apply mt-16;
+		}
+
+		@screen xl {
+			@apply mt-20;
+		}
+	}
+}

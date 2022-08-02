@@ -1,0 +1,38 @@
+.media_slider {
+	// Root Styles.
+	&:hover {
+		.media_slider_btns {
+			&.has_prev,
+			&.has_next {
+				@apply opacity-100 visible pointer-events-auto;
+			}
+		}
+	}
+
+	// Media Slider Btns.
+	&_btns {
+		@apply h-full absolute top-0 z-10 px-2 opacity-0 invisible pointer-events-none from-transparent text-gray-300 to-dark-gray-900 transition-all duration-500;
+
+		&:hover {
+			@apply text-gray-100;
+		}
+
+		@media (hover: none) {
+			@apply hidden;
+		}
+
+		span[role='img'] {
+			svg {
+				@apply w-6 h-6;
+			}
+		}
+
+		&.prev {
+			@apply left-0 bg-gradient-to-l;
+		}
+
+		&.next {
+			@apply right-0 bg-gradient-to-r;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+.media_block {
+	//  Root Styles.
+	@apply flex;
+
+	// Align "Vertical".
+	&.vertical {
+		@apply flex-col gap-3;
+	}
+
+	// Align "Horizontal".
+	&.horizontal {
+		@apply flex-row gap-5 items-baseline;
+	}
+
+	// Media Block Header.
+	&_header {
+		@apply text-sm text-gray-400 font-normal tracking-wider leading-none;
+	}
+
+	// Media Block Body.
+	&_body {
+		@apply text-base text-gray-100 font-light leading-relaxed;
+	}
+}

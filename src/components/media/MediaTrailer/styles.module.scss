@@ -1,0 +1,63 @@
+.media_trailer {
+	// Root Styles.
+	@apply rounded overflow-hidden backface-hidden transition-all duration-500;
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus-within {
+			@apply scale-105;
+
+			.media_trailer_play {
+				@apply bg-dark-gray-800 scale-110;
+			}
+		}
+	}
+
+	// Media Trailer Button.
+	&_btn {
+		@apply relative block text-gray-100 outline-none backface-hidden;
+
+		&:hover {
+			@apply text-gray-300;
+		}
+
+		&:active,
+		&:focus,
+		&:focus-visible {
+			@apply outline-none;
+		}
+
+		&::after {
+			content: '';
+			background: linear-gradient(360deg, #0d0d0e 0%, rgba(9, 11, 21, 0) 67.5%);
+
+			@apply absolute top-0 left-0 block w-full h-full;
+		}
+	}
+
+	// Media Trailer Play icon.
+	&_play {
+		@apply absolute top-2/4 left-2/4 z-10 w-8 h-8 flex items-center justify-center bg-dark-gray-800 bg-opacity-80 transform -translate-x-2/4 -translate-y-2/4 rounded-full transition-all duration-500;
+
+		span[role='img'] {
+			svg {
+				@apply w-4 h-4 to-gray-100 transform translate-x-px;
+			}
+		}
+	}
+
+	// Media Trailer Content.
+	&_content {
+		@apply w-full absolute bottom-0 left-0 z-10 flex justify-between items-center p-3;
+	}
+
+	// Media Trailer Name.
+	&_name {
+		@apply w-8/12 text-left text-sm text-current font-semibold truncate tracking-wide leading-none select-none;
+	}
+
+	// Media Trailer Language.
+	&_lang {
+		@apply block px-2 py-1 bg-primary-500 text-[10px] text-gray-100 font-bold uppercase leading-none rounded-sm;
+	}
+}

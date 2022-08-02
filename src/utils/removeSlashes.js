@@ -1,3 +1,5 @@
+import { isEmpty } from 'lodash';
+
 /**
  * Removes slashes from string.
  *
@@ -5,12 +7,11 @@
  * @returns {string} String without slash.
  */
 const removeSlashes = (str = '') => {
-	const result = str
+	if (isEmpty(str)) return null;
+	return str
 		.split('/')
 		.filter((i) => i)
 		.join('/');
-
-	return result;
 };
 
 export default removeSlashes;

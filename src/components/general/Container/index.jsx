@@ -7,9 +7,10 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The Container component.
  */
-const Container = ({ children, fluid = false, className, ...props }) => {
+const Container = ({ children, fluidLarge, fluid, className, ...props }) => {
 	const classNames = cx(styles.container, className, {
 		[styles.container_fluid]: fluid,
+		[styles.container_fluid_large]: fluidLarge,
 	});
 
 	return (
@@ -24,6 +25,7 @@ const Container = ({ children, fluid = false, className, ...props }) => {
  */
 Container.defaultProps = {
 	fluid: false,
+	fluidLarge: true,
 	children: '',
 	className: '',
 };
@@ -34,6 +36,7 @@ Container.defaultProps = {
 Container.propTypes = {
 	children: PropTypes.node,
 	fluid: PropTypes.bool,
+	fluidLarge: PropTypes.bool,
 	className: PropTypes.string,
 };
 

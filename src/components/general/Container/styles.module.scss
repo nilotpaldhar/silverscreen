@@ -21,6 +21,12 @@
 		max-width: 1320px;
 	}
 
+	&_fluid_large {
+		@screen xxl {
+			max-width: 90% !important;
+		}
+	}
+
 	&_fluid {
 		@apply max-w-full;
 	}

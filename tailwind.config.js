@@ -1,5 +1,18 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 const tailwindBoottrapGrid = require('tailwind-bootstrap-grid');
+
+/** Backface Visibility Plugin. */
+const backfaceVisibility = plugin(({ addUtilities }) => {
+	addUtilities({
+		'.backface-visible': {
+			'backface-visibility': 'visible',
+		},
+		'.backface-hidden': {
+			'backface-visibility': 'hidden',
+		},
+	});
+});
 
 /**
  * Tailwind config object.
@@ -67,5 +80,5 @@ module.exports = {
 	corePlugins: {
 		container: false,
 	},
-	plugins: [tailwindBoottrapGrid()],
+	plugins: [tailwindBoottrapGrid(), backfaceVisibility],
 };

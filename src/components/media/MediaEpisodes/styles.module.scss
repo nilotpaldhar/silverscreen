@@ -1,0 +1,40 @@
+.media_episodes {
+	// Root Styles.
+	ul {
+		@apply flex flex-col gap-4;
+
+		@screen md {
+			@apply gap-6;
+		}
+	}
+
+	// Media Episode.
+	.media_episode {
+		&_btn {
+			@apply w-full flex items-baseline py-3 text-base text-gray-100 font-normal leading-normal border-b border-dark-gray-700 border-opacity-30;
+
+			&:hover,
+			&:active,
+			&:focus,
+			&:focus-visible {
+				@apply outline-none text-gray-300;
+			}
+
+			.label {
+				@apply text-gray-400 whitespace-nowrap;
+			}
+
+			.name {
+				@apply text-left;
+			}
+
+			span[role='img'] {
+				@apply inline-block ml-auto px-2;
+			}
+		}
+
+		&_overview {
+			@apply text-base font-light text-gray-100 leading-relaxed pt-3;
+		}
+	}
+}

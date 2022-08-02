@@ -1,0 +1,126 @@
+.media_card {
+	// Root Styles.
+	@apply flex flex-col gap-3 transition-all duration-500;
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus-within {
+			.media_card_header::after {
+				@apply bg-opacity-70;
+			}
+
+			.media_card_playicon {
+				@apply opacity-100 -translate-x-2/4 -translate-y-2/4 scale-100;
+			}
+
+			.media_card_rating {
+				@apply opacity-100;
+			}
+
+			img {
+				@apply blur-[2px];
+			}
+		}
+	}
+
+	// Media Card Header.
+	&_header {
+		@apply relative rounded overflow-hidden;
+
+		&:hover,
+		&:active,
+		&:focus,
+		&:focus-visible {
+			@apply outline-none;
+		}
+
+		&::after {
+			content: '';
+
+			@apply absolute inset-0 w-full h-full bg-dark-gray-900 bg-opacity-0 transition-all duration-500;
+		}
+	}
+
+	// Media Card Poster.
+	&_poster {
+		@apply block rounded overflow-hidden;
+
+		img {
+			@apply transition-all duration-500;
+		}
+	}
+
+	// Media Card Button.
+	&_playicon {
+		@apply absolute top-2/4 left-2/4 z-10 transform -translate-x-2/4 -translate-y-2/4 text-gray-200 scale-50 opacity-0 transition-all duration-300 delay-100;
+
+		svg {
+			@apply w-8 h-8;
+		}
+	}
+
+	// Media Card Content.
+	&_content {
+		@apply flex flex-col gap-2;
+	}
+
+	// Media Card Title.
+	&_title {
+		@apply flex;
+
+		a,
+		a:link,
+		a:visited {
+			@apply flex-1 truncate text-sm font-normal text-gray-100 leading-none transition-colors;
+
+			&:hover,
+			&:active,
+			&:focus,
+			&:focus-visible {
+				@apply text-gray-400 outline-none;
+			}
+		}
+	}
+
+	// Media Card Meta.
+	&_meta {
+		@apply flex flex-wrap gap-1 items-center;
+
+		li {
+			@apply flex items-center min-w-max text-[10px] text-gray-300 font-light leading-none;
+
+			&:not(:last-child)::after {
+				content: '';
+
+				@apply block w-[2px] h-[2px] rounded-full bg-gray-300 ml-1;
+			}
+		}
+	}
+
+	// Media Card Rating.
+	&_rating {
+		@apply absolute top-2 right-2 z-10 w-7 h-7 bg-dark-gray-800 rounded-full flex items-center justify-center text-[10px] text-gray-200 font-normal backface-hidden transition-opacity duration-300 delay-100;
+
+		&::after {
+			content: '';
+
+			@apply absolute w-6 h-6 rounded-full bg-transparent border-2 border-transparent;
+		}
+
+		@media (hover: hover) {
+			@apply opacity-0;
+		}
+
+		&.poor::after {
+			@apply border-red-600;
+		}
+
+		&.average::after {
+			@apply border-yellow-600;
+		}
+
+		&.above_average::after {
+			@apply border-green-600;
+		}
+	}
+}

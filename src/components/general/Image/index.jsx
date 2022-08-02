@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The Image component.
  */
-const Image = ({ src, alt, placeholder, layout, width, height, className, ...props }) => {
+const Image = ({ src, alt, placeholder, layout, className, ...props }) => {
 	/** Image config. */
 	const conf = {
 		...props,
@@ -15,8 +15,6 @@ const Image = ({ src, alt, placeholder, layout, width, height, className, ...pro
 		alt,
 		placeholder,
 		layout,
-		width,
-		height,
 		className,
 	};
 
@@ -44,8 +42,6 @@ Image.propTypes = {
 	alt: PropTypes.string.isRequired,
 	placeholder: PropTypes.oneOf(['empty', 'blur']),
 	layout: PropTypes.oneOf(['fixed', 'intrinsic', 'responsive', 'fill']),
-	width: PropTypes.number.isRequired,
-	height: PropTypes.number.isRequired,
 	className: PropTypes.string,
 };
 

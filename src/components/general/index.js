@@ -1,3 +1,4 @@
+export { default as BlurImage } from '@components/general/BlurImage';
 export { default as Button } from '@components/general/Button';
 export { default as Container } from '@components/general/Container';
 export { default as Drawer } from '@components/general/Drawer';

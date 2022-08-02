@@ -1,0 +1,45 @@
+.media_header {
+	// Root Styles.
+	@apply relative w-full h-[220px] flex justify-center items-center overflow-hidden;
+
+	@screen md {
+		@apply h-[350px];
+	}
+
+	@screen lg {
+		@apply h-[400px];
+	}
+
+	&::after {
+		content: '';
+
+		@apply absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-dark-gray-800;
+	}
+
+	div:first-child {
+		@apply relative w-full h-full;
+	}
+
+	// Play Button.
+	&_btn {
+		@apply absolute top-2/4 left-2/4 z-10 w-10 h-10 transform -translate-x-2/4 -translate-y-2/4 flex items-center justify-center bg-primary-600 text-white rounded-full transition-colors duration-300;
+
+		@screen lg {
+			@apply w-14 h-14;
+		}
+
+		&:hover {
+			@apply bg-dark-gray-800 text-white;
+		}
+
+		span[role='img'] {
+			svg {
+				@apply w-5 h-5 transform translate-x-px;
+
+				@screen lg {
+					@apply w-8 h-8;
+				}
+			}
+		}
+	}
+}

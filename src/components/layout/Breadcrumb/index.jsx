@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
  */
 const Breadcrumb = ({ heading }) => {
 	/** Breadcrumb background image. */
-	const bgImg = { backgroundImage: 'url("/breadcrumb-bg.jpg")' };
+	const bgImg = { backgroundImage: 'url("/header-bg.jpg")' };
 
 	/** Render breadcrumb label. */
 	const renderLabel = (title) => {

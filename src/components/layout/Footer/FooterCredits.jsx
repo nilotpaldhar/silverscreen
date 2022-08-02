@@ -1,7 +1,8 @@
 import Link from '@components/general/Link';
 import PropTypes from 'prop-types';
-import tmdbLogo from '@public/tmdb-logo.svg';
 import { Image } from '@components/general';
+import { removeSlashes } from '@utils';
+import tmdbLogo from '@public/tmdb-logo.svg';
 import styles from './styles.module.scss';
 
 /**
@@ -11,7 +12,7 @@ import styles from './styles.module.scss';
  */
 const FooterCredits = ({ sitename }) => {
 	const year = new Date().getFullYear();
-	const tmdbHref = 'https://www.themoviedb.org';
+	const tmdbHref = removeSlashes(process.env.NEXT_PUBLIC_TMDB_WEB_URL);
 
 	/** Website link. */
 	const siteLink = <Link href="/">{sitename}</Link>;

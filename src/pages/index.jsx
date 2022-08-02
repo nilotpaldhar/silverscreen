@@ -5,6 +5,12 @@ import { Container } from '@components/general';
  *
  * @return {Element} The HomePage component.
  */
-const HomePage = () => <Container>HomePage</Container>;
+const HomePage = () => (
+	<section className="py-10">
+		<Container>
+			<h4 className="text-xl font-light">Home Page</h4>
+		</Container>
+	</section>
+);
 
 export default HomePage;

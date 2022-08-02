@@ -1,0 +1,23 @@
+.media_casts {
+	// Media Casts People.
+	&_people {
+		@apply max-w-max flex flex-col gap-1 text-gray-100 leading-normal;
+
+		&:hover {
+			@apply text-gray-300;
+		}
+
+		.name,
+		.character {
+			@apply block truncate flex-1 text-xs;
+		}
+
+		.name {
+			@apply text-current font-medium;
+		}
+
+		.character {
+			@apply text-gray-300 font-normal;
+		}
+	}
+}
