@@ -12,7 +12,12 @@ import { isEmpty } from 'lodash';
  * @return {object} Media season details.
  */
 const getMediaSeasonProps = async (mediaId, seasonNo, appendMedia = [], appendSeason = []) => {
-	const appendToMediaRes = `append_to_response=${[...appendMedia, 'credits', 'videos'].join(',')}`;
+	const appendToMediaRes = `append_to_response=${[
+		...appendMedia,
+		'credits',
+		'videos',
+		'recommendations',
+	].join(',')}`;
 	const appendToSeasonRes = `append_to_response=${[...appendSeason, 'videos'].join(',')}`;
 	const language = 'language=en-US';
 

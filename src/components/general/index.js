@@ -8,4 +8,5 @@ export { default as Logo } from '@components/general/Logo';
 export { default as Pagination } from '@components/general/Pagination';
 export { default as SocialHandles } from '@components/general/SocialHandles';
 export { default as TruncateString } from '@components/general/TruncateString';
+export { default as VideoPlayer } from '@components/general/VideoPlayer';
 export { default as VisuallyHidden } from '@components/general/VisuallyHidden';

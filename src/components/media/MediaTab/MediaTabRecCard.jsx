@@ -12,7 +12,7 @@ const MediaTabRecCard = ({ type, data }) => {
 	const { uid, title, backdrop } = data;
 
 	/** Media HREF. */
-	const href = type === 'tv' ? `/tv/${uid}` : `/movie/${uid}`;
+	const href = type === 'tv' || type === 'tvSeason' ? `/tv/${uid}` : `/movie/${uid}`;
 
 	/** Media Image Config. */
 	const imgConf = {
@@ -49,7 +49,7 @@ MediaTabRecCard.defaultProps = {
  * Prop Types.
  */
 MediaTabRecCard.propTypes = {
-	type: PropTypes.oneOf(['tv', 'movie']),
+	type: PropTypes.oneOf(['tv', 'tvSeason', 'movie']),
 	data: PropTypes.shape({
 		uid: PropTypes.string,
 		title: PropTypes.string,

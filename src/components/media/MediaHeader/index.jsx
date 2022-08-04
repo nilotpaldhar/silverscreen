@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { BlurImage, VisuallyHidden } from '@components/general';
 import { Play } from '@icons';
+import { useMediaPlayer } from '@context';
 import styles from './styles.module.scss';
 
 /**
@@ -8,7 +9,9 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaHeader component.
  */
-const MediaHeader = ({ backdrop, title }) => {
+const MediaHeader = ({ backdrop, title, trailer }) => {
+	const { dispatch } = useMediaPlayer();
+
 	/** Image Config. */
 	const imageConf = {
 		src: backdrop,
@@ -20,10 +23,15 @@ const MediaHeader = ({ backdrop, title }) => {
 		priority: true,
 	};
 
+	/** Open Media Player. */
+	const openMediaPlayer = () => {
+		dispatch({ type: 'OPEN_PLAYER', payload: trailer?.key });
+	};
+
 	return (
 		<section className={styles.media_header}>
 			<BlurImage {...imageConf} />
-			<button type="button" className={styles.media_header_btn}>
+			<button type="button" className={styles.media_header_btn} onClick={openMediaPlayer}>
 				<Play />
 				<VisuallyHidden>Play {title} Trailer</VisuallyHidden>
 			</button>

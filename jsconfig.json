@@ -8,6 +8,8 @@
 			"@config/*": ["config/*"],
 			"@constants": ["constants"],
 			"@constants/*": ["constants/*"],
+			"@context": ["context"],
+			"@context/*": ["context/*"],
 			"@hooks": ["hooks"],
 			"@hooks/*": ["hooks/*"],
 			"@icons": ["icons"],

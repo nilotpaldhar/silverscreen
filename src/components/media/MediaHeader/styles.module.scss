@@ -22,22 +22,24 @@
 
 	// Play Button.
 	&_btn {
-		@apply absolute top-2/4 left-2/4 z-10 w-10 h-10 transform -translate-x-2/4 -translate-y-2/4 flex items-center justify-center bg-primary-600 text-white rounded-full transition-colors duration-300;
+		&[type='button'] {
+			@apply absolute top-2/4 left-2/4 z-10 w-10 h-10 transform -translate-x-2/4 -translate-y-2/4 flex items-center justify-center bg-primary-600 text-white rounded-full transition-colors duration-300;
 
-		@screen lg {
-			@apply w-14 h-14;
-		}
+			@screen lg {
+				@apply w-14 h-14;
+			}
 
-		&:hover {
-			@apply bg-dark-gray-800 text-white;
-		}
+			&:hover {
+				@apply bg-dark-gray-800 text-white;
+			}
 
-		span[role='img'] {
-			svg {
-				@apply w-5 h-5 transform translate-x-px;
+			span[role='img'] {
+				svg {
+					@apply w-5 h-5 transform translate-x-px;
 
-				@screen lg {
-					@apply w-8 h-8;
+					@screen lg {
+						@apply w-8 h-8;
+					}
 				}
 			}
 		}

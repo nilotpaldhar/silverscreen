@@ -13,7 +13,7 @@ const SingleMediaTmpl = ({ type, media, season }) => {
 	const mediaHeaderConf = {
 		title: media?.title,
 		backdrop: media?.backdrop,
-		trailer: media?.trailer,
+		trailer: type === 'tvSeason' && season?.trailer ? season?.trailer : media?.trailer,
 	};
 
 	/** Check if videos & recommendations is not empty. */
@@ -53,7 +53,9 @@ SingleMediaTmpl.propTypes = {
 		videos: PropTypes.arrayOf(PropTypes.shape({})),
 		recommendations: PropTypes.arrayOf(PropTypes.shape({})),
 	}),
-	season: PropTypes.shape({}),
+	season: PropTypes.shape({
+		trailer: PropTypes.shape({}),
+	}),
 };
 
 export default SingleMediaTmpl;

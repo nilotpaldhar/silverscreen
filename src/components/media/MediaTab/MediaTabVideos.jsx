@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Container } from '@components/general';
 import { MediaSlider, MediaTrailer } from '@components/media';
+import { isEmpty } from 'lodash';
 import styles from './styles.module.scss';
 
 /**
@@ -43,7 +44,13 @@ const MediaTabVideos = ({ videos }) => {
 	return (
 		<div className={styles.media_tab_videos}>
 			<Container>
-				<MediaSlider {...sliderConf} />
+				{isEmpty(videos) ? (
+					<div className={styles.media_tab_placeholder}>
+						<h3>No Videos</h3>
+					</div>
+				) : (
+					<MediaSlider {...sliderConf} />
+				)}
 			</Container>
 		</div>
 	);

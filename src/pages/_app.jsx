@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { MediaPlayerProvider } from '@context';
 import { Layout } from '@components/layout';
 import { RouteProgress } from '@components/feedback';
 
@@ -12,12 +13,12 @@ import '@styles/global.scss';
  * @return {Element} The App component.
  */
 const App = ({ Component, pageProps }) => (
-	<>
+	<MediaPlayerProvider>
 		<RouteProgress />
 		<Layout>
 			<Component {...pageProps} />
 		</Layout>
-	</>
+	</MediaPlayerProvider>
 );
 
 /**

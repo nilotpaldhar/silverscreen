@@ -8,7 +8,7 @@ import placeholderLand from '@public/backdrop-placeholder.jpg';
  *
  * @return {Element} The BlurImage component.
  */
-const BlurImage = ({ className, orientation, ...props }) => {
+const BlurImage = ({ orientation, ...props }) => {
 	const placeholder = orientation === 'landscape' ? placeholderLand : placeholderPort;
 	return <Image placeholder="blur" blurDataURL={placeholder?.blurDataURL} {...props} />;
 };
@@ -17,7 +17,6 @@ const BlurImage = ({ className, orientation, ...props }) => {
  * Default Props.
  */
 BlurImage.defaultProps = {
-	className: '',
 	orientation: 'portrait',
 };
 
@@ -25,7 +24,6 @@ BlurImage.defaultProps = {
  * Prop Types.
  */
 BlurImage.propTypes = {
-	className: PropTypes.string,
 	orientation: PropTypes.oneOf(['portrait', 'landscape']),
 };
 

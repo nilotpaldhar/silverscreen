@@ -54,8 +54,10 @@
 	&_playicon {
 		@apply absolute top-2/4 left-2/4 z-10 transform -translate-x-2/4 -translate-y-2/4 text-gray-200 scale-50 opacity-0 transition-all duration-300 delay-100;
 
-		svg {
-			@apply w-8 h-8;
+		span[role='img'] {
+			svg {
+				@apply w-8 h-8;
+			}
 		}
 	}
 

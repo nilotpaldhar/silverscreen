@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { BlurImage } from '@components/general';
 import { Play } from '@icons';
+import { useMediaPlayer } from '@context';
 import styles from './styles.module.scss';
 
 /**
@@ -10,6 +11,7 @@ import styles from './styles.module.scss';
  */
 const MediaTrailer = ({ data }) => {
 	const { thumbnail, name, language } = data;
+	const { dispatch } = useMediaPlayer();
 
 	/** Media Trailer Image Config. */
 	const imgConf = {
@@ -21,9 +23,14 @@ const MediaTrailer = ({ data }) => {
 		className: styles.media_trailer_thumbnail,
 	};
 
+	/** Open Media Player. */
+	const openMediaPlayer = () => {
+		dispatch({ type: 'OPEN_PLAYER', payload: data?.key });
+	};
+
 	return (
 		<div className={styles.media_trailer}>
-			<button type="button" className={styles.media_trailer_btn}>
+			<button type="button" className={styles.media_trailer_btn} onClick={openMediaPlayer}>
 				<BlurImage {...imgConf} />
 				<div className={styles.media_trailer_play}>
 					<Play />
@@ -51,6 +58,7 @@ MediaTrailer.propTypes = {
 	data: PropTypes.shape({
 		thumbnail: PropTypes.string,
 		name: PropTypes.string,
+		key: PropTypes.string,
 		language: PropTypes.string,
 	}),
 };

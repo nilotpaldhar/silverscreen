@@ -7,6 +7,7 @@ export { default as generateMediaRuntime } from '@utils/generateMediaRuntime';
 export { default as generateMediaUid } from '@utils/generateMediaUid';
 export { default as getMediaImgUrl } from '@utils/getMediaImgUrl';
 export { default as getMediaTrailer } from '@utils/getMediaTrailer';
+export { default as getMediaVideoUrl } from '@utils/getMediaVideoUrl';
 export { default as getSocialIcons } from '@utils/getSocialIcons';
 export { default as getYouTubeThumbnail } from '@utils/getYouTubeThumbnail';
 export { default as mapMediaGenres } from '@utils/mapMediaGenres';

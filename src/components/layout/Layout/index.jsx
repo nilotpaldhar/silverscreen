@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Navbar, Footer } from '@components/layout';
+import { MediaPlayer } from '@components/media';
 import styles from './styles.module.scss';
 
 /**
@@ -12,6 +13,7 @@ const Layout = ({ children }) => (
 		<Navbar />
 		<div className={styles.content}>{children}</div>
 		<Footer />
+		<MediaPlayer />
 	</div>
 );
 

@@ -1,11 +1,13 @@
 .media_trailer {
 	// Root Styles.
-	@apply rounded overflow-hidden backface-hidden transition-all duration-500;
+	@apply rounded overflow-hidden;
 
 	@media (hover: hover) {
 		&:hover,
 		&:focus-within {
-			@apply scale-105;
+			img {
+				@apply blur-[2px];
+			}
 
 			.media_trailer_play {
 				@apply bg-dark-gray-800 scale-110;
@@ -29,7 +31,7 @@
 
 		&::after {
 			content: '';
-			background: linear-gradient(360deg, #0d0d0e 0%, rgba(9, 11, 21, 0) 67.5%);
+			background: linear-gradient(360deg, #0d0d0e 0%, rgba(9, 11, 21, 0) 70%);
 
 			@apply absolute top-0 left-0 block w-full h-full;
 		}
@@ -37,13 +39,18 @@
 
 	// Media Trailer Play icon.
 	&_play {
-		@apply absolute top-2/4 left-2/4 z-10 w-8 h-8 flex items-center justify-center bg-dark-gray-800 bg-opacity-80 transform -translate-x-2/4 -translate-y-2/4 rounded-full transition-all duration-500;
+		@apply absolute top-2/4 left-2/4 z-10 w-8 h-8 flex items-center justify-center bg-dark-gray-800 bg-opacity-80 transform -translate-x-2/4 -translate-y-2/4 scale-90 rounded-full backface-hidden transition-all duration-500 ease-in-out;
 
 		span[role='img'] {
 			svg {
 				@apply w-4 h-4 to-gray-100 transform translate-x-px;
 			}
 		}
+	}
+
+	// media_trailer_thumbnail
+	&_thumbnail {
+		@apply backface-hidden transition-all duration-500 ease-in-out;
 	}
 
 	// Media Trailer Content.
