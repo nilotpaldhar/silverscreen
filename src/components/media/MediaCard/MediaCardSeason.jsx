@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, BlurImage } from '@components/general';
 import { PlayCircle } from '@icons';
-import { getMediaImgUrl } from '@utils';
 import styles from './styles.module.scss';
 
 /**
@@ -9,11 +8,11 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaCardSeason component.
  */
-const MediaCardSeason = ({ title, href, data }) => {
+const MediaCardSeason = ({ href, data }) => {
 	/** Media Poster Config. */
 	const posterConf = {
-		src: getMediaImgUrl(data?.poster_path, 'w342') ?? '/poster-placeholder.jpg',
-		alt: title,
+		src: data?.poster,
+		alt: data?.title,
 		width: 342,
 		height: 513,
 	};
@@ -30,7 +29,7 @@ const MediaCardSeason = ({ title, href, data }) => {
 			</Link>
 			<div className={styles.media_card_content}>
 				<h2 className={styles.media_card_title}>
-					<Link href={href}>{title}</Link>
+					<Link href={href}>{data?.title}</Link>
 				</h2>
 			</div>
 		</>
@@ -48,10 +47,10 @@ MediaCardSeason.defaultProps = {
  * Prop Types.
  */
 MediaCardSeason.propTypes = {
-	title: PropTypes.string.isRequired,
 	href: PropTypes.string.isRequired,
 	data: PropTypes.shape({
-		poster_path: PropTypes.string,
+		title: PropTypes.string,
+		poster: PropTypes.string,
 	}),
 };
 

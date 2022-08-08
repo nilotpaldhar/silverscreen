@@ -1,0 +1,27 @@
+.media_filters_age_rating {
+	// Root Styles.
+	@apply flex flex-col gap-4;
+
+	ul {
+		@apply flex gap-2 items-center flex-wrap;
+	}
+
+	// Age Rating Button.
+	&_btn {
+		@apply flex items-center gap-2 p-2  text-sm text-gray-300 rounded-sm uppercase leading-none bg-transparent;
+
+		&:hover {
+			@apply text-gray-100;
+		}
+
+		span[role='img'] {
+			svg {
+				@apply w-3 h-3;
+			}
+		}
+
+		&.active {
+			@apply bg-primary-500 text-gray-100;
+		}
+	}
+}

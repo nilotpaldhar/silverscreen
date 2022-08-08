@@ -23,12 +23,12 @@
 
 	// Popovers Overlay.
 	&_overlay {
-		@apply fixed inset-0 bg-dark-gray-800 opacity-70;
+		@apply fixed z-20 inset-0 bg-dark-gray-800 opacity-70;
 	}
 
 	// Popovers Body.
 	&_body {
-		@apply absolute top-[140%] left-0 z-10 w-72 py-2 bg-dark-gray-800 border border-dark-gray-700 border-opacity-40 rounded;
+		@apply absolute top-[140%] left-0 z-30 w-72 py-2 bg-dark-gray-800 border border-dark-gray-700 border-opacity-40 rounded;
 	}
 
 	// Popovers Arrow.

@@ -15,7 +15,7 @@ const SingleSeasonPage = ({ media, season }) => (
 );
 
 /**
- * Get single season page props.
+ * Get page props.
  *
  * @return {object} Page props.
  */

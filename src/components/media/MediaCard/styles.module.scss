@@ -106,7 +106,7 @@
 		&::after {
 			content: '';
 
-			@apply absolute w-6 h-6 rounded-full bg-transparent border-2 border-transparent;
+			@apply absolute w-6 h-6 rounded-full bg-transparent border-2 border-gray-500;
 		}
 
 		@media (hover: hover) {

@@ -2,14 +2,14 @@ import slugify from 'slugify';
 import { MEDIA_GENRES } from '@constants';
 
 /**
- * Generates media(movie/tv-show/tv-season) href.
+ * Map media genres by ID.
  *
  * @param {string} mediaType Media Type.
  * @param {array} genreIds Media Genre Ids.
  *
- * @returns Media HREF.
+ * @returns Media Genres.
  */
-const mapMediaGenres = (mediaType, genreIds = []) => {
+const mapMediaGenresById = (mediaType, genreIds = []) => {
 	const genres = MEDIA_GENRES[mediaType] || [];
 	const slugifyOptions = { lower: true, strict: true };
 
@@ -24,4 +24,4 @@ const mapMediaGenres = (mediaType, genreIds = []) => {
 		}));
 };
 
-export default mapMediaGenres;
+export default mapMediaGenresById;

@@ -1,0 +1,16 @@
+.media_filters_heading {
+	// Root Styles.
+	@apply flex text-gray-400 gap-1 items-center;
+
+	// Heading Icon.
+	span[role='img'] {
+		svg {
+			@apply w-[14px] h-[14px];
+		}
+	}
+
+	// Heading Text.
+	.text {
+		@apply block text-sm text-gray-400 font-normal uppercase leading-none;
+	}
+}

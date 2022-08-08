@@ -1,12 +1,13 @@
 import {
-	generateMediaReleaseDate,
-	generateMediaRuntime,
-	generateMediaLang,
-	filterMediaVideos,
-	generateMediaUid,
-	getMediaTrailer,
-	getMediaImgUrl,
 	formatNumber,
+	getMediaImgUrl,
+	getMediaTrailer,
+	generateMediaUid,
+	filterMediaVideos,
+	generateMediaLang,
+	generateMediaRuntime,
+	formatMediaListProps,
+	generateMediaReleaseDate,
 } from '@utils';
 import { isEmpty, isNumber } from 'lodash';
 import slugify from 'slugify';
@@ -32,10 +33,12 @@ const getRating = (data) => {
 
 /** Get TV Shows Seasons. */
 const getTVSeasons = (tvSeasons = []) => {
-	const collection = tvSeasons?.filter((s) => s?.episode_count > 0) ?? [];
+	const collection = tvSeasons
+		?.filter((s) => s?.episode_count > 0)
+		.map((s) => formatMediaListProps('tvSeason', s));
 	const count = collection?.length ?? 0;
 	const label = count > 1 ? 'SEASONS' : 'SEASON';
-	return { collection, count, label };
+	return { count, label, collection };
 };
 
 /** Filters crew members. */
@@ -87,7 +90,7 @@ const getRecommendatedMedia = (recommendations = []) =>
  *
  * @returns Normalise media data.
  */
-const normaliseMediaProps = (data, type = 'movie') => {
+const normaliseMediaProps = (type = 'movie', data = null) => {
 	if (isEmpty(data)) return null;
 
 	/** Get Title. */

@@ -1,0 +1,39 @@
+.media_filters_sort {
+	// Root Styles.
+	@apply flex gap-3 items-center;
+
+	// Sort Heading.
+	&_heading {
+		@apply block text-sm text-gray-400 font-normal uppercase leading-none;
+	}
+
+	// Sort Body.
+	&_content {
+		@apply flex flex-col gap-4;
+	}
+
+	// Sort Header.
+	&_header {
+		@apply px-5 pt-4;
+	}
+
+	// Sort Body.
+	&_body {
+		li:not(:last-child) {
+			@apply border-b border-b-dark-gray-700 border-opacity-10;
+		}
+	}
+
+	// Sort Button.
+	&_btn {
+		@apply block w-full px-5 py-2 bg-transparent text-sm text-gray-300 text-left transition-all duration-300;
+
+		&:hover {
+			@apply bg-dark-gray-700 text-gray-100 bg-opacity-10;
+		}
+
+		&.active {
+			@apply bg-primary-500 text-gray-100;
+		}
+	}
+}

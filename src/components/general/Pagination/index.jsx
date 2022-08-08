@@ -1,10 +1,9 @@
-import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import ReactPaginate from 'react-paginate';
 import { VisuallyHidden } from '@components/general';
 import { ChevronLeft, ChevronRight, DotsHorizontal } from '@icons';
+import { useRouteParams } from '@hooks';
 import cx from 'classnames';
-import { removeSlashes } from '@utils';
 import styles from './styles.module.scss';
 
 /**
@@ -12,8 +11,8 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The Pagination component.
  */
-const Pagination = ({ pageCount, initialPage, routePrefix, className, ...props }) => {
-	const router = useRouter();
+const Pagination = ({ pageCount, initialPage, key, className, ...props }) => {
+	const { replace } = useRouteParams();
 
 	/** Break Label. */
 	const breakLabel = <DotsHorizontal />;
@@ -37,10 +36,9 @@ const Pagination = ({ pageCount, initialPage, routePrefix, className, ...props }
 	/**
 	 * Handle pagination.
 	 */
-	const handlePagination = (evt) => {
-		const pageNo = (evt?.selected || 0) + 1;
-		const route = routePrefix ? `/${removeSlashes(routePrefix)}/${pageNo}` : `/${pageNo}`;
-		router.push(route);
+	const handlePagination = (_evt) => {
+		const pageNo = (_evt?.selected || 0) + 1;
+		replace(key, pageNo);
 	};
 
 	return (
@@ -48,7 +46,7 @@ const Pagination = ({ pageCount, initialPage, routePrefix, className, ...props }
 			className={cx(styles.pagination, className)}
 			initialPage={initialPage - 1}
 			pageCount={pageCount}
-			pageRangeDisplayed={5}
+			pageRangeDisplayed={2}
 			onPageChange={handlePagination}
 			disableInitialCallback
 			activeLinkClassName={styles.active}
@@ -67,7 +65,7 @@ const Pagination = ({ pageCount, initialPage, routePrefix, className, ...props }
  */
 Pagination.defaultProps = {
 	initialPage: 1,
-	routePrefix: null,
+	key: 'page',
 	className: '',
 };
 
@@ -77,7 +75,7 @@ Pagination.defaultProps = {
 Pagination.propTypes = {
 	pageCount: PropTypes.number.isRequired,
 	initialPage: PropTypes.number,
-	routePrefix: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(null)]),
+	key: PropTypes.string,
 	className: PropTypes.string,
 };
 

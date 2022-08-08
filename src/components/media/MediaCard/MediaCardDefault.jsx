@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link, BlurImage, TruncateString } from '@components/general';
 import { PlayCircle } from '@icons';
-import { format } from 'date-fns';
 import { isArray } from 'lodash';
-import { getMediaImgUrl, mapMediaGenres } from '@utils';
 import MediaCardRating from './MediaCardRating';
 import styles from './styles.module.scss';
 
@@ -12,10 +10,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaCardDefault component.
  */
-const MediaCardDefault = ({ type, href, title, data }) => {
-	/** Format release date. */
-	const formatReleaseDate = (date = null) => (date ? format(new Date(date), 'MMM d, y') : null);
-
+const MediaCardDefault = ({ href, data }) => {
 	/** Format grenres. */
 	const formatGenres = (genres) => {
 		if (!isArray(genres)) return null;
@@ -23,15 +18,15 @@ const MediaCardDefault = ({ type, href, title, data }) => {
 	};
 
 	/** Media Release Date. */
-	const releaseDate = formatReleaseDate(type === 'tv' ? data?.first_air_date : data?.release_date);
+	const releaseDate = data?.releaseDate?.dateString;
 
 	/** Media Genres. */
-	const genresStr = formatGenres(mapMediaGenres(type, data?.genre_ids));
+	const genresStr = formatGenres(data?.genres);
 
 	/** Media Poster Config. */
 	const posterConf = {
-		src: getMediaImgUrl(data?.poster_path, 'w342') ?? '/poster-placeholder.jpg',
-		alt: title,
+		src: data?.poster,
+		alt: data?.title,
 		width: 342,
 		height: 513,
 	};
@@ -45,11 +40,11 @@ const MediaCardDefault = ({ type, href, title, data }) => {
 				<span className={styles.media_card_playicon}>
 					<PlayCircle />
 				</span>
-				<MediaCardRating rating={data?.vote_average} />
+				<MediaCardRating rating={data?.rating} />
 			</Link>
 			<div className={styles.media_card_content}>
 				<h2 className={styles.media_card_title}>
-					<Link href={href}>{title}</Link>
+					<Link href={href}>{data?.title}</Link>
 				</h2>
 				<ul className={styles.media_card_meta}>
 					{releaseDate && <li>{releaseDate}</li>}
@@ -68,7 +63,6 @@ const MediaCardDefault = ({ type, href, title, data }) => {
  * Default Props.
  */
 MediaCardDefault.defaultProps = {
-	type: 'movie',
 	data: {},
 };
 
@@ -76,15 +70,15 @@ MediaCardDefault.defaultProps = {
  * Prop Types.
  */
 MediaCardDefault.propTypes = {
-	type: PropTypes.oneOf(['tv', 'movie', 'tvSeason']),
-	title: PropTypes.string.isRequired,
 	href: PropTypes.string.isRequired,
 	data: PropTypes.shape({
-		poster_path: PropTypes.string,
-		release_date: PropTypes.string,
-		first_air_date: PropTypes.string,
-		genre_ids: PropTypes.arrayOf(PropTypes.number),
-		vote_average: PropTypes.number,
+		title: PropTypes.string,
+		poster: PropTypes.string,
+		releaseDate: PropTypes.shape({
+			dateString: PropTypes.string,
+		}),
+		genres: PropTypes.arrayOf(PropTypes.shape({})),
+		rating: PropTypes.number,
 	}),
 };
 

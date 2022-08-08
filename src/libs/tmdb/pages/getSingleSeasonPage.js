@@ -8,7 +8,6 @@ import { isEmpty, isNull } from 'lodash';
  * @param {object} params Page Params.
  *
  * @return {object} Object containing page props.
- *
  */
 const getSingleSeasonPage = async (params) => {
 	const mediaId = parseMediaUid(params?.uid)?.id;

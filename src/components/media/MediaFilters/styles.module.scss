@@ -1,0 +1,56 @@
+.media_filters {
+	// Root Styles.
+	@apply flex flex-wrap gap-4 items-center justify-between;
+
+	@screen sm {
+		@apply gap-0 justify-start;
+	}
+
+	// Media Filters Icon Label.
+	&_icon_label {
+		@apply hidden;
+
+		@screen lg {
+			@apply flex;
+		}
+	}
+
+	// Media Filters Leftbar.
+	&_leftbar {
+		@apply hidden items-center gap-5 ml-5;
+
+		@screen lg {
+			@apply flex;
+		}
+	}
+
+	// Media Filters Rightbar.
+	&_rightbar {
+		@apply flex items-center gap-8;
+
+		@screen sm {
+			@apply ml-auto;
+		}
+	}
+
+	// Media Filters Block.
+	&_block {
+		@apply px-5 py-4;
+	}
+
+	// Media Filters Reset.
+	&_reset {
+		@apply hidden;
+
+		@screen xl {
+			@apply block;
+		}
+	}
+
+	// Media Filters Toggle.
+	&_toggle {
+		@screen lg {
+			@apply hidden;
+		}
+	}
+}

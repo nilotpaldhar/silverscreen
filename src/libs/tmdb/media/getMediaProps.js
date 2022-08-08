@@ -25,7 +25,7 @@ const getMediaProps = async (mediaId, type = 'movie', append = []) => {
 	/** Fetch media details. */
 	try {
 		const res = await tmdbClient.get(url);
-		return normaliseMediaProps(res?.data, type);
+		return normaliseMediaProps(type, res?.data);
 	} catch (error) {
 		return null;
 	}

@@ -1,0 +1,36 @@
+.media_filters_language {
+	// Root Styles.
+	@apply flex flex-col gap-4;
+
+	// Search Wrapper.
+	.search_wrapper {
+		@apply relative w-full flex flex-col gap-1;
+	}
+
+	// Search Input.
+	.search_input {
+		@apply w-full block bg-dark-gray-700 bg-opacity-10 px-3 py-2 text-sm text-gray-300 font-normal border border-dark-gray-700 border-opacity-30 rounded-sm transition duration-300;
+
+		&:focus,
+		&:focus-visible {
+			@apply border-opacity-80 outline-none;
+		}
+	}
+
+	// Search Options.
+	.search_options {
+		@apply max-h-52 bg-dark-gray-700 bg-opacity-10 py-1 rounded-sm overflow-y-auto;
+
+		li {
+			@apply flex items-center justify-start h-10 px-3 bg-transparent text-gray-400 text-sm font-light cursor-pointer transition-colors;
+
+			&.active {
+				@apply bg-dark-gray-700 bg-opacity-40 text-gray-100;
+			}
+
+			&.empty {
+				@apply cursor-default select-none bg-dark-gray-700 bg-opacity-40 text-gray-100;
+			}
+		}
+	}
+}

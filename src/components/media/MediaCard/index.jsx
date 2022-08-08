@@ -10,18 +10,15 @@ import styles from './styles.module.scss';
  * @return {Element} The MediaCard component.
  */
 const MediaCard = ({ type, hrefPrefix, data }) => {
-	/** Media Title. */
-	const mediaTitle = type === 'tv' || type === 'tvSeason' ? data?.name : data?.title;
-
 	/** Media Href. */
-	const mediaHref = generateMediaHref(type, data?.id, mediaTitle, data?.season_number, hrefPrefix);
+	const mediaHref = generateMediaHref(type, data?.id, data?.title, data?.season, hrefPrefix);
 
 	return (
 		<div className={styles.media_card}>
 			{type === 'tvSeason' ? (
-				<MediaCardSeason title={mediaTitle} href={mediaHref} data={data} />
+				<MediaCardSeason href={mediaHref} data={data} />
 			) : (
-				<MediaCardDefault type={type} title={mediaTitle} href={mediaHref} data={data} />
+				<MediaCardDefault href={mediaHref} data={data} />
 			)}
 		</div>
 	);
@@ -44,10 +41,8 @@ MediaCard.propTypes = {
 	hrefPrefix: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(null)]),
 	data: PropTypes.shape({
 		id: PropTypes.number,
-		name: PropTypes.string,
 		title: PropTypes.string,
-		season_number: PropTypes.number,
-		runtime: PropTypes.number,
+		season: PropTypes.number,
 	}),
 };
 

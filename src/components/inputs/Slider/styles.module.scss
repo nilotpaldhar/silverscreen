@@ -1,0 +1,38 @@
+.slider {
+	//  Root Styles.
+	@apply w-full flex items-center gap-4;
+
+	// Slider Label.
+	&_label {
+		@apply text-sm text-gray-300 font-normal leading-none;
+	}
+
+	// RC Slider Styles.
+	:global {
+		.rc-slider {
+			@apply relative flex-1 w-full h-2 py-1 rounded-full touch-none;
+
+			&-rail {
+				@apply absolute w-full h-[2px] bg-dark-gray-700 bg-opacity-30 rounded-full;
+			}
+
+			&-track {
+				@apply absolute h-[2px] bg-dark-gray-700 rounded-full;
+			}
+
+			&-handle {
+				@apply absolute w-[14px] h-[14px] bg-dark-gray-700 border border-transparent rounded-full cursor-pointer touch-pan-x transition;
+
+				&:hover {
+					@apply border-dark-gray-500;
+				}
+
+				&:active,
+				&:focus,
+				&:focus-visible {
+					@apply outline-none shadow-none border-dark-gray-500;
+				}
+			}
+		}
+	}
+}

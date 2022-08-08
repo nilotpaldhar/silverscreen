@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import NextImage from 'next/image';
+import cx from 'classnames';
 import styles from './styles.module.scss';
 
 /**
@@ -19,7 +20,7 @@ const Image = ({ src, alt, placeholder, layout, className, ...props }) => {
 	};
 
 	return (
-		<div className={styles.image}>
+		<div className={cx(styles.image, 'img-wrapper')}>
 			<NextImage {...conf} />
 		</div>
 	);

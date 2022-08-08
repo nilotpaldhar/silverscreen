@@ -1,0 +1,69 @@
+.media_group_tmpl {
+	// Content.
+	&_content {
+		@apply py-14;
+
+		@screen md {
+			@apply py-16;
+		}
+
+		@screen xl {
+			@apply py-20;
+		}
+	}
+
+	// Section.
+	&_section {
+		@apply flex flex-col gap-6;
+
+		@screen lg {
+			@apply gap-8;
+		}
+	}
+
+	// Pagination.
+	&_pagination {
+		@apply flex justify-center items-center mt-6 pt-6 border-t border-dark-gray-700 border-opacity-30;
+
+		@screen sm {
+			@apply mt-8 pt-8;
+		}
+
+		@screen md {
+			@apply justify-between mt-10 pt-10;
+		}
+	}
+
+	// Total results.
+	&_results {
+		@apply hidden text-sm text-gray-400 font-light leading-none;
+
+		@screen md {
+			@apply block;
+		}
+
+		span {
+			@apply px-1 text-gray-300 font-medium;
+		}
+	}
+	// No Result Message.
+	&_message {
+		@apply w-full h-48 flex items-center justify-center;
+
+		@screen md {
+			@apply h-60;
+		}
+
+		h2 {
+			@apply w-full text-xl text-gray-100 font-normal capitalize tracking-[3px] text-center;
+
+			@screen md {
+				@apply text-2xl;
+			}
+
+			@screen lg {
+				@apply text-4xl;
+			}
+		}
+	}
+}

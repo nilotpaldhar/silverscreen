@@ -1,6 +1,6 @@
 .breadcrumb {
 	// Root Styles.
-	@apply relative h-40 flex justify-center items-center bg-cover bg-no-repeat bg-center;
+	@apply relative w-full h-40 flex justify-center items-center;
 
 	@screen md {
 		@apply h-48;
@@ -56,8 +56,12 @@
 			a,
 			a:link,
 			a:visited {
-				@apply font-medium text-primary-500 pointer-events-none select-none;
+				@apply font-medium text-primary-500 pointer-events-none select-none outline-none;
 			}
 		}
+	}
+
+	:global(.img-wrapper) {
+		@apply absolute inset-0 w-full h-full;
 	}
 }

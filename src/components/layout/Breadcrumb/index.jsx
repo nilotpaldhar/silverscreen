@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import NextBreadcrumb from 'nextjs-breadcrumbs';
-import { Container } from '@components/general';
+import { Container, Image } from '@components/general';
 import { ChevronRight, Home } from '@icons';
+import headerBg from '@public/header-bg.jpg';
 import styles from './styles.module.scss';
 
 /**
@@ -10,9 +11,6 @@ import styles from './styles.module.scss';
  * @return {Element} The Breadcrumb component.
  */
 const Breadcrumb = ({ heading }) => {
-	/** Breadcrumb background image. */
-	const bgImg = { backgroundImage: 'url("/header-bg.jpg")' };
-
 	/** Render breadcrumb label. */
 	const renderLabel = (title) => {
 		if (title.toLowerCase() === 'home') {
@@ -32,8 +30,21 @@ const Breadcrumb = ({ heading }) => {
 		);
 	};
 
+	/** Image Config. */
+	const imageConf = {
+		layout: 'fill',
+		priority: true,
+		objectFit: 'cover',
+		placeholder: 'blur',
+		src: headerBg,
+		orientation: 'landscape',
+		objectPosition: 'center',
+		alt: 'Header Background',
+	};
+
 	return (
-		<div className={styles.breadcrumb} style={bgImg}>
+		<div className={styles.breadcrumb}>
+			<Image {...imageConf} />
 			<Container>
 				<div className={styles.breadcrumb_content}>
 					<h1 className={styles.breadcrumb_heading}>{heading}</h1>

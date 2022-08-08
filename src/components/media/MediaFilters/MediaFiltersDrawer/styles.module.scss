@@ -1,0 +1,20 @@
+.media_filters_drawer {
+	// Drawer Heading.
+	&_heading {
+		@apply flex items-center gap-4 justify-between p-5 shadow-lg;
+	}
+
+	// Drawer Body.
+	&_body {
+		@apply flex flex-col gap-0;
+	}
+
+	// Drawer Block.
+	&_block {
+		@apply px-5 py-4;
+
+		&:not(:last-child) {
+			@apply border-b border-dark-gray-800 border-opacity-60;
+		}
+	}
+}

@@ -5,6 +5,7 @@ import { parseMediaUid } from '@utils';
 /**
  * Get single media page props.
  *
+ * @param {string} uid Media Unique Identifier.
  * @param {string} type Media Type.
  *
  * @return {object} Object containing page props and revalidate setting.

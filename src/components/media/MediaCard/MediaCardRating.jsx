@@ -10,18 +10,25 @@ import styles from './styles.module.scss';
 const MediaCardRating = ({ rating }) => {
 	const classNames = cx(styles.media_card_rating, {
 		[styles.poor]: rating < 3,
-		[styles.average]: rating > 3 && rating < 7,
-		[styles.above_average]: rating > 7,
+		[styles.average]: rating >= 3 && rating < 7,
+		[styles.above_average]: rating >= 7,
 	});
 
 	return <span className={classNames}>{rating}</span>;
 };
 
 /**
+ * Default Props.
+ */
+MediaCardRating.defaultProps = {
+	rating: 'NR',
+};
+
+/**
  * Prop Types.
  */
 MediaCardRating.propTypes = {
-	rating: PropTypes.number.isRequired,
+	rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default MediaCardRating;

@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
+export { default as MediaGroupTmpl } from '@templates/MediaGroup';
 export { default as SingleMediaTmpl } from '@templates/SingleMedia';

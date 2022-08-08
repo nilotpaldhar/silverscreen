@@ -1,13 +1,13 @@
 .single_media_tmpl {
 	// Root Styles.
-	@apply mb-14;
+	@apply pb-14;
 
 	@screen md {
-		@apply mb-16;
+		@apply pb-16;
 	}
 
 	@screen xl {
-		@apply mb-20;
+		@apply pb-20;
 	}
 
 	// Media Tabs.

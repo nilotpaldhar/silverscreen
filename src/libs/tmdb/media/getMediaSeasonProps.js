@@ -34,7 +34,7 @@ const getMediaSeasonProps = async (mediaId, seasonNo, appendMedia = [], appendSe
 
 		/** Normalise response data. */
 		const response = {
-			media: normaliseMediaProps(media?.data, 'tv'),
+			media: normaliseMediaProps('tv', media?.data),
 			season: normaliseSeasonProps(season?.data),
 		};
 

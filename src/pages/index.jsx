@@ -8,7 +8,7 @@ import { Container } from '@components/general';
 const HomePage = () => (
 	<section className="py-10">
 		<Container>
-			<h4 className="text-xl font-light">Home Page</h4>
+			<h4 className="mb-4 text-xl font-light">Home Page</h4>
 		</Container>
 	</section>
 );

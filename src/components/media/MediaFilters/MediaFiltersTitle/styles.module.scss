@@ -1,0 +1,24 @@
+.media_filters_title {
+	// Root Styles.
+	@apply flex justify-between items-center gap-4;
+
+	// Title.
+	.title {
+		@apply text-base text-gray-100 font-normal leading-none;
+	}
+
+	// Reset Button.
+	.reset_btn {
+		@apply flex items-center gap-[2px] text-gray-400 text-sm font-normal leading-none;
+
+		&:hover {
+			@apply text-gray-100;
+		}
+
+		span[role='img'] {
+			svg {
+				@apply w-3 h-3;
+			}
+		}
+	}
+}

@@ -15,7 +15,7 @@ export const MEDIA_RESULTS_PER_PAGE = 20;
 /**
  * Media(movie/tv) genres.
  *
- * @type {number}
+ * @type {object}
  */
 export const MEDIA_GENRES = {
 	movie: [
@@ -163,3 +163,29 @@ export const MEDIA_GENRES = {
 		},
 	],
 };
+
+/**
+ * Media(movie/tv) group keys.
+ *
+ * @type {object}
+ */
+export const MEDIA_GROUP_KEYS = {
+	movie: ['popular', 'top_rated', 'upcoming', 'now_playing'],
+	tv: ['popular', 'top_rated', 'upcoming', 'airing_today', 'on_the_air'],
+};
+
+/**
+ * Media(movie/tv) group filter keys.
+ *
+ * @type {array}
+ */
+export const MEDIA_GROUP_FILTER_KEYS = [
+	'sort',
+	'certification',
+	'genres',
+	'language',
+	'minRating',
+	'maxRating',
+	'releaseYearFrom',
+	'releaseYearUntil',
+];
