@@ -1,13 +1,10 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Drawer, Button } from '@components/general';
 import { Filter } from '@icons';
 import MediaFiltersReset from '../MediaFiltersReset';
-import MediaFiltersRating from '../MediaFiltersRating';
-import MediaFiltersGenres from '../MediaFiltersGenres';
 import MediaFiltersHeading from '../MediaFiltersHeading';
-import MediaFiltersRelease from '../MediaFiltersRelease';
-import MediaFiltersLanguage from '../MediaFiltersLanguage';
-import MediaFiltersAgeRating from '../MediaFiltersAgeRating';
+import mapMediaFilters from '../utils/mapMediaFilters';
 import styles from './styles.module.scss';
 
 /**
@@ -15,7 +12,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaFiltersDrawer component.
  */
-const MediaFiltersDrawer = () => {
+const MediaFiltersDrawer = ({ type, filters }) => {
 	const [open, setOpen] = useState(false);
 
 	/** Open mobile menu. */
@@ -51,25 +48,34 @@ const MediaFiltersDrawer = () => {
 					<MediaFiltersReset />
 				</div>
 				<div className={styles.media_filters_drawer_body}>
-					<div className={styles.media_filters_drawer_block}>
-						<MediaFiltersRelease />
-					</div>
-					<div className={styles.media_filters_drawer_block}>
-						<MediaFiltersGenres />
-					</div>
-					<div className={styles.media_filters_drawer_block}>
-						<MediaFiltersLanguage />
-					</div>
-					<div className={styles.media_filters_drawer_block}>
-						<MediaFiltersRating />
-					</div>
-					<div className={styles.media_filters_drawer_block}>
-						<MediaFiltersAgeRating />
-					</div>
+					{filters?.map((filter) => {
+						const FilterComponent = mapMediaFilters(filter);
+						return FilterComponent ? (
+							<div key={filter} className={styles.media_filters_drawer_block}>
+								{filter === 'genres' ? <FilterComponent type={type} /> : <FilterComponent />}
+							</div>
+						) : null;
+					})}
 				</div>
 			</Drawer>
 		</>
 	);
+};
+
+/**
+ * Default Props.
+ */
+MediaFiltersDrawer.defaultProps = {
+	type: 'movie',
+	filters: [],
+};
+
+/**
+ * Prop Types.
+ */
+MediaFiltersDrawer.propTypes = {
+	type: PropTypes.oneOf(['tv', 'movie']),
+	filters: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default MediaFiltersDrawer;

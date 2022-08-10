@@ -1,4 +1,5 @@
-import { SliderDebounce } from '@components/inputs';
+import { useState } from 'react';
+import { Slider } from '@components/inputs';
 import { useRouteParams } from '@hooks';
 import { toNumber } from 'lodash';
 import { isValidDate } from '@utils';
@@ -12,8 +13,8 @@ import styles from './styles.module.scss';
  */
 const MediaFiltersRelease = () => {
 	const { query, replaceMultiple, removesMultiple } = useRouteParams();
-	const minYear = 1900;
-	const currYear = typeof Date !== 'undefined' && new Date().getFullYear();
+	const defaultReleaseFrom = 1900;
+	const defaultReleaseUntil = typeof Date !== 'undefined' && new Date().getFullYear();
 
 	/** Get default slider value. */
 	const getDefaultValue = (queryParams, defaultMin = 1900, defaultMax = 2000) => {
@@ -25,8 +26,13 @@ const MediaFiltersRelease = () => {
 		];
 	};
 
+	/** Slider state. */
+	const [value, setValue] = useState(
+		getDefaultValue(query, defaultReleaseFrom, defaultReleaseUntil)
+	);
+
 	/** Handle Filter Release Year. */
-	const handleFilterRelease = (releaseYears = [1900, 2022]) => {
+	const handleFilterRelease = (releaseYears) => {
 		const [releaseYearFrom, releaseYearUntil] = releaseYears;
 		const replaceParams = [
 			{
@@ -43,22 +49,24 @@ const MediaFiltersRelease = () => {
 
 	/** Handle Reset Release Year */
 	const handleResetRelease = () => {
+		setValue([defaultReleaseFrom, defaultReleaseUntil]);
 		removesMultiple(['releaseYearFrom', 'releaseYearUntil']);
 	};
 
 	/** Slider Config. */
 	const sliderConf = {
+		value,
 		step: 1,
-		min: minYear,
-		max: currYear,
-		onChange: handleFilterRelease,
-		defaultValue: getDefaultValue(query, minYear, currYear),
+		min: defaultReleaseFrom,
+		max: defaultReleaseUntil,
+		onAfterChange: handleFilterRelease,
+		onChange: (val) => setValue(val),
 	};
 
 	return (
 		<div className={styles.media_filters_release}>
 			<MediaFiltersTitle title="Release Year" onReset={handleResetRelease} />
-			<SliderDebounce {...sliderConf} />
+			<Slider {...sliderConf} />
 		</div>
 	);
 };

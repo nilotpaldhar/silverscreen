@@ -1,7 +1,7 @@
 import { Container } from '@components/general';
 
 /**
- * Render the HomePage component.
+ * Render  the HomePage component.
  *
  * @return {Element} The HomePage component.
  */

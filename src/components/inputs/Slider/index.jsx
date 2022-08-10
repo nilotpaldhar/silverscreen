@@ -17,6 +17,7 @@ const Slider = ({
 	defaultValue,
 	step,
 	onChange,
+	onAfterChange,
 	...props
 }) => {
 	/** Slider Label ClassNames. */
@@ -32,6 +33,7 @@ const Slider = ({
 		defaultValue,
 		step,
 		onChange,
+		onAfterChange,
 	};
 
 	return (
@@ -55,6 +57,7 @@ Slider.defaultProps = {
 	defaultValue: [0, 10],
 	step: 0.1,
 	onChange: () => {},
+	onAfterChange: () => {},
 };
 
 /**
@@ -69,6 +72,7 @@ Slider.propTypes = {
 	defaultValue: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
 	step: PropTypes.number,
 	onChange: PropTypes.func,
+	onAfterChange: PropTypes.func,
 };
 
 export default Slider;

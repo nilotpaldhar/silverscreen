@@ -11,7 +11,12 @@ const MEDIA_TYPE = 'tv';
  * @return {Element} The OnAirTVShowsPage component.
  */
 const OnAirTVShowsPage = ({ data }) => (
-	<MediaGroupTmpl type={MEDIA_TYPE} heading="TV Shows On Air" data={data} />
+	<MediaGroupTmpl
+		type={MEDIA_TYPE}
+		heading="TV Shows On Air"
+		excludeFilters={['release']}
+		data={data}
+	/>
 );
 
 /**

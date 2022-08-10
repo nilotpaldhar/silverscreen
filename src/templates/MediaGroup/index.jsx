@@ -10,7 +10,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaGroupTmpl component.
  */
-const MediaGroupTmpl = ({ type, heading, data }) => {
+const MediaGroupTmpl = ({ type, heading, excludeFilters, data }) => {
 	const { currentPage, totalPages } = data?.meta ?? {};
 	const hasCollection = !isEmpty(data?.collection);
 	const message = `No ${type === 'tv' ? 'tv shows' : 'movies'} found!`;
@@ -21,7 +21,7 @@ const MediaGroupTmpl = ({ type, heading, data }) => {
 			<main className={styles.media_group_tmpl_content}>
 				<Container fluidLarge={false}>
 					<section className={styles.media_group_tmpl_section}>
-						<MediaFilters type={type} />
+						<MediaFilters type={type} excludeFilters={excludeFilters} />
 						{hasCollection ? (
 							<MediaCollection type={type} collection={data?.collection} />
 						) : (
@@ -49,8 +49,9 @@ const MediaGroupTmpl = ({ type, heading, data }) => {
  */
 MediaGroupTmpl.defaultProps = {
 	type: 'movie',
-	data: {},
 	heading: '',
+	excludeFilters: [],
+	data: {},
 };
 
 /**
@@ -59,6 +60,7 @@ MediaGroupTmpl.defaultProps = {
 MediaGroupTmpl.propTypes = {
 	type: PropTypes.oneOf(['tv', 'movie']),
 	heading: PropTypes.node,
+	excludeFilters: PropTypes.arrayOf(PropTypes.string),
 	data: PropTypes.shape({
 		collection: PropTypes.arrayOf(PropTypes.shape({})),
 		meta: PropTypes.shape({

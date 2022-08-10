@@ -5,11 +5,11 @@ import MediaFiltersTitle from '../MediaFiltersTitle';
 import styles from './styles.module.scss';
 
 /**
- * Render the MediaFiltersAgeRating component.
+ * Render the MediaFiltersCertification component.
  *
- * @return {Element} The MediaFiltersAgeRating component.
+ * @return {Element} The MediaFiltersCertification component.
  */
-const MediaFiltersAgeRating = () => {
+const MediaFiltersCertification = () => {
 	const { query, toggle, remove } = useRouteParams();
 
 	/** Age Rating Buttons. */
@@ -35,20 +35,20 @@ const MediaFiltersAgeRating = () => {
 		return certArr?.includes(val);
 	};
 
-	/** Handle Filter Age Rating */
+	/** Handle Filter Certification. */
 	const handleFilterAgeRating = (_evt) => {
 		const val = _evt?.currentTarget?.value;
 		toggle('certification', val);
 	};
 
-	/** Handle Reset Age Rating */
+	/** Handle Reset Certification. */
 	const handleResetAgeRating = () => {
 		remove('certification');
 	};
 
 	return (
 		<div className={styles.media_filters_age_rating}>
-			<MediaFiltersTitle title="Age rating" onReset={handleResetAgeRating} />
+			<MediaFiltersTitle title="Certification" onReset={handleResetAgeRating} />
 			<ul>
 				{ageRatingBtns?.map((btn) => (
 					<li key={btn?.value}>
@@ -70,4 +70,4 @@ const MediaFiltersAgeRating = () => {
 	);
 };
 
-export default MediaFiltersAgeRating;
+export default MediaFiltersCertification;

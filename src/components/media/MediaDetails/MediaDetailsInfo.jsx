@@ -18,6 +18,9 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 	/** Media Creator. */
 	const mediaCreator = type === 'tv' || type === 'tvSeason' ? creators : directors;
 
+	/** Genre href prefix. */
+	const genreHrefPrefix = type === 'tv' || type === 'tvSeason' ? 'genres/tv' : 'genres/movie';
+
 	/** Media slider config. */
 	const sliderConf = {
 		collection: seasons?.collection,
@@ -97,7 +100,7 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 						<ul className={styles.media_details_list}>
 							{genres?.map((genre) => (
 								<li key={genre?.id}>
-									<Link href={genre?.slug}>{genre?.name}</Link>
+									<Link href={`/${genreHrefPrefix}/${genre?.slug}`}>{genre?.name}</Link>
 								</li>
 							))}
 						</ul>

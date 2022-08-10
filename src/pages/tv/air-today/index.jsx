@@ -11,7 +11,12 @@ const MEDIA_TYPE = 'tv';
  * @return {Element} The AiringTodayTVShowsPage component.
  */
 const AiringTodayTVShowsPage = ({ data }) => (
-	<MediaGroupTmpl type={MEDIA_TYPE} heading="TV Shows Airing Today" data={data} />
+	<MediaGroupTmpl
+		type={MEDIA_TYPE}
+		heading="TV Shows Airing Today"
+		excludeFilters={['release']}
+		data={data}
+	/>
 );
 
 /**

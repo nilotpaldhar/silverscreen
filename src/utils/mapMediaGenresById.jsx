@@ -1,5 +1,5 @@
-import slugify from 'slugify';
 import { MEDIA_GENRES } from '@constants';
+import generateMediaUid from '@utils/generateMediaUid';
 
 /**
  * Map media genres by ID.
@@ -11,15 +11,12 @@ import { MEDIA_GENRES } from '@constants';
  */
 const mapMediaGenresById = (mediaType, genreIds = []) => {
 	const genres = MEDIA_GENRES[mediaType] || [];
-	const slugifyOptions = { lower: true, strict: true };
 
 	return genres
 		?.filter((g) => genreIds?.includes(g?.id))
 		?.map((g, idx) => ({
 			...g,
-			href: g?.name
-				? `/${mediaType === 'tv' ? 'tv' : 'movie'}/genres/${slugify(g?.name, slugifyOptions)}`
-				: null,
+			uid: generateMediaUid(g?.id, g?.name),
 			imgPath: mediaType === 'tv' ? `/genres/tv/${idx + 1}.jpg` : `/genres/movie/${idx + 1}.jpg`,
 		}));
 };

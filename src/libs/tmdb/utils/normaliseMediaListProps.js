@@ -25,7 +25,10 @@ const normaliseMediaListProps = (type = 'movie', groupKey = '', data = null) => 
 			currentPage: data?.page,
 			totalPages: data?.total_pages <= 500 ? data?.total_pages : 500,
 			totalResults: data?.total_results,
-			queryType: `${groupKey}_${type}`,
+			query: {
+				type: `${groupKey ?? 'unknown'}_${type}`,
+				name: groupKey ?? 'unknown',
+			},
 		},
 		collection: getMediaListCollection(type, data?.results),
 	};

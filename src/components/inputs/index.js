@@ -1,2 +1,2 @@
+// eslint-disable-next-line import/prefer-default-export
 export { default as Slider } from '@components/inputs/Slider';
-export { default as SliderDebounce } from '@components/inputs/Slider/SliderDebounce';

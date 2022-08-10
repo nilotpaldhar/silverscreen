@@ -4,9 +4,13 @@ export { default as getMediaProps } from '@libs/tmdb/media/getMediaProps';
 export { default as getMediaGroupProps } from '@libs/tmdb/media/getMediaGroupProps';
 export { default as getMediaSeasonProps } from '@libs/tmdb/media/getMediaSeasonProps';
 
+/** Genres. */
+export { default as getGenreProps } from '@libs/tmdb/genre/getGenreProps';
+
 /** Pages. */
 export { default as getMediaGroupPage } from '@libs/tmdb/pages/getMediaGroupPage';
 export { default as getSingleMediaPage } from '@libs/tmdb/pages/getSingleMediaPage';
+export { default as getSingleGenrePage } from '@libs/tmdb/pages/getSingleGenrePage';
 export { default as getSingleSeasonPage } from '@libs/tmdb/pages/getSingleSeasonPage';
 
 /** Utils. */

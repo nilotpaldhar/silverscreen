@@ -1,4 +1,5 @@
-import { SliderDebounce } from '@components/inputs';
+import { useState } from 'react';
+import { Slider } from '@components/inputs';
 import { useRouteParams } from '@hooks';
 import { toNumber } from 'lodash';
 import MediaFiltersTitle from '../MediaFiltersTitle';
@@ -19,8 +20,11 @@ const MediaFiltersRating = () => {
 		return [minRating, maxRating];
 	};
 
+	/** Slider state. */
+	const [value, setValue] = useState(getDefaultValue(query));
+
 	/** Handle Filter Rating. */
-	const handleFilterRating = (ratings = [0, 10]) => {
+	const handlefilterRating = (ratings) => {
 		const [minRating, maxRating] = ratings;
 		const replaceParams = [
 			{
@@ -37,6 +41,7 @@ const MediaFiltersRating = () => {
 
 	/** Handle Reset Rating */
 	const handleResetRating = () => {
+		setValue([0, 10]);
 		removesMultiple(['minRating', 'maxRating']);
 	};
 
@@ -45,14 +50,15 @@ const MediaFiltersRating = () => {
 		step: 0.1,
 		min: 0,
 		max: 10,
-		defaultValue: getDefaultValue(query),
-		onChange: handleFilterRating,
+		value,
+		onAfterChange: handlefilterRating,
+		onChange: (val) => setValue(val),
 	};
 
 	return (
 		<div className={styles.media_filters_rating}>
 			<MediaFiltersTitle title="Rating" onReset={handleResetRating} />
-			<SliderDebounce {...sliderConf} />
+			<Slider {...sliderConf} />
 		</div>
 	);
 };

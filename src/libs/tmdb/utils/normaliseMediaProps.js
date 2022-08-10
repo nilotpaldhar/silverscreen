@@ -13,13 +13,12 @@ import { isEmpty, isNumber } from 'lodash';
 import slugify from 'slugify';
 
 /** Get Genres. */
-const getGenres = (type, genres = []) => {
-	const prefix = type === 'tv' ? 'tv/genres' : 'movie/genres';
-	return genres?.map((genre) => {
-		const slug = `/${prefix}/${slugify(genre?.name, { lower: true })}`;
-		return { ...genre, slug };
+const getGenres = (genres = []) =>
+	genres?.map((genre) => {
+		const slug = `${slugify(genre?.name, { lower: true })}`;
+		const uid = generateMediaUid(genre?.id, genre?.name);
+		return { ...genre, slug, uid };
 	});
-};
 
 /** Get Rating. */
 const getRating = (data) => {
@@ -102,7 +101,7 @@ const normaliseMediaProps = (type = 'movie', data = null) => {
 		title,
 		tagline: data?.tagline,
 		overview: data?.overview,
-		genres: getGenres(type, data?.genres),
+		genres: getGenres(data?.genres),
 		language: generateMediaLang(data?.original_language),
 		runtime: generateMediaRuntime(type === 'tv' ? data?.episode_run_time[0] : data?.runtime),
 		rating: getRating(data),
