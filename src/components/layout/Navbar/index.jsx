@@ -1,7 +1,7 @@
 import { Container, Logo, VisuallyHidden } from '@components/general';
 import { MobileMenu } from '@components/layout';
 import { Search } from '@icons';
-import menus from '@public/menus.json';
+import menus from '@public/misc/menus.json';
 import NavMenu from './NavMenu';
 import NavSearch from './NavSearch';
 import styles from './styles.module.scss';

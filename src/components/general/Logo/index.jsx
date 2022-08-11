@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Image, Link } from '@components/general';
-import logo from '@public/logo.svg';
+import logo from '@public/images/logos/site-logo.svg';
 
 /**
  * Render the Logo component.

@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash';
-import languages from '@public/languages.json';
+import languages from '@public/misc/languages.json';
 
 /**
  * Checks if valid media language.

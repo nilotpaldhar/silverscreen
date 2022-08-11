@@ -1,0 +1,47 @@
+.genre_card {
+	// Root Styles.
+	@apply relative text-gray-100 rounded outline-none overflow-hidden backface-hidden transition-all duration-500;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&:focus-within {
+		@apply outline-none;
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus-within {
+			img {
+				@apply blur-[2px];
+			}
+
+			h2 {
+				@apply transform -translate-x-2/4 -translate-y-2/4 scale-125;
+			}
+		}
+	}
+
+	// Genre Card Overlay.
+	&::after {
+		content: '';
+
+		@apply absolute inset-0 block w-full h-full bg-gradient-to-b from-transparent to-black;
+	}
+
+	// Genre Card Poster.
+	&_poster {
+		img {
+			@apply transition-all duration-500;
+		}
+	}
+
+	// Genre Card Title.
+	&_title {
+		@apply max-w-[60%] absolute top-2/4 left-1/2 z-10 transform -translate-x-2/4 -translate-y-2/4 text-xs text-gray-100 font-semibold text-center uppercase leading-snug tracking-widest truncate backface-hidden transition-all duration-300;
+
+		@screen sm {
+			@apply text-sm leading-snug;
+		}
+	}
+}

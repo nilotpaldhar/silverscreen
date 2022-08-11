@@ -28,7 +28,11 @@
 
 	// Popovers Body.
 	&_body {
-		@apply absolute top-[140%] left-0 z-30 w-72 py-2 bg-dark-gray-800 border border-dark-gray-700 border-opacity-40 rounded;
+		@apply absolute top-[140%] left-0 z-30 w-52 py-2 bg-dark-gray-800 border border-dark-gray-700 border-opacity-40 rounded;
+
+		@screen md {
+			@apply w-72;
+		}
 	}
 
 	// Popovers Arrow.

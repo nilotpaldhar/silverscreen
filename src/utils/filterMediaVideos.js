@@ -27,7 +27,7 @@ const filterMediaVideos = (videos = []) => {
 		key: v?.key,
 		name: v?.name,
 		size: v?.size,
-		thumbnail: getYouTubeThumbnail(v?.key, 'medium') ?? '/poster-placeholder.jpg',
+		thumbnail: getYouTubeThumbnail(v?.key, 'medium') ?? '/images/placeholders/backdrop.jpg',
 		language: v?.iso_639_1,
 		published: v?.published_at,
 	}));

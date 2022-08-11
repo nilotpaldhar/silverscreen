@@ -37,7 +37,7 @@ const normaliseSeasonProps = (data = null) => {
 		title: data?.name,
 		overview: data?.overview,
 		sessionNo: data?.season_number,
-		poster: getMediaImgUrl(data?.poster_path, 'w342') ?? '/poster-placeholder.jpg',
+		poster: getMediaImgUrl(data?.poster_path, 'w342') ?? '/images/placeholders/poster.jpg',
 		episodes: getSeasonEpisodes(data?.episodes),
 		releaseDate: generateMediaReleaseDate(data?.air_date),
 		trailer: getMediaTrailer(data?.videos?.results),

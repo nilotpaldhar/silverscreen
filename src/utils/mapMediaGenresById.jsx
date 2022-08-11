@@ -1,3 +1,4 @@
+import slugify from 'slugify';
 import { MEDIA_GENRES } from '@constants';
 import generateMediaUid from '@utils/generateMediaUid';
 
@@ -17,7 +18,8 @@ const mapMediaGenresById = (mediaType, genreIds = []) => {
 		?.map((g, idx) => ({
 			...g,
 			uid: generateMediaUid(g?.id, g?.name),
-			imgPath: mediaType === 'tv' ? `/genres/tv/${idx + 1}.jpg` : `/genres/movie/${idx + 1}.jpg`,
+			slug: `${slugify(g?.name, { lower: true })}`,
+			backdrop: mediaType === 'tv' ? `/genres/tv/${idx + 1}.jpg` : `/genres/movie/${idx + 1}.jpg`,
 		}));
 };
 

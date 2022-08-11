@@ -9,8 +9,8 @@ import {
 	formatMediaListProps,
 	generateMediaReleaseDate,
 } from '@utils';
-import { isEmpty, isNumber } from 'lodash';
 import slugify from 'slugify';
+import { isEmpty, isNumber } from 'lodash';
 
 /** Get Genres. */
 const getGenres = (genres = []) =>
@@ -78,7 +78,7 @@ const getRecommendatedMedia = (recommendations = []) =>
 		id: r?.id,
 		uid: generateMediaUid(r?.id, r?.name || r?.title),
 		title: r?.name || r?.title,
-		backdrop: getMediaImgUrl(r?.backdrop_path, 'w300') ?? '/backdrop-placeholder.jpg',
+		backdrop: getMediaImgUrl(r?.backdrop_path, 'w300') ?? '/images/placeholders/backdrop.jpg',
 	}));
 
 /**
@@ -112,8 +112,8 @@ const normaliseMediaProps = (type = 'movie', data = null) => {
 		[type === 'tv' ? 'creators' : 'directors']: getCreators(type, data),
 		writers: getWriters(data?.credits?.crew),
 		topCasts: getTopCast(data?.credits?.cast),
-		backdrop: getMediaImgUrl(data?.backdrop_path, 'w1280') ?? '/backdrop-placeholder.jpg',
-		poster: getMediaImgUrl(data?.poster_path, 'w342') ?? '/poster-placeholder.jpg',
+		backdrop: getMediaImgUrl(data?.backdrop_path, 'w1280') ?? '/images/placeholders/backdrop.jpg',
+		poster: getMediaImgUrl(data?.poster_path, 'w342') ?? '/images/placeholders/poster.jpg',
 		trailer: getMediaTrailer(data?.videos?.results),
 		videos: filterMediaVideos(data?.videos?.results),
 		recommendations: getRecommendatedMedia(data?.recommendations?.results),

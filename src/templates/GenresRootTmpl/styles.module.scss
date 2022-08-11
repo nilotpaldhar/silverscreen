@@ -1,0 +1,45 @@
+.genres_root_tmpl {
+	// Content.
+	&_content {
+		@apply py-14;
+
+		@screen md {
+			@apply py-16;
+		}
+
+		@screen xl {
+			@apply py-20;
+		}
+	}
+
+	// Section.
+	&_section {
+		@apply flex flex-col gap-5;
+
+		@screen lg {
+			@apply gap-7;
+		}
+	}
+
+	// Info.
+	&_info {
+		@apply hidden text-sm text-gray-300 italic font-light leading-none;
+
+		@screen sm {
+			@apply block;
+		}
+
+		&::before {
+			content: '\201C';
+		}
+
+		&::after {
+			content: '\201D';
+		}
+	}
+
+	// Tab Header.
+	&_tabheader {
+		@apply flex items-center justify-between;
+	}
+}

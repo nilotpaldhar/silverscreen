@@ -1,16 +1,26 @@
-import { Container } from '@components/general';
+import PropTypes from 'prop-types';
+import {} from '@templates';
+import { getHomePage } from '@libs/tmdb';
 
 /**
  * Render  the HomePage component.
  *
  * @return {Element} The HomePage component.
  */
-const HomePage = () => (
-	<section className="py-10">
-		<Container>
-			<h4 className="mb-4 text-xl font-light">Home Page</h4>
-		</Container>
-	</section>
-);
+const HomePage = () => <div className="py-10">HomePage</div>;
+
+/**
+ * Get home page props.
+ *
+ * @return {object} Page props.
+ */
+export const getStaticProps = async () => getHomePage();
+
+/**
+ * Prop Types.
+ */
+HomePage.propTypes = {
+	data: PropTypes.shape({}).isRequired,
+};
 
 export default HomePage;

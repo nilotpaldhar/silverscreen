@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Image } from '@components/general';
-import placeholderPort from '@public/poster-placeholder.jpg';
-import placeholderLand from '@public/backdrop-placeholder.jpg';
+import placeholderPort from '@public/images/placeholders/poster.jpg';
+import placeholderLand from '@public/images/placeholders/backdrop.jpg';
 
 /**
  * Render the BlurImage component.

@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The Popovers component.
  */
-const Popovers = ({ label, selected, placement, children }) => {
+const Popovers = ({ label, selected, placement, fallbackPlacements, children }) => {
 	const [referenceElement, setReferenceElement] = useState(null);
 	const [popperElement, setPopperElement] = useState(null);
 	const [arrowElement, setArrowElement] = useState(null);
@@ -20,7 +20,7 @@ const Popovers = ({ label, selected, placement, children }) => {
 	const modifiers = [
 		{ name: 'offset', options: { offset: [0, 12] } },
 		{ name: 'arrow', options: { element: arrowElement, padding: 5 } },
-		{ name: 'flip', options: { fallbackPlacements: ['top', 'left'] } },
+		{ name: 'flip', options: { fallbackPlacements } },
 	];
 
 	/** Setup popper-react. */
@@ -73,6 +73,7 @@ Popovers.defaultProps = {
 	label: 'Popover Label',
 	selected: false,
 	placement: 'bottom',
+	fallbackPlacements: ['top', 'left', 'right'],
 	children: '',
 };
 
@@ -83,6 +84,7 @@ Popovers.propTypes = {
 	label: PropTypes.node,
 	selected: PropTypes.bool,
 	placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
+	fallbackPlacements: PropTypes.arrayOf(PropTypes.string),
 	children: PropTypes.node,
 };
 

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import NextBreadcrumb from 'nextjs-breadcrumbs';
 import { Container, Image } from '@components/general';
 import { ChevronRight, Home } from '@icons';
-import headerBg from '@public/header-bg.jpg';
+import headerBg from '@public/images/backgrounds/header.jpg';
 import styles from './styles.module.scss';
 
 /**

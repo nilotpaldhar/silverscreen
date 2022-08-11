@@ -1,4 +1,4 @@
-import getGenreProps from '@libs/tmdb/genre/getGenreProps';
+import getGenreProps from '@libs/tmdb/genres/getGenreProps';
 import { isEmpty } from 'lodash';
 
 /**

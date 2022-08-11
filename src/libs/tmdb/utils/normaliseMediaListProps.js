@@ -10,8 +10,9 @@ const getMediaListCollection = (type, results = []) => {
 /**
  * Normalise media list props.
  *
- * @param {object} data Media Data.
  * @param {string} type Media Type.
+ * @param {string} groupKey Media Group Key.
+ * @param {object} data Media Data.
  *
  * @returns Normalised media list data.
  */

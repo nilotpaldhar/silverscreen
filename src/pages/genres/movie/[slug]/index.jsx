@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { MediaGroupTmpl } from '@templates';
+import { SingleGenreTmpl } from '@templates';
 import { getSingleGenrePage } from '@libs/tmdb';
 
 /** Genre Type. */
@@ -10,20 +10,7 @@ const GENRE_TYPE = 'movie';
  *
  * @return {Element} The SingleMovieGenrePage component.
  */
-const SingleMovieGenrePage = ({ data }) => {
-	/** Get genre name. */
-	const genreName = data?.meta?.query?.name;
-
-	/** Media Group Tmpl Config. */
-	const conf = {
-		type: GENRE_TYPE,
-		heading: `Genre "${genreName ?? 'unknown'}"`,
-		excludeFilters: ['genres'],
-		data,
-	};
-
-	return <MediaGroupTmpl {...conf} />;
-};
+const SingleMovieGenrePage = ({ data }) => <SingleGenreTmpl type={GENRE_TYPE} data={data} />;
 
 /**
  * Get page props.
@@ -39,13 +26,7 @@ export const getServerSideProps = async ({ res, params, query }) => {
  * Prop Types.
  */
 SingleMovieGenrePage.propTypes = {
-	data: PropTypes.shape({
-		meta: PropTypes.shape({
-			query: PropTypes.shape({
-				name: PropTypes.string,
-			}),
-		}),
-	}).isRequired,
+	data: PropTypes.shape({}).isRequired,
 };
 
 export default SingleMovieGenrePage;

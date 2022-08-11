@@ -2,7 +2,7 @@ import Link from '@components/general/Link';
 import PropTypes from 'prop-types';
 import { Image } from '@components/general';
 import { removeSlashes } from '@utils';
-import tmdbLogo from '@public/tmdb-logo.svg';
+import tmdbLogo from '@public/images/logos/tmdb-logo.svg';
 import styles from './styles.module.scss';
 
 /**

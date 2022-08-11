@@ -2,7 +2,7 @@ import { useState, Fragment } from 'react';
 import { useRouteParams } from '@hooks';
 import cx from 'classnames';
 import { Combobox } from '@headlessui/react';
-import languages from '@public/languages.json';
+import languages from '@public/misc/languages.json';
 import MediaFiltersTitle from '../MediaFiltersTitle';
 import styles from './styles.module.scss';
 

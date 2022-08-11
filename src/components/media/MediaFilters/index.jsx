@@ -33,7 +33,11 @@ const MediaFilters = ({ type, excludeFilters }) => {
 							const FilterComponent = mapMediaFilters(filter);
 							const label = filter === 'release' ? 'release year' : filter;
 							return FilterComponent ? (
-								<Popovers key={filter} label={<span className="capitalize">{label}</span>}>
+								<Popovers
+									key={filter}
+									label={<span className="capitalize">{label}</span>}
+									fallbackPlacements={['top']}
+								>
 									<div className={styles.media_filters_block}>
 										{filter === 'genres' ? <FilterComponent type={type} /> : <FilterComponent />}
 									</div>
