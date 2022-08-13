@@ -17,7 +17,7 @@
 
 	// Tabs Label.
 	&_label {
-		@apply bg-transparent px-5 py-2 text-sm text-gray-100 rounded-full leading-tight outline-none border-none transition-colors duration-300;
+		@apply block bg-transparent px-4 py-2 text-xs text-gray-100 rounded-full leading-tight outline-none border-none truncate transition-colors duration-300;
 
 		&:hover {
 			@apply text-gray-300;
@@ -43,6 +43,7 @@
 
 	// Tabs Body.
 	&_body {
+		@apply outline-none;
 	}
 
 	// Tabs Content.

@@ -1,6 +1,7 @@
 import { isEmpty, isArray } from 'lodash';
 import { tmdbClient } from '@config/tmdb';
 import getGenresCollection from '@libs/tmdb/genres/getGenresCollection';
+import getLatestMediaTrailers from '@libs/tmdb/media/getLatestMediaTrailers';
 import normaliseMediaRootProps from '@libs/tmdb/utils/normaliseMediaRootProps';
 
 /** Request URLs. */
@@ -40,12 +41,13 @@ const getMediaRootProps = async (type = 'all', reqUrls = REQ_URL_OBJ) => {
 	try {
 		const allMedias = await Promise.all(reqUrlStrings.map((url) => tmdbClient.get(url)));
 		const mediaGenres = await getGenresCollection();
+		const latestTrailers = await getLatestMediaTrailers(type);
 
 		if (isEmpty(allMedias) || !isArray(allMedias)) {
 			return null;
 		}
 
-		return normaliseMediaRootProps(type, allMedias, mediaGenres);
+		return normaliseMediaRootProps(type, allMedias, latestTrailers, mediaGenres);
 	} catch (error) {
 		return null;
 	}

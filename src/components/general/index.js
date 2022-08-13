@@ -4,6 +4,7 @@ export { default as Link } from '@components/general/Link';
 export { default as Image } from '@components/general/Image';
 export { default as Button } from '@components/general/Button';
 export { default as Drawer } from '@components/general/Drawer';
+export { default as Heading } from '@components/general/Heading';
 export { default as BlurImage } from '@components/general/BlurImage';
 export { default as Container } from '@components/general/Container';
 export { default as Pagination } from '@components/general/Pagination';

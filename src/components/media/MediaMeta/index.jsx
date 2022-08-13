@@ -28,13 +28,23 @@ const MediaMeta = ({ language, runtime, releaseDate, rating }) => (
 );
 
 /**
+ * Default Props.
+ */
+MediaMeta.defaultProps = {
+	language: '',
+	runtime: '',
+	releaseDate: '',
+	rating: '',
+};
+
+/**
  * Prop Types.
  */
 MediaMeta.propTypes = {
-	language: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(null)]).isRequired,
-	runtime: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(null)]).isRequired,
-	releaseDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(null)]).isRequired,
-	rating: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(null)]).isRequired,
+	language: PropTypes.string,
+	runtime: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	releaseDate: PropTypes.string,
+	rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default MediaMeta;

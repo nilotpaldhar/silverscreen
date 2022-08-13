@@ -11,7 +11,7 @@ import { formatMediaListProps } from '@utils';
  *
  * @returns Normalise media root data.
  */
-const normaliseMediaRootProps = (type = 'all', results = [], genres = {}) => {
+const normaliseMediaRootProps = (type = 'all', results = [], latestTrailers = [], genres = {}) => {
 	const asignDirectly = type !== 'all';
 
 	/** Initialized Props. */
@@ -20,6 +20,7 @@ const normaliseMediaRootProps = (type = 'all', results = [], genres = {}) => {
 		upcomming: {},
 		popular: {},
 		topRated: {},
+		trailers: latestTrailers,
 		genres: asignDirectly ? genres[type] : genres,
 	};
 
@@ -49,7 +50,7 @@ const normaliseMediaRootProps = (type = 'all', results = [], genres = {}) => {
 			}
 
 			/** Upcomming movies & tv shows. */
-			if (key === 'movieUpcoming' || key === 'movieUpcoming') {
+			if (key === 'movieUpcoming' || key === 'tvOnTheAir') {
 				asignDirectly ? (props.upcomming = resObj) : (props.upcomming[mediaType] = resObj);
 			}
 

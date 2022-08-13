@@ -10,4 +10,5 @@ export { default as MediaDetails } from '@components/media/MediaDetails';
 export { default as MediaFilters } from '@components/media/MediaFilters';
 export { default as MediaTrailer } from '@components/media/MediaTrailer';
 export { default as MediaEpisodes } from '@components/media/MediaEpisodes';
+export { default as MediaCarousel } from '@components/media/MediaCarousel';
 export { default as MediaCollection } from '@components/media/MediaCollection';

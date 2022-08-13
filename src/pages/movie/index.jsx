@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {} from '@templates';
+import { MediaRootTmpl } from '@templates';
 import { getMediaRootPage } from '@libs/tmdb';
 
 /** Media Type. */
@@ -10,8 +10,7 @@ const MEDIA_TYPE = 'movie';
  *
  * @return {Element} The MoviesPage component.
  */
-const MoviesPage = () => <div className="py-10">MoviesPage</div>;
-
+const MoviesPage = ({ data }) => <MediaRootTmpl type={MEDIA_TYPE} data={data} />;
 /**
  * Get movies page props.
  *

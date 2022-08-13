@@ -1,0 +1,34 @@
+.heading {
+	@apply flex items-center;
+
+	// Heading Right.
+	&.right {
+		@apply justify-end text-right;
+
+		h1 {
+			@apply text-right;
+		}
+	}
+
+	// Heading Left.
+	&.left {
+		@apply justify-start text-left;
+
+		h1 {
+			@apply text-left;
+		}
+	}
+
+	// Heading Center.
+	&.center {
+		@apply justify-center text-center;
+
+		h1 {
+			@apply text-center;
+		}
+	}
+
+	h1 {
+		@apply text-base text-gray-100 font-light leading-snug capitalize tracking-wide truncate;
+	}
+}

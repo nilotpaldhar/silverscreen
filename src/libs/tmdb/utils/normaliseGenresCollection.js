@@ -23,8 +23,8 @@ const normaliseGenresCollection = (type = 'movie', data = []) => {
 	}));
 
 	return {
-		meta: { totalResults: collection?.length },
 		collection,
+		meta: { totalResults: collection?.length },
 	};
 };
 

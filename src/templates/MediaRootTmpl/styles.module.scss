@@ -1,0 +1,28 @@
+.media_root_tmpl {
+	// Home Page Hero Carousel.
+	&_hero {
+		@apply overflow-hidden;
+	}
+
+	// Home Page Content.
+	&_content {
+		@apply flex flex-col gap-14 py-10;
+
+		@screen md {
+			@apply py-14;
+		}
+
+		@screen xl {
+			@apply gap-20 py-20;
+		}
+	}
+
+	// Home Page Section.
+	&_section {
+		@apply overflow-hidden;
+
+		.heading_wrapper {
+			@apply mb-5;
+		}
+	}
+}

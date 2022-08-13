@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {} from '@templates';
+import { HomePageTmpl } from '@templates';
 import { getHomePage } from '@libs/tmdb';
 
 /**
@@ -7,7 +7,7 @@ import { getHomePage } from '@libs/tmdb';
  *
  * @return {Element} The HomePage component.
  */
-const HomePage = () => <div className="py-10">HomePage</div>;
+const HomePage = ({ data }) => <HomePageTmpl data={data} />;
 
 /**
  * Get home page props.

@@ -1,0 +1,94 @@
+.media_carousel {
+	// Media Carousel Item.
+	&_item {
+		@apply relative flex items-center bg-dark-gray-900 rounded-b cursor-pointer overflow-hidden;
+
+		// Background Divider.
+		&::after {
+			content: '';
+
+			@apply absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-dark-gray-800;
+
+			@screen xl {
+				@apply left-1/2 transform -translate-x-2/4 w-96 h-full bg-gradient-to-r from-dark-gray-900 via-dark-gray-900 to-transparent;
+			}
+		}
+
+		// Content.
+		&_content {
+			@apply absolute bottom-0 left-0 z-10 w-full pb-5 px-3;
+
+			@screen sm {
+				@apply pb-8 px-5;
+			}
+
+			@screen lg {
+				@apply pb-10 px-8;
+			}
+
+			@screen xl {
+				@apply relative w-6/12 px-8 pb-0;
+			}
+
+			@screen xxxl {
+				@apply pl-16;
+			}
+		}
+
+		// Backdrop Image.
+		&_backdrop {
+			@apply relative w-full;
+
+			&::after {
+				content: '';
+
+				@apply absolute inset-0 w-full h-full bg-dark-gray-900 bg-opacity-30;
+			}
+
+			@screen xl {
+				@apply w-6/12;
+			}
+		}
+
+		// Title.
+		&_title {
+			@apply text-xl text-gray-100 font-semibold mb-2 leading-tight tracking-wider;
+
+			@screen md {
+				@apply text-2xl mb-4 leading-tight;
+			}
+
+			@screen xxxl {
+				@apply text-3xl leading-tight;
+			}
+		}
+
+		// Description/Overview.
+		&_desc {
+			@apply hidden text-sm text-gray-300 font-light mt-3 leading-relaxed;
+
+			@screen md {
+				@apply max-w-[70ch] block;
+			}
+
+			@screen xl {
+				@apply max-w-[55ch] mb-5 mt-4;
+			}
+
+			@screen xxxl {
+				@apply text-xl leading-loose;
+			}
+		}
+
+		// Button.
+		&_btn {
+			&:link {
+				@apply hidden px-8 py-2;
+
+				@screen xl {
+					@apply inline-flex;
+				}
+			}
+		}
+	}
+}
