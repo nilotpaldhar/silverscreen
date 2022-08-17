@@ -2,7 +2,7 @@ import axios from 'axios';
 
 /** Get TMDB base URL & access token. */
 const tmdbBaseUrl = process.env.NEXT_PUBLIC_TMDB_API_URL;
-const tmdbAccessToken = process.env.NEXT_PUBLIC_TMDB_ACCESS_TOKEN;
+const tmdbAccessToken = process.env.TMDB_ACCESS_TOKEN;
 
 /** Create TMDB client. */
 const tmdbClient = axios.create();

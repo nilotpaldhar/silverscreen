@@ -10,7 +10,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The Breadcrumb component.
  */
-const Breadcrumb = ({ heading }) => {
+const Breadcrumb = ({ heading, showBreadcrumb }) => {
 	/** Render breadcrumb label. */
 	const renderLabel = (title) => {
 		if (title.toLowerCase() === 'home') {
@@ -48,11 +48,13 @@ const Breadcrumb = ({ heading }) => {
 			<Container>
 				<div className={styles.breadcrumb_content}>
 					<h1 className={styles.breadcrumb_heading}>{heading}</h1>
-					<NextBreadcrumb
-						containerClassName={styles.breadcrumb_links}
-						transformLabel={renderLabel}
-						activeItemClassName={styles.active}
-					/>
+					{showBreadcrumb && (
+						<NextBreadcrumb
+							containerClassName={styles.breadcrumb_links}
+							transformLabel={renderLabel}
+							activeItemClassName={styles.active}
+						/>
+					)}
 				</div>
 			</Container>
 		</div>
@@ -64,13 +66,15 @@ const Breadcrumb = ({ heading }) => {
  */
 Breadcrumb.defaultProps = {
 	heading: 'Default Heading',
+	showBreadcrumb: true,
 };
 
 /**
  * Prop Types.
  */
 Breadcrumb.propTypes = {
-	heading: PropTypes.string,
+	heading: PropTypes.node,
+	showBreadcrumb: PropTypes.bool,
 };
 
 export default Breadcrumb;

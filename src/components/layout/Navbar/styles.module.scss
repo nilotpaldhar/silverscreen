@@ -1,6 +1,6 @@
 .navbar {
 	// Root Styles.
-	@apply h-20 border-b border-dark-gray-700 border-opacity-40;
+	@apply bg-dark-gray-800 h-20 border-b border-dark-gray-700 border-opacity-40;
 
 	// Navbar Body.
 	&_body {
@@ -9,14 +9,22 @@
 
 	// Nav Menu.
 	.nav_menu {
-		@apply ml-24 hidden;
+		@apply ml-12 mr-6 hidden;
 
 		@screen lg {
 			@apply block;
 		}
 
+		@screen xl {
+			@apply ml-24;
+		}
+
 		ul {
-			@apply flex items-center flex-wrap gap-12;
+			@apply flex items-center flex-wrap gap-8;
+
+			@screen xl {
+				@apply gap-12;
+			}
 		}
 
 		&_link {
@@ -34,14 +42,30 @@
 
 	// Nav Search.
 	.nav_search {
-		@apply hidden flex-1 h-full items-center justify-end;
+		@apply flex-1 w-full items-center justify-center;
 
-		@screen lg {
-			@apply flex;
+		.nav_search_wrapper {
+			@apply flex-1 w-full;
 		}
 
-		&_wrapper {
-			@apply flex-1 max-w-lg;
+		&.desktop {
+			@apply hidden flex-1 h-full items-center justify-end;
+
+			@screen sm {
+				@apply flex;
+			}
+
+			.nav_search_wrapper {
+				@apply flex-1 max-w-xs;
+
+				@screen md {
+					@apply max-w-md;
+				}
+
+				@screen xxxl {
+					@apply max-w-2xl;
+				}
+			}
 		}
 	}
 
@@ -72,7 +96,7 @@
 			@apply h-5 w-5;
 		}
 
-		@screen lg {
+		@screen sm {
 			@apply hidden;
 		}
 	}

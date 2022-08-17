@@ -4,6 +4,7 @@ export { default as MediaMeta } from '@components/media/MediaMeta';
 export { default as MediaBlock } from '@components/media/MediaBlock';
 export { default as MediaCasts } from '@components/media/MediaCasts';
 export { default as MediaHeader } from '@components/media/MediaHeader';
+export { default as MediaSearch } from '@components/media/MediaSearch';
 export { default as MediaPlayer } from '@components/media/MediaPlayer';
 export { default as MediaSlider } from '@components/media/MediaSlider';
 export { default as MediaDetails } from '@components/media/MediaDetails';

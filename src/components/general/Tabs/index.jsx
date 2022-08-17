@@ -1,8 +1,7 @@
-/* eslint-disable react/no-array-index-key */
-
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Tab } from '@headlessui/react';
+import { v4 as uuid } from 'uuid';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 
@@ -26,8 +25,8 @@ const Tabs = ({ items, prepend, append, className, headerClassName, bodyClassNam
 			<Tab.List className={headerClassNames}>
 				{prepend}
 				<div className={styles.tabs_label_wrapper}>
-					{labels?.map((label, idx) => (
-						<Tab as={Fragment} key={idx}>
+					{labels?.map((label) => (
+						<Tab as={Fragment} key={uuid()}>
 							{({ selected }) => (
 								<button
 									type="button"
@@ -44,8 +43,8 @@ const Tabs = ({ items, prepend, append, className, headerClassName, bodyClassNam
 				{append}
 			</Tab.List>
 			<Tab.Panels className={bodyClassNames}>
-				{contents?.map((content, idx) => (
-					<Tab.Panel as="div" key={idx} className={styles.tabs_content}>
+				{contents?.map((content) => (
+					<Tab.Panel as="div" key={uuid()} className={styles.tabs_content}>
 						{content}
 					</Tab.Panel>
 				))}

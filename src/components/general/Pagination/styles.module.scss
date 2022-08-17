@@ -1,6 +1,6 @@
 .pagination {
 	// Root Styles.
-	@apply flex items-center flex-wrap gap-1 max-w-max;
+	@apply flex items-center justify-center flex-wrap gap-1 max-w-max;
 
 	li {
 		@apply flex items-center justify-center;
