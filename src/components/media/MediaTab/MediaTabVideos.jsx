@@ -12,11 +12,12 @@ import styles from './styles.module.scss';
 const MediaTabVideos = ({ videos }) => {
 	/** Slider Config. */
 	const sliderConf = {
+		overflow: true,
+		spaceBetween: 10,
+		slidesPerView: 1,
 		collection: videos,
 		component: MediaTrailer,
-		slidesPerView: 1,
-		spaceBetween: 10,
-		overflow: true,
+		loaderProps: { orientation: 'landscape' },
 		breakpoints: {
 			340: {
 				slidesPerView: 2,

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { MediaCard } from '@components/media';
 import cx from 'classnames';
+import MediaSliderLoader from './MediaSliderLoader';
 import styles from './styles.module.scss';
 import 'swiper/css';
 
@@ -12,13 +13,15 @@ import 'swiper/css';
  * @return {Element} The MediaSlider component.
  */
 const MediaSlider = ({
-	collection,
-	component: Component,
-	componentProps,
-	slidesPerView,
-	spaceBetween,
-	breakpoints,
 	overflow,
+	collection,
+	breakpoints,
+	spaceBetween,
+	slidesPerView,
+	loader: Loader,
+	loaderProps,
+	componentProps,
+	component: Component,
 	...props
 }) => {
 	/** Swiper Buttons State. */
@@ -47,7 +50,7 @@ const MediaSlider = ({
 	return (
 		<Swiper {...swiperConf}>
 			{loading ? (
-				<div className="flex items-center justify-center text-gray-300 py-14">Loading...</div>
+				<Loader {...loaderProps} />
 			) : (
 				<div>
 					{collection?.map((item) => (
@@ -66,11 +69,14 @@ const MediaSlider = ({
  */
 MediaSlider.defaultProps = {
 	collection: [],
-	component: MediaCard,
-	componentProps: {},
-	slidesPerView: 1,
-	spaceBetween: 10,
 	overflow: false,
+	spaceBetween: 10,
+	slidesPerView: 1,
+	componentProps: {},
+	component: MediaCard,
+	loaderProps: {},
+	loader: MediaSliderLoader,
+	loaderOrientation: 'portrait',
 	breakpoints: {
 		340: {
 			slidesPerView: 2,
@@ -103,13 +109,16 @@ MediaSlider.defaultProps = {
  * Prop Types.
  */
 MediaSlider.propTypes = {
-	collection: PropTypes.arrayOf(PropTypes.shape({})),
-	component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-	componentProps: PropTypes.shape({}),
-	slidesPerView: PropTypes.number,
-	spaceBetween: PropTypes.number,
-	breakpoints: PropTypes.shape({}),
 	overflow: PropTypes.bool,
+	spaceBetween: PropTypes.number,
+	slidesPerView: PropTypes.number,
+	breakpoints: PropTypes.shape({}),
+	loaderProps: PropTypes.shape({}),
+	componentProps: PropTypes.shape({}),
+	collection: PropTypes.arrayOf(PropTypes.shape({})),
+	loaderOrientation: PropTypes.oneOf(['portrait', 'landscape']),
+	loader: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+	component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 };
 
 export default MediaSlider;

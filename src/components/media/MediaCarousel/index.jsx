@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Container } from '@components/general';
 import { MediaSlider } from '@components/media';
 import MediaCarouselItem from './MediaCarouselItem';
+import MediaCarouselLoader from './MediaCarouselLoader';
 import styles from './styles.module.scss';
 
 /**
@@ -17,13 +18,14 @@ const MediaCarousel = ({ collection }) => {
 		<div className={styles.media_carousel}>
 			<Container>
 				<MediaSlider
-					collection={collection}
-					component={MediaCarouselItem}
-					initialSlide={initialSlide}
+					overflow
+					breakpoints={{}}
 					slidesPerView={1}
 					spaceBetween={20}
-					breakpoints={{}}
-					overflow
+					collection={collection}
+					initialSlide={initialSlide}
+					loader={MediaCarouselLoader}
+					component={MediaCarouselItem}
 				/>
 			</Container>
 		</div>

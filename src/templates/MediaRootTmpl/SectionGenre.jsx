@@ -20,6 +20,7 @@ const SectionGenre = ({ type, heading, data }) => (
 				component={GenreCard}
 				componentProps={{ type }}
 				collection={data?.collection}
+				loaderProps={{ orientation: 'landscape' }}
 			/>
 		</Container>
 	</section>

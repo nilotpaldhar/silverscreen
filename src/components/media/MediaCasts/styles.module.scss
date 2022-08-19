@@ -20,4 +20,13 @@
 			@apply text-gray-300 font-normal;
 		}
 	}
+
+	// Media Casts Loader.
+	&_loader {
+		@apply flex items-center justify-start w-full py-1;
+
+		span {
+			@apply text-xs text-gray-400 font-light capitalize;
+		}
+	}
 }

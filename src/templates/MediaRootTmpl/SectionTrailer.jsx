@@ -9,15 +9,22 @@ import styles from './styles.module.scss';
  * @return {Element} The SectionTrailer component.
  */
 const SectionTrailer = ({ heading, data }) => {
-	const collection = data?.collection?.map((m) => m?.trailer);
+	const collection = data?.collection?.map((m) => {
+		const trailer = m?.trailer;
+		return {
+			...trailer,
+			name: `${m?.title} ${trailer?.name ? ` - ${trailer?.name}` : ''}`,
+		};
+	});
 
 	/** Slider Config. */
 	const sliderConf = {
-		component: MediaTrailer,
 		collection,
-		slidesPerView: 1,
-		spaceBetween: 10,
 		overflow: true,
+		spaceBetween: 10,
+		slidesPerView: 1,
+		component: MediaTrailer,
+		loaderProps: { orientation: 'landscape' },
 		breakpoints: {
 			340: {
 				slidesPerView: 2,

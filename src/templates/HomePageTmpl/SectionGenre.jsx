@@ -22,6 +22,7 @@ const SectionGenre = ({ heading, data }) => {
 					component={GenreCard}
 					collection={movie?.collection}
 					componentProps={{ type: 'movie' }}
+					loaderProps={{ orientation: 'landscape' }}
 				/>
 			),
 		},

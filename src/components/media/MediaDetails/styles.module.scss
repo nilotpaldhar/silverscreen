@@ -74,4 +74,37 @@
 			}
 		}
 	}
+
+	// Season Loader.
+	.season_loader {
+		@apply w-full h-44 grid grid-cols-2 gap-2;
+
+		@screen sm {
+			@apply grid-cols-3;
+		}
+
+		@screen md {
+			@apply grid-cols-4;
+		}
+
+		&_item {
+			@apply block w-full h-full rounded bg-dark-gray-900 animate-pulse;
+
+			&:nth-child(n + 3) {
+				@apply hidden;
+			}
+
+			@screen sm {
+				&:nth-child(3) {
+					@apply block;
+				}
+			}
+
+			@screen md {
+				&:nth-child(n + 4):nth-last-child(n + 1) {
+					@apply block;
+				}
+			}
+		}
+	}
 }

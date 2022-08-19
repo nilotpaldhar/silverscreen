@@ -10,15 +10,28 @@ import styles from './styles.module.scss';
  */
 const SectionTrailer = ({ heading, data }) => {
 	const { movie, tv } = data || {};
-	const movieCollection = movie?.collection?.map((m) => m?.trailer);
-	const tvCollection = tv?.collection?.map((t) => t?.trailer);
+	const movieCollection = movie?.collection?.map((m) => {
+		const trailer = m?.trailer;
+		return {
+			...trailer,
+			name: `${m?.title} ${trailer?.name ? ` - ${trailer?.name}` : ''}`,
+		};
+	});
+	const tvCollection = tv?.collection?.map((t) => {
+		const trailer = t?.trailer;
+		return {
+			...trailer,
+			name: `${t?.title} ${trailer?.name ? ` - ${trailer?.name}` : ''}`,
+		};
+	});
 
 	/** Slider Config. */
 	const sliderConf = {
-		component: MediaTrailer,
+		overflow: true,
 		slidesPerView: 1,
 		spaceBetween: 10,
-		overflow: true,
+		component: MediaTrailer,
+		loaderProps: { orientation: 'landscape' },
 		breakpoints: {
 			340: {
 				slidesPerView: 2,

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from '@components/general';
 import { MediaBlock, MediaCasts, MediaSlider, MediaEpisodes } from '@components/media';
+import SeasonLoader from './SeasonLoader';
 import styles from './styles.module.scss';
 
 /**
@@ -23,13 +24,14 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 
 	/** Media slider config. */
 	const sliderConf = {
+		spaceBetween: 10,
+		slidesPerView: 1.3,
+		loader: SeasonLoader,
 		collection: seasons?.collection,
 		componentProps: {
 			type: 'tvSeason',
 			hrefPrefix: `tv/${uid}`,
 		},
-		slidesPerView: 1.3,
-		spaceBetween: 10,
 		breakpoints: {
 			320: {
 				slidesPerView: 2.3,

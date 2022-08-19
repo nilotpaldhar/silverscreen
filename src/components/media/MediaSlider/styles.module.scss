@@ -35,4 +35,79 @@
 			@apply right-0 bg-gradient-to-r;
 		}
 	}
+
+	// Media Slider Loader.
+	&_loader {
+		@apply w-full h-56 overflow-hidden;
+
+		@screen lg {
+			@apply h-64;
+		}
+
+		&_grid {
+			@apply grid grid-cols-2 h-full w-full gap-3;
+
+			@screen sm {
+				@apply grid-cols-3;
+			}
+
+			@screen lg {
+				@apply grid-cols-4;
+			}
+
+			@screen xl {
+				@apply grid-cols-6;
+			}
+
+			@screen xxxl {
+				@apply grid-cols-8;
+			}
+		}
+
+		&_grid_item {
+			@apply block rounded bg-dark-gray-900 w-full h-full animate-pulse;
+
+			// 2
+			&:nth-child(n + 3) {
+				@apply hidden;
+			}
+
+			// 3
+			@screen sm {
+				&:nth-child(3) {
+					@apply block;
+				}
+			}
+
+			// 4
+			@screen lg {
+				&:nth-child(4) {
+					@apply block;
+				}
+			}
+
+			// 5
+			@screen xl {
+				&:nth-child(n + 5):nth-last-child(n + 3) {
+					@apply block;
+				}
+			}
+
+			// 8
+			@screen xxxl {
+				&:nth-child(n + 7):nth-last-child(n + 1) {
+					@apply block;
+				}
+			}
+		}
+
+		// Loader Landscape
+		&.landscape {
+			@apply h-24;
+
+			@screen md {
+				@apply h-32;
+			}
+		}
+	}
 }

@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { MediaSlider } from '@components/media';
 import MediaCastsPeople from './MediaCastsPeople';
+import MediaCastsLoader from './MediaCastsLoader';
 import styles from './styles.module.scss';
 
 /**
@@ -11,10 +12,11 @@ import styles from './styles.module.scss';
 const MediaCasts = ({ casts }) => (
 	<div className={styles.media_casts}>
 		<MediaSlider
-			collection={casts}
-			component={MediaCastsPeople}
-			slidesPerView={1.5}
 			spaceBetween={10}
+			collection={casts}
+			slidesPerView={1.5}
+			loader={MediaCastsLoader}
+			component={MediaCastsPeople}
 			breakpoints={{
 				320: {
 					slidesPerView: 2.5,

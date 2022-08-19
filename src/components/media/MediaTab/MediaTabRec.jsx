@@ -13,30 +13,31 @@ import styles from './styles.module.scss';
 const MediaTabRec = ({ type, recommendations }) => {
 	/** Slider Config. */
 	const sliderConf = {
-		collection: recommendations,
-		component: MediaTabRecCard,
-		componentProps: { type },
+		overflow: true,
 		slidesPerView: 2,
 		spaceBetween: 10,
-		overflow: true,
+		componentProps: { type },
+		component: MediaTabRecCard,
+		collection: recommendations,
+		loaderProps: { orientation: 'landscape' },
 		breakpoints: {
-			576: {
-				slidesPerView: 3,
+			340: {
+				slidesPerView: 2,
 				spaceBetween: 10,
 			},
 			768: {
-				slidesPerView: 4,
+				slidesPerView: 3,
 				spaceBetween: 16,
 			},
 			992: {
-				slidesPerView: 5,
+				slidesPerView: 4,
 				spaceBetween: 16,
 			},
-			1200: {
+			1600: {
 				slidesPerView: 6,
 				spaceBetween: 16,
 			},
-			2000: {
+			2400: {
 				slidesPerView: 8,
 				spaceBetween: 16,
 			},

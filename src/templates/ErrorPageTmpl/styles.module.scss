@@ -1,0 +1,54 @@
+.error_page_tmpl {
+	// Root Styles.
+	@apply min-h-full py-14;
+
+	@screen md {
+		@apply py-16;
+	}
+
+	@screen xl {
+		@apply py-20;
+	}
+
+	&.is404 {
+		.error_page_tmpl_content {
+			@apply mt-6;
+		}
+	}
+
+	// Error Page Heading.
+	&_heading {
+		@apply text-3xl text-gray-100 font-normal leading-snug text-center capitalize mb-2;
+
+		@screen md {
+			@apply text-4xl leading-snug;
+		}
+
+		@screen xl {
+			@apply text-5xl leading-snug;
+		}
+	}
+
+	// Error Page Text.
+	&_text {
+		@apply text-base text-gray-300 font-light leading-relaxed text-center;
+
+		@screen lg {
+			@apply text-lg leading-relaxed;
+		}
+	}
+
+	// Error Page Button.
+	&_btn {
+		@apply flex items-center justify-center mt-4;
+
+		button,
+		a {
+			@apply px-5 py-2;
+
+			@screen xl {
+				@apply px-10;
+			}
+		}
+	}
+}

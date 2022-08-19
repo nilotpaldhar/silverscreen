@@ -91,4 +91,29 @@
 			}
 		}
 	}
+
+	// Media Carousel Loader.
+	&_loader {
+		@apply w-full h-44;
+
+		@screen sm {
+			@apply h-60;
+		}
+
+		@screen md {
+			@apply h-80;
+		}
+
+		@screen xl {
+			@apply h-72;
+		}
+
+		@screen xxxl {
+			@apply h-96;
+		}
+
+		span {
+			@apply block w-full h-full rounded-b bg-dark-gray-900 animate-pulse;
+		}
+	}
 }
