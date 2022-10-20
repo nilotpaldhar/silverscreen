@@ -1,7 +1,11 @@
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import { Navbar, Footer } from '@components/layout';
-import { MediaPlayer } from '@components/media';
+import Navbar from '@components/layout/Navbar';
 import styles from './styles.module.scss';
+
+/** Dynamic Imports. */
+const MediaPlayer = dynamic(() => import('@components/media/MediaPlayer'));
+const Footer = dynamic(() => import('@components/layout/Footer'));
 
 /**
  * Render the Layout component.

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { MediaGroupTmpl } from '@templates';
+import { Seo } from '@components/general';
 import { getMediaGroupPage } from '@libs/tmdb';
 
 /** Media Type. */
@@ -11,12 +12,15 @@ const MEDIA_TYPE = 'tv';
  * @return {Element} The OnAirTVShowsPage component.
  */
 const OnAirTVShowsPage = ({ data }) => (
-	<MediaGroupTmpl
-		type={MEDIA_TYPE}
-		heading="TV Shows On Air"
-		excludeFilters={['release']}
-		data={data}
-	/>
+	<>
+		<Seo title="Watch TV Shows that are Currently on TV" />
+		<MediaGroupTmpl
+			type={MEDIA_TYPE}
+			heading="TV Shows On Air"
+			excludeFilters={['release']}
+			data={data}
+		/>
+	</>
 );
 
 /**

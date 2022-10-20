@@ -1,3 +1,4 @@
+export { default as Seo } from '@components/general/Seo';
 export { default as Tabs } from '@components/general/Tabs';
 export { default as Logo } from '@components/general/Logo';
 export { default as Link } from '@components/general/Link';

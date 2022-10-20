@@ -76,7 +76,6 @@ MediaSlider.defaultProps = {
 	component: MediaCard,
 	loaderProps: {},
 	loader: MediaSliderLoader,
-	loaderOrientation: 'portrait',
 	breakpoints: {
 		340: {
 			slidesPerView: 2,
@@ -116,7 +115,6 @@ MediaSlider.propTypes = {
 	loaderProps: PropTypes.shape({}),
 	componentProps: PropTypes.shape({}),
 	collection: PropTypes.arrayOf(PropTypes.shape({})),
-	loaderOrientation: PropTypes.oneOf(['portrait', 'landscape']),
 	loader: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 	component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 };

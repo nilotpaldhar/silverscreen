@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { MediaGroupTmpl } from '@templates';
+import { Seo } from '@components/general';
 import { getMediaGroupPage } from '@libs/tmdb';
 
 /** Media Type. */
@@ -11,7 +12,10 @@ const MEDIA_TYPE = 'movie';
  * @return {Element} The UpcomingMoviesPage component.
  */
 const UpcomingMoviesPage = ({ data }) => (
-	<MediaGroupTmpl type={MEDIA_TYPE} heading="Upcomming Movies" data={data} />
+	<>
+		<Seo title="Watch New and Upcomming Movies" />
+		<MediaGroupTmpl type={MEDIA_TYPE} heading="Upcomming Movies" data={data} />
+	</>
 );
 
 /**

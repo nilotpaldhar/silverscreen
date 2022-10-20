@@ -1,7 +1,10 @@
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import { MediaSearch } from '@components/media';
 import cx from 'classnames';
 import styles from './styles.module.scss';
+
+/** Dynamic Imports. */
+const MediaSearch = dynamic(() => import('@components/media/MediaSearch'));
 
 /**
  * Render the NavSearch component.

@@ -42,7 +42,7 @@ const formatMediaListProps = (type = 'movie', data = null) => {
 		genres: mapMediaGenresById(type, data?.genre_ids),
 		language: generateMediaLang(data?.original_language),
 		poster: getMediaImgUrl(data?.poster_path, 'w342') ?? '/images/placeholders/poster.jpg',
-		backdrop: getMediaImgUrl(data?.backdrop_path, 'w1280') ?? '/images/placeholders/backdrop.jpg',
+		backdrop: getMediaImgUrl(data?.backdrop_path, 'w780') ?? '/images/placeholders/backdrop.jpg',
 		releaseDate: generateMediaReleaseDate(
 			type === 'tv' ? data?.first_air_date : data?.release_date
 		),

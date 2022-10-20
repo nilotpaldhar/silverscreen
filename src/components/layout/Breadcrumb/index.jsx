@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
-import NextBreadcrumb from 'nextjs-breadcrumbs';
 import { Container, Image } from '@components/general';
-import { ChevronRight, Home } from '@icons';
 import headerBg from '@public/images/backgrounds/header.jpg';
 import styles from './styles.module.scss';
+
+/** Dynamic Imports. */
+const NextBreadcrumb = dynamic(() => import('nextjs-breadcrumbs'));
+const Home = dynamic(() => import('@icons/general/Home'));
+const ChevronRight = dynamic(() => import('@icons/general/ChevronRight'));
 
 /**
  * Render the Breadcrumb component.

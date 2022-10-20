@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import MediaGroupTmpl from '@templates/MediaGroupTmpl';
+import { Seo } from '@components/general';
 
 /**
  * Render the SingleGenreTmpl component.
@@ -10,6 +11,9 @@ const SingleGenreTmpl = ({ type, data }) => {
 	/** Get genre name. */
 	const genreName = data?.meta?.query?.name;
 
+	/** Get page title for seo. */
+	const pageTitle = `Watch ${genreName} ${type === 'tv' ? 'TV Shows' : 'Movies'}`;
+
 	/** Media Group Tmpl Config. */
 	const conf = {
 		data,
@@ -18,7 +22,12 @@ const SingleGenreTmpl = ({ type, data }) => {
 		heading: `Genre "${genreName ?? 'unknown'}"`,
 	};
 
-	return <MediaGroupTmpl {...conf} />;
+	return (
+		<>
+			<Seo title={pageTitle} />
+			<MediaGroupTmpl {...conf} />
+		</>
+	);
 };
 
 /**

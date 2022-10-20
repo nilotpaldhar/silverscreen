@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Container, Pagination, Tabs } from '@components/general';
+import { Container, Pagination, Tabs, Seo } from '@components/general';
 import { Breadcrumb } from '@components/layout';
 import { MediaCollection } from '@components/media';
 import { isEmpty } from 'lodash';
@@ -13,6 +13,9 @@ import styles from './styles.module.scss';
 const SearchPageTmpl = ({ data }) => {
 	const { meta: { currentPage, totalPages, query } = {}, collection } = data || {};
 	const hasCollection = !isEmpty(collection?.movie) || !isEmpty(collection?.tv);
+
+	/** Page Title for SEO. */
+	const pageTitle = `Search for '${query?.name || 'unknown'}'`;
 
 	/** Page Heading */
 	const heading = (
@@ -55,25 +58,28 @@ const SearchPageTmpl = ({ data }) => {
 	];
 
 	return (
-		<div className={styles.search_page_tmpl}>
-			<Breadcrumb heading={heading} showBreadcrumb={false} />
-			<main className={styles.search_page_tmpl_content}>
-				<Container fluidLarge={false}>
-					<section className={styles.search_page_tmpl_section}>
-						<Tabs
-							items={tabItems}
-							prepend={results}
-							headerClassName={styles.search_page_tmpl_tabheader}
-						/>
-					</section>
-					{hasCollection && (
-						<div className={styles.search_page_tmpl_pagination}>
-							<Pagination initialPage={currentPage} pageCount={totalPages} routePrefix="?page=" />
-						</div>
-					)}
-				</Container>
-			</main>
-		</div>
+		<>
+			<Seo title={pageTitle} />
+			<div className={styles.search_page_tmpl}>
+				<Breadcrumb heading={heading} showBreadcrumb={false} />
+				<main className={styles.search_page_tmpl_content}>
+					<Container fluidLarge={false}>
+						<section className={styles.search_page_tmpl_section}>
+							<Tabs
+								items={tabItems}
+								prepend={results}
+								headerClassName={styles.search_page_tmpl_tabheader}
+							/>
+						</section>
+						{hasCollection && (
+							<div className={styles.search_page_tmpl_pagination}>
+								<Pagination initialPage={currentPage} pageCount={totalPages} routePrefix="?page=" />
+							</div>
+						)}
+					</Container>
+				</main>
+			</div>
+		</>
 	);
 };
 /**

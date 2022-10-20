@@ -1,11 +1,14 @@
+import dynamic from 'next/dynamic';
 import { Container, Logo, VisuallyHidden } from '@components/general';
-import { MobileMenu } from '@components/layout';
-import { Search } from '@icons';
 import menus from '@public/misc/menus.json';
 import { useState } from 'react';
 import NavMenu from './NavMenu';
 import NavSearch from './NavSearch';
 import styles from './styles.module.scss';
+
+/** Dynamic Imports. */
+const MobileMenu = dynamic(() => import('@components/layout/MobileMenu'));
+const Search = dynamic(() => import('@icons/general/Search'));
 
 /**
  * Render the Navbar component.

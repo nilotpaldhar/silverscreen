@@ -6,7 +6,7 @@ import { ErrorPageTmpl } from '@templates';
  * @return {Element} The Error500Page component.
  */
 const Error500Page = () => (
-	<ErrorPageTmpl>
+	<ErrorPageTmpl errorCode="500">
 		<ErrorPageTmpl.Heading>Internal Server Error</ErrorPageTmpl.Heading>
 		<ErrorPageTmpl.Text>
 			Unfortunately we are having trouble loading the page you are looking for. Please come back in

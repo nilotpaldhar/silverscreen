@@ -11,7 +11,6 @@ const getImageDomains = (str = '') => {
 	return [];
 };
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
 	trailingSlash: false,

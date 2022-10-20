@@ -70,7 +70,7 @@ const getLatestMediaTrailers = async (type = 'all') => {
 		const mediaList = await getLatestMediaList(type, language);
 
 		/** Fetch Latest Trailers. */
-		const resArr = await Promise.all(
+		const resArr = await Promise.allSettled(
 			mediaList?.map((m) => {
 				const appendToRes = 'append_to_response=videos';
 				const lang = `language=${language}`;
@@ -79,12 +79,14 @@ const getLatestMediaTrailers = async (type = 'all') => {
 		);
 
 		/** Normalise Data. */
-		const latestTrailers = resArr?.map(({ data }) => ({
-			id: data?.id,
-			title: data?.name ?? data?.title,
-			type: data?.name ? 'tv' : 'movie',
-			trailer: getMediaTrailer(data?.videos?.results),
-		}));
+		const latestTrailers = resArr
+			?.filter((res) => res.status === 'fulfilled')
+			?.map(({ value: { data } = {} }) => ({
+				id: data?.id,
+				title: data?.name ?? data?.title,
+				type: data?.name ? 'tv' : 'movie',
+				trailer: getMediaTrailer(data?.videos?.results),
+			}));
 		return normaliseTrailersCollection(type, latestTrailers);
 	} catch (error) {
 		return null;

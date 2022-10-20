@@ -1,9 +1,12 @@
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { MediaCarousel } from '@components/media';
-import SectionMedia from './SectionMedia';
-import SectionGenre from './SectionGenre';
-import SectionTrailer from './SectionTrailer';
 import styles from './styles.module.scss';
+
+/** Dynamic Imports. */
+const SectionMedia = dynamic(() => import('./SectionMedia'));
+const SectionGenre = dynamic(() => import('./SectionGenre'));
+const SectionTrailer = dynamic(() => import('./SectionTrailer'));
 
 /**
  * Render the MediaRootTmpl component.
