@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { Container, Image } from '@components/general';
-import headerBg from '@public/images/backgrounds/header.jpg';
+import headerBg from '@public/images/backgrounds/header.webp';
 import styles from './styles.module.scss';
 
 /** Dynamic Imports. */

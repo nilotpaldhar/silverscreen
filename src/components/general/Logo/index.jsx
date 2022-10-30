@@ -9,7 +9,7 @@ import logo from '@public/images/logos/site-logo.svg';
  */
 const Logo = ({ className, ...props }) => (
 	<Link href="/" className={className} {...props}>
-		<Image src={logo} alt="Logo" width={62} height={20} />
+		<Image src={logo} alt="Logo" width={150} height={25} />
 	</Link>
 );
 

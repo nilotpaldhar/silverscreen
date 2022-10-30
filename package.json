@@ -1,9 +1,9 @@
 {
-	"name": "nextjs-movie-directory-app",
+	"name": "redcarpet",
 	"version": "0.0.1",
 	"private": true,
 	"license": "MIT",
-	"author": "Nilotpal Dhar <nilotpaldhar1997@gmail.com>",
+	"author": "Nilotpal Dhar <contact.nilotpaldhar@gmail.com>",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -25,10 +25,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/nilotpaldhar/nextjs-movie-directory-app"
+		"url": "https://github.com/nilotpaldhar/redcarpet"
 	},
 	"bugs": {
-		"url": "https://github.com/nilotpaldhar/nextjs-movie-directory-app/issues"
+		"url": "https://github.com/nilotpaldhar/redcarpet/issues"
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.6.5",
