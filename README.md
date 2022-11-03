@@ -1,9 +1,11 @@
+<a name="readme-top"></a>
+
 <!-- PROJECT SHIELDS -->
 <p align="center">
-  <a href="https://github.com/github_username/repo_name/issues">
+  <a href="https://github.com/nilotpaldhar/redcarpet/issues">
     <img src="https://img.shields.io/github/issues/nilotpaldhar/redcarpet.svg?style=for-the-badge" alt="Issues">
   </a>
-  <a href="https://github.com/nilotpaldhar/redcarpet/blob/master/LICENSE">
+  <a href="https://github.com/nilotpaldhar/redcarpet/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/nilotpaldhar/redcarpet.svg?style=for-the-badge" alt="License">
   </a>
    <a href="https://linkedin.com/in/nilotpaldhar">
@@ -21,9 +23,9 @@
 <h2 align="center">RedCarpet</h2>
 
   <p align="center">
-    A movie-search engine that lets users browse a wide variety of films and television shows
+    Search Engine for Movies and Television Shows
     <br />
-    <a href="https://github.com/nilotpaldhar/redcarpet"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nilotpaldhar/redcarpet#readme-top"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://redcarpet.vercel.app">Live Demo</a>
@@ -46,7 +48,7 @@
       </ul>
     </li>
     <li>
-      <a href="#geting-started">Geting Started</a>
+      <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#setup">Setup</a></li>
@@ -59,7 +61,6 @@
         <li><a href="#netlify--firebase-etc">Netlify / Firebase etc.</a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#support">Support</a></li>
     <li><a href="#licence">Licence</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -75,13 +76,13 @@
 A movie-search engine that lets users browse a wide variety of films and television shows and helps get information regarding them. It makes use of TMDB API for all films' related metadata.
 
 <p align="center">
-  <img src = "public/images/preview/desktop.png">
+  <img src = "public/images/preview/desktop.webp">
 </p>
 
 > **Fully Responsive**
 
 <p align="center">
-  <img src = "public/images/preview/mobile.png">
+  <img src = "public/images/preview/mobile.webp">
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -118,7 +119,7 @@ Here is a run through of how to set up the application:
 - **Step 4** : Add Envirnoment Variables to your project:
   - Create a new copy of **`.env.sample`** file in your root directory and rename it to **`.env.local`**
   - Go to the [the movie database (TMDB) API](https://www.themoviedb.org/) WEBSITE, sign up for a free account and generate an API key.
-  - On **`.env.local`** file add yout API key like **`TMDB_ACCESS_TOKEN='<your-api-key>'`**
+  - On **`.env.local`** file add your API key like **`TMDB_ACCESS_TOKEN='<your-api-key>'`**
 - **Step 5** : On your terminal run **`yarn dev`** or **`npm run dev`** command to open a local development server on **`localhost:3000`**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -139,10 +140,6 @@ The API routes used in the autocomplete search component cannot be used in a sta
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
-
-## Contributing
-
 <!-- SUPPORT -->
 
 ## Support
@@ -155,7 +152,7 @@ Like 💖 this project? Support this effort by giving a star on GitHub, sharing 
 
 ## Licence
 
-You are welcome to use this application however you wish under the [MIT](https://github.com/nilotpaldhar/redcarpet/new/mainLICENSE) license.
+You are welcome to use this application however you wish under the [MIT](https://github.com/nilotpaldhar/redcarpet/blob/main/LICENSE) license.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,6 +162,7 @@ You are welcome to use this application however you wish under the [MIT](https:/
 
 - [The Movie Database](https://www.themoviedb.org)
 - [Vercel](https://vercel.com)
+- [Figma](https://www.figma.com/)
 - [React Icons](https://react-icons.github.io/react-icons/search)
 - [Choose an Open Source License](https://choosealicense.com)
 - [Img Shields](https://shields.io)
