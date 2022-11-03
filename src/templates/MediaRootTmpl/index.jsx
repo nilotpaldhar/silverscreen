@@ -24,12 +24,13 @@ const MediaRootTmpl = ({ type, data }) => {
 			</section>
 			<main className={styles.media_root_tmpl_content}>
 				<SectionMedia
+					type={type}
 					heading={type === 'tv' ? 'Latest Shows' : 'New and Upcomming'}
 					data={upcomming}
 				/>
 				<SectionTrailer heading="Latest Trailers" data={trailers} />
-				<SectionMedia heading="Most Popular" data={popular} />
-				<SectionMedia heading="All Time Hits" data={topRated} />
+				<SectionMedia type={type} heading="Most Popular" data={popular} />
+				<SectionMedia type={type} heading="All Time Hits" data={topRated} />
 				<SectionGenre type={type} heading="Genres" data={genres} />
 			</main>
 		</div>
