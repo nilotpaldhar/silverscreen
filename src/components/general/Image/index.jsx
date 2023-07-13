@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import NextImage from 'next/image';
+import NextImage from 'next/legacy/image';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 

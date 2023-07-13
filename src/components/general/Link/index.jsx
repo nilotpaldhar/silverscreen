@@ -20,7 +20,7 @@ const Link = forwardRef((props, ref) => {
 	};
 
 	return (
-		<NextLink href={href} passHref>
+		<NextLink href={href} passHref legacyBehavior>
 			<a {...linkConf}>{children}</a>
 		</NextLink>
 	);

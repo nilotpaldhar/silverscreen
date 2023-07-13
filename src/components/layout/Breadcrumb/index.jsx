@@ -1,39 +1,14 @@
-import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { Container, Image } from '@components/general';
 import headerBg from '@public/images/backgrounds/header.webp';
 import styles from './styles.module.scss';
-
-/** Dynamic Imports. */
-const NextBreadcrumb = dynamic(() => import('nextjs-breadcrumbs'));
-const Home = dynamic(() => import('@icons/general/Home'));
-const ChevronRight = dynamic(() => import('@icons/general/ChevronRight'));
 
 /**
  * Render the Breadcrumb component.
  *
  * @return {Element} The Breadcrumb component.
  */
-const Breadcrumb = ({ heading, showBreadcrumb }) => {
-	/** Render breadcrumb label. */
-	const renderLabel = (title) => {
-		if (title.toLowerCase() === 'home') {
-			return (
-				<>
-					<Home />
-					{title}
-				</>
-			);
-		}
-
-		return (
-			<>
-				<ChevronRight />
-				{title}
-			</>
-		);
-	};
-
+const Breadcrumb = ({ heading }) => {
 	/** Image Config. */
 	const imageConf = {
 		layout: 'fill',
@@ -52,13 +27,7 @@ const Breadcrumb = ({ heading, showBreadcrumb }) => {
 			<Container>
 				<div className={styles.breadcrumb_content}>
 					<h1 className={styles.breadcrumb_heading}>{heading}</h1>
-					{showBreadcrumb && (
-						<NextBreadcrumb
-							containerClassName={styles.breadcrumb_links}
-							transformLabel={renderLabel}
-							activeItemClassName={styles.active}
-						/>
-					)}
+					{/* TODO: CREATE BREADCRUMB LINKS */}
 				</div>
 			</Container>
 		</div>
