@@ -24,6 +24,7 @@ export { default as getSingleSeasonPage } from '@libs/tmdb/pages/getSingleSeason
 /** Utils. */
 export { default as getMediaResults } from '@libs/tmdb/utils/getMediaResults';
 export { default as getMediaGroupUrl } from '@libs/tmdb/utils/getMediaGroupUrl';
+export { default as normaliseCastProps } from '@libs/tmdb/utils/normaliseCastProps';
 export { default as normaliseMediaProps } from '@libs/tmdb/utils/normaliseMediaProps';
 export { default as normaliseSeasonProps } from '@libs/tmdb/utils/normaliseSeasonProps';
 export { default as normaliseSearchResults } from '@libs/tmdb/utils/normaliseSearchResults';

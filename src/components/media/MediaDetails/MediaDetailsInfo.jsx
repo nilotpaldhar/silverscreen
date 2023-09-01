@@ -116,11 +116,13 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 					<MediaBlock.Header>{type === 'tv' ? 'CREATOR(s):' : 'DIRECTOR(s):'}</MediaBlock.Header>
 					<MediaBlock.Body>
 						<ul className={styles.media_details_list}>
-							{mediaCreator?.map((creator) => (
-								<li key={creator?.id}>
-									<Link href="/">{creator?.name}</Link>
-								</li>
-							))}
+							{mediaCreator?.map((creator) =>
+								creator?.id ? (
+									<li key={creator.id}>
+										<Link href={`/cast/${creator.id}`}>{creator?.name}</Link>
+									</li>
+								) : null
+							)}
 						</ul>
 					</MediaBlock.Body>
 				</MediaBlock>
@@ -132,11 +134,13 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 					<MediaBlock.Header>WRITER(s):</MediaBlock.Header>
 					<MediaBlock.Body>
 						<ul className={styles.media_details_list}>
-							{writers?.map((writer) => (
-								<li key={writer?.id}>
-									<Link href="/">{writer?.name}</Link>
-								</li>
-							))}
+							{writers?.map((writer) =>
+								writer?.id ? (
+									<li key={writer.id}>
+										<Link href={`/cast/${writer.id}`}>{writer?.name}</Link>
+									</li>
+								) : null
+							)}
 						</ul>
 					</MediaBlock.Body>
 				</MediaBlock>

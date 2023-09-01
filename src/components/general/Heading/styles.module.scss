@@ -5,7 +5,12 @@
 	&.right {
 		@apply justify-end text-right;
 
-		h1 {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
 			@apply text-right;
 		}
 	}
@@ -14,7 +19,12 @@
 	&.left {
 		@apply justify-start text-left;
 
-		h1 {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
 			@apply text-left;
 		}
 	}
@@ -23,12 +33,22 @@
 	&.center {
 		@apply justify-center text-center;
 
-		h1 {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
 			@apply text-center;
 		}
 	}
 
-	h1 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		@apply text-base text-gray-100 font-light leading-snug capitalize tracking-wide truncate;
 	}
 }

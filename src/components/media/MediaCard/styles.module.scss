@@ -101,28 +101,32 @@
 
 	// Media Card Rating.
 	&_rating {
-		@apply absolute top-2 right-2 z-10 w-7 h-7 bg-dark-gray-800 rounded-full flex items-center justify-center text-[10px] text-gray-200 font-normal backface-hidden transition-opacity duration-300 delay-100;
+		@apply absolute top-0 left-1.5 z-10 w-5 h-7 bg-primary-500 backface-hidden transition-opacity duration-300 delay-100;
 
-		&::after {
-			content: '';
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
 
-			@apply absolute w-6 h-6 rounded-full bg-transparent border-2 border-gray-500;
+		@screen md {
+			@apply left-3 z-10 w-5 h-8;
+		}
+
+		&_inner {
+			@apply h-full flex items-center justify-center pb-px text-[10px] text-gray-200 font-normal;
 		}
 
 		@media (hover: hover) {
 			@apply opacity-0;
 		}
 
-		&.poor::after {
-			@apply border-red-600;
+		&.poor {
+			@apply bg-red-600;
 		}
 
-		&.average::after {
-			@apply border-yellow-600;
+		&.average {
+			@apply bg-yellow-600;
 		}
 
-		&.above_average::after {
-			@apply border-green-600;
+		&.above_average {
+			@apply bg-green-600;
 		}
 	}
 }

@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The Heading component.
  */
-const Heading = ({ align, children, ...props }) => {
+const Heading = ({ as: Component, align, children, ...props }) => {
 	/** ClassNames. */
 	const classNames = cx(styles.heading, {
 		[styles.left]: align === 'left',
@@ -17,7 +17,7 @@ const Heading = ({ align, children, ...props }) => {
 
 	return (
 		<div className={classNames} {...props}>
-			<h1>{children}</h1>
+			<Component>{children}</Component>
 		</div>
 	);
 };
@@ -26,6 +26,7 @@ const Heading = ({ align, children, ...props }) => {
  * Default Props.
  */
 Heading.defaultProps = {
+	as: 'h1',
 	align: 'left',
 	children: '',
 };
@@ -34,6 +35,7 @@ Heading.defaultProps = {
  * Prop Types.
  */
 Heading.propTypes = {
+	as: PropTypes.string,
 	align: PropTypes.oneOf(['left', 'right', 'center']),
 	children: PropTypes.node,
 };

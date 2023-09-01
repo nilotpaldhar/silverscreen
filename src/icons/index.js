@@ -3,6 +3,10 @@ export { default as ArrowDown } from '@icons/general/ArrowDown';
 export { default as ArrowLeft } from '@icons/general/ArrowLeft';
 export { default as ArrowRight } from '@icons/general/ArrowRight';
 export { default as ArrowUp } from '@icons/general/ArrowUp';
+export { default as ArrowNarrowDown } from '@icons/general/ArrowNarrowDown';
+export { default as ArrowNarrowLeft } from '@icons/general/ArrowNarrowLeft';
+export { default as ArrowNarrowRight } from '@icons/general/ArrowNarrowRight';
+export { default as ArrowNarrowUp } from '@icons/general/ArrowNarrowUp';
 export { default as CheckMark } from '@icons/general/CheckMark';
 export { default as ChevronDown } from '@icons/general/ChevronDown';
 export { default as ChevronLeft } from '@icons/general/ChevronLeft';
@@ -24,5 +28,6 @@ export { default as StarFilled } from '@icons/general/StarFilled';
 /** Social Icons. */
 export { default as Facebook } from '@icons/social/Facebook';
 export { default as Instagram } from '@icons/social/Instagram';
+export { default as Tiktok } from '@icons/social/Tiktok';
 export { default as Twitter } from '@icons/social/Twitter';
 export { default as Youtube } from '@icons/social/Youtube';

@@ -16,6 +16,7 @@ export { default as generateMediaHref } from '@utils/generateMediaHref';
 export { default as generateMediaLang } from '@utils/generateMediaLang';
 export { default as createCanonicalUrl } from '@utils/createCanonicalUrl';
 export { default as mapMediaGenresById } from '@utils/mapMediaGenresById';
+export { default as removeDuplicatesObj } from '@utils/removeDuplicatesObj';
 export { default as getYouTubeThumbnail } from '@utils/getYouTubeThumbnail';
 export { default as getMediaGenreBySlug } from '@utils/getMediaGenreBySlug';
 export { default as removeTrailingSlash } from '@utils/removeTrailingSlash';

@@ -1,0 +1,68 @@
+.credit {
+	// Title.
+	&_title {
+		@apply text-xl text-gray-100 font-light leading-snug capitalize tracking-wide truncate;
+	}
+
+	// List.
+	&_list {
+		@apply mt-5 flex flex-col space-y-2;
+	}
+
+	// List Item.
+	&_item {
+		@apply flex items-center text-gray-400;
+
+		&_release,
+		&_arrow {
+			@apply flex items-center overflow-hidden;
+		}
+
+		&_release {
+			@apply w-8 md:w-10 h-8;
+
+			svg {
+				@apply w-5 h-5 md:w-6 md:h-6;
+			}
+		}
+
+		&_arrow {
+			@apply w-6 h-8 mx-3 md:mx-5;
+
+			svg {
+				@apply w-4 h-4 md:w-5 md:h-5;
+			}
+		}
+
+		&_content {
+			@apply flex-1 flex flex-wrap items-center gap-2;
+
+			&_title {
+				@apply text-sm md:text-base font-normal text-gray-100;
+
+				a,
+				a:link,
+				a:visited {
+					@apply text-current;
+
+					&:hover {
+						@apply text-gray-300;
+					}
+				}
+			}
+
+			&_divider {
+				@apply text-xs md:text-sm;
+			}
+
+			&_dept {
+				@apply text-sm md:text-base font-normal text-gray-100;
+			}
+		}
+	}
+
+	// Divider.
+	&_divider {
+		@apply h-px w-full bg-gray-400 bg-opacity-5;
+	}
+}
