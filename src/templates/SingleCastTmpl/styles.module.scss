@@ -1,0 +1,103 @@
+.single_cast_tmpl {
+	@apply pt-6 pb-8;
+
+	@screen lg {
+		@apply pt-8 pb-10;
+	}
+
+	// Wrapper
+	&_wrapper {
+		@apply grid grid-cols-12 gap-x-6 gap-y-10;
+
+		&_col_left {
+			@apply col-span-12;
+
+			@screen lg {
+				@apply col-span-4;
+			}
+
+			@screen xxl {
+				@apply col-span-3;
+			}
+		}
+
+		&_col_right {
+			@apply col-span-12;
+
+			@screen lg {
+				@apply col-span-8;
+			}
+
+			@screen xxl {
+				@apply col-span-9;
+			}
+		}
+	}
+
+	// Cast Avatar
+	&_avatar {
+		&_wrapper {
+			@apply relative rounded-t overflow-hidden;
+		}
+
+		&_img {
+			@apply relative w-full h-[500px] sm:h-[600px] md:h-[800px] lg:h-[450px];
+		}
+
+		&_overlay {
+			@apply absolute inset-0 w-full h-full z-10 bg-gradient-to-b from-transparent to-dark-gray-800;
+		}
+
+		&_social_ids_wrapper {
+			@apply absolute bottom-0 w-full z-20 py-6 px-2;
+		}
+	}
+
+	// Cast Info
+	&_info {
+		&_title {
+			@apply hidden text-lg leading-normal font-light text-gray-400 tracking-wider mb-8 lg:block;
+		}
+
+		&_wrapper {
+			@apply flex flex-col gap-y-8;
+		}
+
+		&_content {
+			@apply flex flex-row flex-wrap gap-8 lg:flex-col;
+		}
+
+		&_aka {
+			@apply flex flex-row flex-wrap gap-y-2 gap-x-4 lg:flex-col lg:gap-x-0;
+		}
+	}
+
+	// Cast Name
+	&_cast_name {
+		@apply text-2xl font-normal text-gray-100 leading-normal;
+	}
+
+	// Cast Credits
+	&_cast_credits {
+		@apply flex flex-col space-y-12 mt-12;
+	}
+
+	// Social Ids
+	&_social_ids {
+		@apply flex items-center justify-center flex-wrap gap-3;
+
+		a,
+		a:link,
+		a:visited {
+			@apply inline-flex justify-center items-center w-8 h-8 bg-dark-gray-700 bg-opacity-40 text-gray-100 rounded-full;
+
+			&:hover {
+				@apply bg-primary-500 text-current;
+			}
+
+			svg {
+				@apply w-3 h-3;
+			}
+		}
+	}
+}

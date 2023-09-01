@@ -189,3 +189,31 @@ export const MEDIA_GROUP_FILTER_KEYS = [
 	'releaseYearFrom',
 	'releaseYearUntil',
 ];
+
+/**
+ * List of the departments used in TMDB.
+ */
+export const LIST_OF_DEPARTMENTS = [
+	{ production: 'production' },
+	{ directing: 'directing' },
+	{ writing: 'writing' },
+	{ editing: 'editing' },
+	{ sound: 'sound' },
+	{ art: 'art' },
+	{ visualEffects: 'visual effects' },
+	{ costumeMakeUp: 'costume & make-up' },
+	{ lighting: 'lighting' },
+	{ camera: 'camera' },
+	{ crew: 'crew' },
+];
+
+/**
+ * List of the social media URLs.
+ */
+export const SOCIAL_MEDIA_URLS = {
+	facebook: 'https://www.facebook.com',
+	instagram: 'https://www.instagram.com',
+	tiktok: 'https://www.tiktok.com',
+	twitter: 'https://twitter.com',
+	youtube: 'https://www.youtube.com',
+};

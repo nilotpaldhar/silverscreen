@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube } from '@icons';
+import { Facebook, Instagram, Twitter, Youtube, Tiktok } from '@icons';
 
 /**
  * Retrive social icons by name.
@@ -13,6 +13,7 @@ const getSocialIcons = (name = '') => {
 		instagram: Instagram,
 		twitter: Twitter,
 		youtube: Youtube,
+		tiktok: Tiktok,
 	};
 
 	if (name in SocialIconsMap) {

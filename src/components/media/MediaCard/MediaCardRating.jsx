@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import isNumber from 'lodash/isNumber';
 import cx from 'classnames';
 import styles from './styles.module.scss';
 
@@ -14,7 +15,13 @@ const MediaCardRating = ({ rating }) => {
 		[styles.above_average]: rating >= 7,
 	});
 
-	return <span className={classNames}>{rating}</span>;
+	return (
+		<span className={classNames}>
+			<span className={styles.media_card_rating_inner}>
+				{isNumber(rating) ? rating.toFixed(1) : rating}
+			</span>
+		</span>
+	);
 };
 
 /**

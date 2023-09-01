@@ -7,12 +7,16 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaCastsPeople component.
  */
-const MediaCastsPeople = ({ data }) => (
-	<Link href="/" className={styles.media_casts_people}>
-		<span className={styles.name}>{data?.name}</span>
-		<span className={styles.character}>{data?.character}</span>
-	</Link>
-);
+const MediaCastsPeople = ({ data }) => {
+	const { id, name, character } = data || {};
+
+	return id ? (
+		<Link href={`/cast/${id}`} className={styles.media_casts_people}>
+			<span className={styles.name}>{name}</span>
+			<span className={styles.character}>{character}</span>
+		</Link>
+	) : null;
+};
 
 /**
  * Default Props.
@@ -26,6 +30,7 @@ MediaCastsPeople.defaultProps = {
  */
 MediaCastsPeople.propTypes = {
 	data: PropTypes.shape({
+		id: PropTypes.number,
 		name: PropTypes.string,
 		character: PropTypes.string,
 	}),
