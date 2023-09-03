@@ -10,7 +10,16 @@ const GENRE_PAGE_TYPE = 'movie';
  *
  * @return {Element} The MovieGenrePage component.
  */
-const MovieGenrePage = ({ data }) => <GenresRootTmpl pageType={GENRE_PAGE_TYPE} data={data} />;
+const MovieGenrePage = ({ data }) => (
+	<GenresRootTmpl
+		pageType={GENRE_PAGE_TYPE}
+		data={data}
+		breadcrumbs={[
+			{ label: 'Genres', href: '/genres' },
+			{ label: 'Movie', href: null },
+		]}
+	/>
+);
 
 /**
  * Get page props.

@@ -10,7 +10,13 @@ const GENRE_PAGE_TYPE = 'all';
  *
  * @return {Element} The RootGenresPage component.
  */
-const RootGenresPage = ({ data }) => <GenresRootTmpl pageType={GENRE_PAGE_TYPE} data={data} />;
+const RootGenresPage = ({ data }) => (
+	<GenresRootTmpl
+		pageType={GENRE_PAGE_TYPE}
+		data={data}
+		breadcrumbs={[{ label: 'Genres', href: null }]}
+	/>
+);
 
 /**
  * Get page props.

@@ -1,8 +1,11 @@
 import cx from 'classnames';
-import { Popovers } from '@components/feedback';
-import { useRouteParams } from '@hooks';
-import { chain } from 'lodash';
-import MediaFiltersTitle from '../MediaFiltersTitle';
+import Popovers from '@components/feedback/Popovers';
+import MediaFiltersTitle from '@components/media/MediaFilters/MediaFiltersTitle';
+
+import useRouteParams from '@hooks/useRouteParams';
+import keyBy from 'lodash/keyBy';
+import mapValues from 'lodash/mapValues';
+
 import styles from './styles.module.scss';
 
 /**
@@ -42,7 +45,8 @@ const MediaFiltersSort = () => {
 			return defaultLabel;
 		}
 
-		const sortLabels = chain(sortArr).keyBy('value').mapValues('label').value();
+		// const sortLabels = chain(sortArr).keyBy('value').mapValues('label').value();
+		const sortLabels = mapValues(keyBy(sortArr, 'value'), 'label');
 		return sortLabels[queryParam] ?? defaultLabel;
 	};
 

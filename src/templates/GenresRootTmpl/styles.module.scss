@@ -1,14 +1,10 @@
 .genres_root_tmpl {
 	// Content.
 	&_content {
-		@apply py-14;
-
-		@screen md {
-			@apply py-16;
-		}
+		@apply pt-10 pb-14;
 
 		@screen xl {
-			@apply py-20;
+			@apply pt-16 pb-20;
 		}
 	}
 
@@ -23,18 +19,10 @@
 
 	// Info.
 	&_info {
-		@apply hidden text-sm text-gray-300 italic font-light leading-none;
+		@apply hidden text-base lg:text-lg text-gray-300 font-light leading-normal tracking-wider;
 
 		@screen sm {
 			@apply block;
-		}
-
-		&::before {
-			content: '\201C';
-		}
-
-		&::after {
-			content: '\201D';
 		}
 	}
 

@@ -14,7 +14,14 @@ const MEDIA_TYPE = 'tv';
 const PopularTVShowsPage = ({ data }) => (
 	<>
 		<Seo title="Watch Popular TV Shows" />
-		<MediaGroupTmpl type={MEDIA_TYPE} heading="Popular TV Shows" data={data} />
+		<MediaGroupTmpl
+			type={MEDIA_TYPE}
+			data={data}
+			breadcrumbs={[
+				{ label: 'TV Shows', href: '/tv' },
+				{ label: 'Popular', href: null },
+			]}
+		/>
 	</>
 );
 

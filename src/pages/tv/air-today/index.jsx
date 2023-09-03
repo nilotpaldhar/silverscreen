@@ -16,9 +16,12 @@ const AiringTodayTVShowsPage = ({ data }) => (
 		<Seo title="Watch TV Shows that are Airing Today" />
 		<MediaGroupTmpl
 			type={MEDIA_TYPE}
-			heading="TV Shows Airing Today"
 			excludeFilters={['release']}
 			data={data}
+			breadcrumbs={[
+				{ label: 'TV Shows', href: '/tv' },
+				{ label: 'Airing Today', href: null },
+			]}
 		/>
 	</>
 );

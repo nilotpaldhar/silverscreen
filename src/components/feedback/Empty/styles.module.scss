@@ -1,0 +1,23 @@
+.empty {
+	@apply flex flex-col items-center text-gray-100;
+
+	&_img_wrapper {
+		@apply mb-6;
+	}
+
+	&_content_wrapper {
+		@apply text-center max-w-lg;
+	}
+
+	&_title {
+		@apply text-2xl xl:text-3xl font-normal leading-normal;
+	}
+
+	&_desc {
+		@apply text-sm xl:text-base font-light leading-relaxed text-gray-300 mt-2 xl:mt-4;
+	}
+
+	&_content {
+		@apply leading-relaxed mt-6;
+	}
+}

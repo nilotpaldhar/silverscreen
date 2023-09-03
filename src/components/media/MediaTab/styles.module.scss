@@ -84,18 +84,6 @@
 
 	// Media Tab Placeholder
 	&_placeholder {
-		@apply w-full h-12 flex items-center justify-center;
-
-		@screen md {
-			@apply h-20;
-		}
-
-		h3 {
-			@apply w-full text-base text-gray-100 font-medium capitalize text-left tracking-widest;
-
-			@screen md {
-				@apply text-center text-xl;
-			}
-		}
+		@apply w-full pt-10;
 	}
 }

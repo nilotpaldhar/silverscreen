@@ -14,7 +14,14 @@ const MEDIA_TYPE = 'movie';
 const UpcomingMoviesPage = ({ data }) => (
 	<>
 		<Seo title="Watch New and Upcomming Movies" />
-		<MediaGroupTmpl type={MEDIA_TYPE} heading="Upcomming Movies" data={data} />
+		<MediaGroupTmpl
+			type={MEDIA_TYPE}
+			data={data}
+			breadcrumbs={[
+				{ label: 'Movies', href: '/movie' },
+				{ label: 'Upcomming', href: null },
+			]}
+		/>
 	</>
 );
 

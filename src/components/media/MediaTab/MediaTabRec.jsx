@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
-import { Container } from '@components/general';
-import { MediaSlider } from '@components/media';
-import { isEmpty } from 'lodash';
-import MediaTabRecCard from './MediaTabRecCard';
+
+import Empty from '@components/feedback/Empty';
+import Container from '@components/general/Container';
+import MediaSlider from '@components/media/MediaSlider';
+import MediaTabRecCard from '@components/media/MediaTab/MediaTabRecCard';
+
+import isEmpty from 'lodash/isEmpty';
 import styles from './styles.module.scss';
 
 /**
@@ -49,7 +52,7 @@ const MediaTabRec = ({ type, recommendations }) => {
 			<Container>
 				{isEmpty(recommendations) ? (
 					<div className={styles.media_tab_placeholder}>
-						<h3>No Recommendations</h3>
+						<Empty title={<span className="text-lg lg:text-xl">No Recommendations</span>} />
 					</div>
 				) : (
 					<MediaSlider {...sliderConf} />

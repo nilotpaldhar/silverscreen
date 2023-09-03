@@ -10,7 +10,21 @@ const GENRE_TYPE = 'tv';
  *
  * @return {Element} The SingleTVGenrePage component.
  */
-const SingleTVGenrePage = ({ data }) => <SingleGenreTmpl type={GENRE_TYPE} data={data} />;
+const SingleTVGenrePage = ({ data }) => {
+	const genre = data?.meta?.query?.name;
+
+	return (
+		<SingleGenreTmpl
+			type={GENRE_TYPE}
+			data={data}
+			breadcrumbs={[
+				{ label: 'Genres', href: '/genres' },
+				{ label: 'TV', href: '/genres/tv' },
+				{ label: `${genre}`, href: null },
+			]}
+		/>
+	);
+};
 
 /**
  * Get page props.
@@ -26,7 +40,13 @@ export const getServerSideProps = async ({ res, params, query }) => {
  * Prop Types.
  */
 SingleTVGenrePage.propTypes = {
-	data: PropTypes.shape({}).isRequired,
+	data: PropTypes.shape({
+		meta: PropTypes.shape({
+			query: PropTypes.shape({
+				name: PropTypes.string,
+			}),
+		}),
+	}).isRequired,
 };
 
 export default SingleTVGenrePage;
