@@ -10,7 +10,16 @@ const GENRE_PAGE_TYPE = 'tv';
  *
  * @return {Element} The TVGenrePage component.
  */
-const TVGenrePage = ({ data }) => <GenresRootTmpl pageType={GENRE_PAGE_TYPE} data={data} />;
+const TVGenrePage = ({ data }) => (
+	<GenresRootTmpl
+		pageType={GENRE_PAGE_TYPE}
+		data={data}
+		breadcrumbs={[
+			{ label: 'Genres', href: '/genres' },
+			{ label: 'TV', href: null },
+		]}
+	/>
+);
 
 /**
  * Get page props.

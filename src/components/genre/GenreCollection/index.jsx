@@ -53,7 +53,7 @@ const GenreCollection = ({ type, steps, collection }) => {
  */
 GenreCollection.defaultProps = {
 	type: 'movie',
-	steps: 12,
+	steps: 18,
 	collection: [],
 };
 

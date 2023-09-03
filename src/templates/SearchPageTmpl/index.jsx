@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types';
-import { Container, Pagination, Tabs, Seo } from '@components/general';
-import { Breadcrumb } from '@components/layout';
-import { MediaCollection } from '@components/media';
-import { isEmpty } from 'lodash';
+
+import Seo from '@components/general/Seo';
+import Tabs from '@components/general/Tabs';
+import Empty from '@components/feedback/Empty';
+import Container from '@components/general/Container';
+import Pagination from '@components/general/Pagination';
+import Breadcrumb from '@components/layout/Breadcrumb';
+import MediaCollection from '@components/media/MediaCollection';
+
+import isEmpty from 'lodash/isEmpty';
+import emptyImg from '@public/images/placeholders/search-empty.svg';
 import styles from './styles.module.scss';
 
 /**
@@ -17,14 +24,6 @@ const SearchPageTmpl = ({ data }) => {
 	/** Page Title for SEO. */
 	const pageTitle = `Search for '${query?.name || 'unknown'}'`;
 
-	/** Page Heading */
-	const heading = (
-		<div className={styles.search_page_tmpl_heading}>
-			<span className={styles.label}>Search results for:</span>
-			<span className={styles.query}>{query?.name || 'unknown'}</span>
-		</div>
-	);
-
 	/** Total Results. */
 	const results = (
 		<div className={styles.search_page_tmpl_results}>
@@ -37,21 +36,13 @@ const SearchPageTmpl = ({ data }) => {
 	const tabItems = [
 		{
 			label: 'Movies',
-			content: isEmpty(collection?.movie) ? (
-				<div className={styles.search_page_tmpl_message}>
-					<h2>No movies found!</h2>
-				</div>
-			) : (
+			content: !isEmpty(collection?.movie) && (
 				<MediaCollection type="movie" collection={collection?.movie} />
 			),
 		},
 		{
 			label: 'TV Shows',
-			content: isEmpty(collection?.tv) ? (
-				<div className={styles.search_page_tmpl_message}>
-					<h2>No tv shows found!</h2>
-				</div>
-			) : (
+			content: !isEmpty(collection?.tv) && (
 				<MediaCollection type="tv" collection={collection?.tv} />
 			),
 		},
@@ -61,15 +52,32 @@ const SearchPageTmpl = ({ data }) => {
 		<>
 			<Seo title={pageTitle} />
 			<div className={styles.search_page_tmpl}>
-				<Breadcrumb heading={heading} showBreadcrumb={false} />
+				<Breadcrumb links={[{ label: 'Search', href: null }]} />
+				<Container fluidLarge={false}>
+					<div className={styles.search_page_tmpl_heading}>
+						<span className={styles.label}>Search results for:</span>
+						<span className={styles.query}>{query?.name || 'unknown'}</span>
+					</div>
+				</Container>
 				<main className={styles.search_page_tmpl_content}>
 					<Container fluidLarge={false}>
 						<section className={styles.search_page_tmpl_section}>
-							<Tabs
-								items={tabItems}
-								prepend={results}
-								headerClassName={styles.search_page_tmpl_tabheader}
-							/>
+							{hasCollection ? (
+								<Tabs
+									items={tabItems}
+									prepend={results}
+									headerClassName={styles.search_page_tmpl_tabheader}
+								/>
+							) : (
+								<div className={styles.search_page_tmpl_message}>
+									<Empty
+										imgSrc={emptyImg}
+										imgProps={{ width: 260, height: 210, alt: 'empty' }}
+										title="Nothing Found!"
+										description="Sorry, but nothing matched your search terms. Please try again with some different keywords."
+									/>
+								</div>
+							)}
 						</section>
 						{hasCollection && (
 							<div className={styles.search_page_tmpl_pagination}>

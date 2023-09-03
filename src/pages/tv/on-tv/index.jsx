@@ -16,9 +16,12 @@ const OnAirTVShowsPage = ({ data }) => (
 		<Seo title="Watch TV Shows that are Currently on TV" />
 		<MediaGroupTmpl
 			type={MEDIA_TYPE}
-			heading="TV Shows On Air"
 			excludeFilters={['release']}
 			data={data}
+			breadcrumbs={[
+				{ label: 'TV Shows', href: '/tv' },
+				{ label: 'On TV', href: null },
+			]}
 		/>
 	</>
 );

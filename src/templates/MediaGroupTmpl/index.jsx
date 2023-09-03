@@ -1,8 +1,13 @@
 import PropTypes from 'prop-types';
-import { Container, Pagination } from '@components/general';
-import { Breadcrumb } from '@components/layout';
-import { MediaCollection, MediaFilters } from '@components/media';
-import { isEmpty } from 'lodash';
+
+import Empty from '@components/feedback/Empty';
+import Container from '@components/general/Container';
+import Breadcrumb from '@components/layout/Breadcrumb';
+import Pagination from '@components/general/Pagination';
+import MediaFilters from '@components/media/MediaFilters';
+import MediaCollection from '@components/media/MediaCollection';
+
+import isEmpty from 'lodash/isEmpty';
 import styles from './styles.module.scss';
 
 /**
@@ -10,14 +15,14 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaGroupTmpl component.
  */
-const MediaGroupTmpl = ({ type, heading, excludeFilters, data }) => {
+const MediaGroupTmpl = ({ type, excludeFilters, breadcrumbs, data }) => {
 	const { currentPage, totalPages } = data?.meta ?? {};
 	const hasCollection = !isEmpty(data?.collection);
 	const message = `No ${type === 'tv' ? 'tv shows' : 'movies'} found!`;
 
 	return (
 		<div className={styles.media_group_tmpl}>
-			<Breadcrumb heading={heading} />
+			<Breadcrumb links={breadcrumbs} />
 			<main className={styles.media_group_tmpl_content}>
 				<Container fluidLarge={false}>
 					<section className={styles.media_group_tmpl_section}>
@@ -26,7 +31,7 @@ const MediaGroupTmpl = ({ type, heading, excludeFilters, data }) => {
 							<MediaCollection type={type} collection={data?.collection} />
 						) : (
 							<div className={styles.media_group_tmpl_message}>
-								<h2>{message}</h2>
+								<Empty title={message} />
 							</div>
 						)}
 					</section>
@@ -49,8 +54,8 @@ const MediaGroupTmpl = ({ type, heading, excludeFilters, data }) => {
  */
 MediaGroupTmpl.defaultProps = {
 	type: 'movie',
-	heading: '',
 	excludeFilters: [],
+	breadcrumbs: [],
 	data: {},
 };
 
@@ -59,8 +64,8 @@ MediaGroupTmpl.defaultProps = {
  */
 MediaGroupTmpl.propTypes = {
 	type: PropTypes.oneOf(['tv', 'movie']),
-	heading: PropTypes.node,
 	excludeFilters: PropTypes.arrayOf(PropTypes.string),
+	breadcrumbs: PropTypes.arrayOf(PropTypes.shape({})),
 	data: PropTypes.shape({
 		collection: PropTypes.arrayOf(PropTypes.shape({})),
 		meta: PropTypes.shape({

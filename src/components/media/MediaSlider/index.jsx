@@ -1,10 +1,13 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { MediaCard } from '@components/media';
+import MediaCard from '@components/media/MediaCard';
+import MediaSliderLoader from '@components/media/MediaSlider/MediaSliderLoader';
+
 import cx from 'classnames';
-import MediaSliderLoader from './MediaSliderLoader';
 import styles from './styles.module.scss';
+
 import 'swiper/css';
 
 /**

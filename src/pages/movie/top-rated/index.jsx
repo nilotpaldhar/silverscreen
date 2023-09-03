@@ -14,7 +14,14 @@ const MEDIA_TYPE = 'movie';
 const TopRatedMoviesPage = ({ data }) => (
 	<>
 		<Seo title="Watch Top Rated Movies" />
-		<MediaGroupTmpl type={MEDIA_TYPE} heading="Top Rated Movies" data={data} />
+		<MediaGroupTmpl
+			type={MEDIA_TYPE}
+			data={data}
+			breadcrumbs={[
+				{ label: 'Movies', href: '/movie' },
+				{ label: 'Top Rated', href: null },
+			]}
+		/>
 	</>
 );
 

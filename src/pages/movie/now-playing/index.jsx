@@ -14,7 +14,14 @@ const MEDIA_TYPE = 'movie';
 const NowPlayingMoviesPage = ({ data }) => (
 	<>
 		<Seo title="Watch Now Playing Movies" />
-		<MediaGroupTmpl type={MEDIA_TYPE} heading="Now Playing Movies" data={data} />
+		<MediaGroupTmpl
+			type={MEDIA_TYPE}
+			data={data}
+			breadcrumbs={[
+				{ label: 'Movies', href: '/movie' },
+				{ label: 'Now Playing', href: null },
+			]}
+		/>
 	</>
 );
 

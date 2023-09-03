@@ -7,7 +7,7 @@ import { Seo } from '@components/general';
  *
  * @return {Element} The SingleGenreTmpl component.
  */
-const SingleGenreTmpl = ({ type, data }) => {
+const SingleGenreTmpl = ({ type, breadcrumbs, data }) => {
 	/** Get genre name. */
 	const genreName = data?.meta?.query?.name;
 
@@ -18,6 +18,7 @@ const SingleGenreTmpl = ({ type, data }) => {
 	const conf = {
 		data,
 		type,
+		breadcrumbs,
 		excludeFilters: ['genres'],
 		heading: `Genre "${genreName ?? 'unknown'}"`,
 	};
@@ -35,6 +36,7 @@ const SingleGenreTmpl = ({ type, data }) => {
  */
 SingleGenreTmpl.defaultProps = {
 	type: 'movie',
+	breadcrumbs: [],
 	data: {},
 };
 
@@ -43,6 +45,7 @@ SingleGenreTmpl.defaultProps = {
  */
 SingleGenreTmpl.propTypes = {
 	type: PropTypes.oneOf(['tv', 'movie']),
+	breadcrumbs: PropTypes.arrayOf(PropTypes.shape({})),
 	data: PropTypes.shape({
 		meta: PropTypes.shape({
 			query: PropTypes.shape({

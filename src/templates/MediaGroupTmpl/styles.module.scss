@@ -1,14 +1,10 @@
 .media_group_tmpl {
 	// Content.
 	&_content {
-		@apply py-14;
-
-		@screen md {
-			@apply py-16;
-		}
+		@apply pt-10 pb-14;
 
 		@screen xl {
-			@apply py-20;
+			@apply pt-16 pb-20;
 		}
 	}
 
@@ -49,22 +45,6 @@
 
 	// No Result Message.
 	&_message {
-		@apply w-full h-48 flex items-center justify-center;
-
-		@screen md {
-			@apply h-60;
-		}
-
-		h2 {
-			@apply w-full text-xl text-gray-100 font-normal capitalize tracking-[3px] text-center;
-
-			@screen md {
-				@apply text-2xl;
-			}
-
-			@screen lg {
-				@apply text-4xl;
-			}
-		}
+		@apply py-52;
 	}
 }
