@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
+import createCanonicalUrl from '@utils/createCanonicalUrl';
 
 /**
  * Render the Seo component.
@@ -19,9 +20,7 @@ const Seo = ({
 }) => {
 	/** Create canonical URL. */
 	const router = useRouter();
-	const currentLocation = typeof window !== 'undefined' ? window?.location?.origin : '';
-	const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? currentLocation;
-	const canonicalUrl = siteUrl + (router.asPath === '/' ? '' : router.asPath).split('?')[0];
+	const canonicalUrl = createCanonicalUrl(router.asPath);
 
 	/** Seo Config. */
 	const conf = {

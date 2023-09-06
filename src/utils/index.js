@@ -20,6 +20,7 @@ export { default as removeDuplicatesObj } from '@utils/removeDuplicatesObj';
 export { default as getYouTubeThumbnail } from '@utils/getYouTubeThumbnail';
 export { default as getMediaGenreBySlug } from '@utils/getMediaGenreBySlug';
 export { default as removeTrailingSlash } from '@utils/removeTrailingSlash';
+export { default as copyTextToClipboard } from '@utils/copyTextToClipboard';
 export { default as mapMediaGenresByName } from '@utils/mapMediaGenresByName';
 export { default as generateMediaRuntime } from '@utils/generateMediaRuntime';
 export { default as formatMediaListProps } from '@utils/formatMediaListProps';

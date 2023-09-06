@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
-import { Container, BlurImage, Link } from '@components/general';
-import { MediaMeta } from '@components/media';
-import MediaDetailsInfo from './MediaDetailsInfo';
+import { useRouter } from 'next/router';
+
+import Link from '@components/general/Link';
+import Container from '@components/general/Container';
+import BlurImage from '@components/general/BlurImage';
+
+import MediaMeta from '@components/media/MediaMeta';
+import MediaDetailsInfo from '@components/media/MediaDetails/MediaDetailsInfo';
+
+import createCanonicalUrl from '@utils/createCanonicalUrl';
 import styles from './styles.module.scss';
 
 /**
@@ -10,6 +17,8 @@ import styles from './styles.module.scss';
  * @return {Element} The MediaDetails component.
  */
 const MediaDetails = ({ type, media, season }) => {
+	const router = useRouter();
+
 	/** Media "HREF". */
 	const mediaHref = `/${type === 'tv' || type === 'tvSeason' ? 'tv' : 'movie'}/${media?.uid}`;
 
@@ -33,6 +42,10 @@ const MediaDetails = ({ type, media, season }) => {
 		runtime: media?.runtime,
 		releaseDate: media?.releaseDate?.dateString,
 		rating: media?.rating,
+		share: {
+			url: createCanonicalUrl(router.asPath),
+			title: type === 'tvSeason' ? `${media?.title} - ${season?.title}` : media?.title,
+		},
 	};
 
 	return (

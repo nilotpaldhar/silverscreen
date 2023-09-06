@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { StarFilled } from '@icons';
+import MediaShare from '@components/media/MediaShare';
+import StarFilled from '@icons/general/StarFilled';
 import styles from './styles.module.scss';
 
 /**
@@ -7,7 +8,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaMeta component.
  */
-const MediaMeta = ({ language, runtime, releaseDate, rating }) => (
+const MediaMeta = ({ language, runtime, releaseDate, rating, share }) => (
 	<div className={styles.media_meta}>
 		<ul className={styles.media_meta_list}>
 			{language && (
@@ -23,6 +24,9 @@ const MediaMeta = ({ language, runtime, releaseDate, rating }) => (
 			)}
 			{runtime && <li className={styles.media_meta_runtime}>{runtime}</li>}
 			{releaseDate && <li className={styles.media_meta_date}>{releaseDate}</li>}
+			<li>
+				<MediaShare {...share} />
+			</li>
 		</ul>
 	</div>
 );
@@ -35,6 +39,10 @@ MediaMeta.defaultProps = {
 	runtime: '',
 	releaseDate: '',
 	rating: '',
+	share: {
+		url: '',
+		title: '',
+	},
 };
 
 /**
@@ -45,6 +53,10 @@ MediaMeta.propTypes = {
 	runtime: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	releaseDate: PropTypes.string,
 	rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	share: PropTypes.shape({
+		url: PropTypes.string,
+		title: PropTypes.string,
+	}),
 };
 
 export default MediaMeta;

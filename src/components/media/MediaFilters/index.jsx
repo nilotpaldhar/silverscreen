@@ -36,7 +36,7 @@ const MediaFilters = ({ type, excludeFilters }) => {
 								<Popovers
 									key={filter}
 									label={<span className="capitalize">{label}</span>}
-									fallbackPlacements={['top']}
+									fallbackPlacements={['top', 'left']}
 								>
 									<div className={styles.media_filters_block}>
 										{filter === 'genres' ? <FilterComponent type={type} /> : <FilterComponent />}
