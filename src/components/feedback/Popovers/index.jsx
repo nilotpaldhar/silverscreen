@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The Popovers component.
  */
-const Popovers = ({ label, selected, placement, fallbackPlacements, children }) => {
+const Popovers = ({ label, selected, placement, fallbackPlacements, showIcon, children }) => {
 	const [referenceElement, setReferenceElement] = useState(null);
 	const [popperElement, setPopperElement] = useState(null);
 	const [arrowElement, setArrowElement] = useState(null);
@@ -53,7 +53,7 @@ const Popovers = ({ label, selected, placement, fallbackPlacements, children }) 
 				<>
 					<Popover.Button className={btnClassNames} ref={setReferenceElement}>
 						<span>{label}</span>
-						{open ? <ChevronUp /> : <ChevronDown />}
+						{showIcon && (open ? <ChevronUp /> : <ChevronDown />)}
 					</Popover.Button>
 					<Popover.Overlay className={styles.popovers_overlay} />
 					<Popover.Panel {...bodyConf}>
@@ -74,6 +74,7 @@ Popovers.defaultProps = {
 	selected: false,
 	placement: 'bottom',
 	fallbackPlacements: ['top', 'left', 'right'],
+	showIcon: true,
 	children: '',
 };
 
@@ -85,6 +86,7 @@ Popovers.propTypes = {
 	selected: PropTypes.bool,
 	placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
 	fallbackPlacements: PropTypes.arrayOf(PropTypes.string),
+	showIcon: PropTypes.bool,
 	children: PropTypes.node,
 };
 

@@ -1,12 +1,12 @@
 import removeTrailingSlash from '@utils/removeTrailingSlash';
 
 /**
- * Converts long number into abbreviated string.
+ * Create canonical URL for seo.
  *
- * @param {number} num
- * @param {string} format
+ * @param {string} asPath
+ * @param {string} baseUrl
  *
- * @returns Formatted Number.
+ * @returns Canonical URL.
  */
 const createCanonicalUrl = (asPath = '', baseUrl = process.env.NEXT_PUBLIC_SITE_URL) => {
 	const baseUrlNoSlash = removeTrailingSlash(baseUrl);

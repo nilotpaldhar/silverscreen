@@ -2,6 +2,7 @@ export { default as MediaTab } from '@components/media/MediaTab';
 export { default as MediaCard } from '@components/media/MediaCard';
 export { default as MediaMeta } from '@components/media/MediaMeta';
 export { default as MediaBlock } from '@components/media/MediaBlock';
+export { default as MediaShare } from '@components/media/MediaShare';
 export { default as MediaCasts } from '@components/media/MediaCasts';
 export { default as MediaHeader } from '@components/media/MediaHeader';
 export { default as MediaSearch } from '@components/media/MediaSearch';

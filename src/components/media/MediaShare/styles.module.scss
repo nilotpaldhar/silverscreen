@@ -1,0 +1,31 @@
+.media_share {
+	&_trigger {
+		@apply flex items-center space-x-2 text-gray-300 text-sm font-medium;
+
+		span[role='img'] svg {
+			@apply w-4 h-4;
+		}
+	}
+
+	&_item {
+		@apply text-base font-medium text-gray-300;
+
+		&:focus-within {
+			@apply bg-dark-gray-700 bg-opacity-10 text-gray-100;
+		}
+
+		button {
+			@apply px-5 py-3 #{!important};
+
+			@apply flex items-center gap-5 w-full text-inherit;
+
+			svg {
+				@apply w-5 h-5;
+			}
+		}
+	}
+
+	&_item:not(:last-child) {
+		@apply border-b border-dark-gray-700 border-opacity-10;
+	}
+}
