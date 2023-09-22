@@ -1,10 +1,5 @@
 [
   {
-    "id": "62be94bbd0090d39430a82fa",
-    "label": "Home",
-    "href": "/"
-  },
-  {
     "id": "62be94bb6b60d37ac1c10c28",
     "label": "Movies",
     "href": "/movie",
@@ -62,5 +57,10 @@
     "id": "62be94bbe62d1bd0bd4532dd",
     "label": "Genres",
     "href": "/genres"
+  },
+  {
+    "id": "62be94bbd0090d39430a82fa",
+    "label": "Watchlist",
+    "href": "/watchlist"
   }
 ]

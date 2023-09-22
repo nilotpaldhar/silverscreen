@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 
 import Seo from '@components/general/Seo';
 import Tabs from '@components/general/Tabs';
+import Heading from '@components/general/Heading';
 import Container from '@components/general/Container';
 import Breadcrumb from '@components/layout/Breadcrumb';
 import GenreCollection from '@components/genre/GenreCollection';
@@ -52,12 +53,12 @@ const GenresRootTmpl = ({ pageType, breadcrumbs, data }) => {
 							{pageType === 'all' ? (
 								<Tabs
 									items={tabItems}
-									prepend={<div className={styles.genres_root_tmpl_info}>Filter by genre</div>}
+									prepend={<Heading>Filter By Genre</Heading>}
 									headerClassName={styles.genres_root_tmpl_tabheader}
 								/>
 							) : (
 								<>
-									<div className={styles.genres_root_tmpl_info}>Filter by genre</div>
+									<Heading>Filter By Genre</Heading>
 									<GenreCollection
 										collection={collection}
 										type={pageType === 'tv' ? 'tv' : 'movie'}

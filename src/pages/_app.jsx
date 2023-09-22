@@ -2,8 +2,11 @@ import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
-import { MediaPlayerProvider } from '@context';
+
 import { Layout } from '@components/layout';
+import { MediaPlayerProvider } from '@context/mediaPlayerContext';
+import { WatchlistProvider } from '@context/watchlistContext';
+
 import { createCanonicalUrl } from '@utils';
 
 /** Default Seo Config. */
@@ -15,6 +18,7 @@ import '@styles/global.scss';
 
 /** Dynamic Imports. */
 const RouteProgress = dynamic(() => import('@components/feedback/RouteProgress'));
+const Notification = dynamic(() => import('@components/feedback/Notification'));
 
 /**
  * Render the App component.
@@ -36,13 +40,16 @@ const App = ({ Component, pageProps }) => {
 	};
 
 	return (
-		<MediaPlayerProvider>
-			<RouteProgress />
-			<DefaultSeo {...defaultSeoConf} />
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
-		</MediaPlayerProvider>
+		<WatchlistProvider>
+			<MediaPlayerProvider>
+				<RouteProgress />
+				<Notification />
+				<DefaultSeo {...defaultSeoConf} />
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</MediaPlayerProvider>
+		</WatchlistProvider>
 	);
 };
 

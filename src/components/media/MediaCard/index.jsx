@@ -16,9 +16,9 @@ const MediaCard = ({ type, hrefPrefix, data }) => {
 	return (
 		<div className={styles.media_card}>
 			{type === 'tvSeason' ? (
-				<MediaCardSeason href={mediaHref} data={data} />
+				<MediaCardSeason href={mediaHref} data={data} type={type} />
 			) : (
-				<MediaCardDefault href={mediaHref} data={data} />
+				<MediaCardDefault href={mediaHref} data={data} type={type} />
 			)}
 		</div>
 	);

@@ -1,8 +1,13 @@
 import PropTypes from 'prop-types';
+
 import { Link, BlurImage, TruncateString } from '@components/general';
 import { PlayCircle } from '@icons';
+
 import { isArray } from 'lodash';
+
 import MediaCardRating from './MediaCardRating';
+import MediaCardWatchlist from './MediaCardWatchlist';
+
 import styles from './styles.module.scss';
 
 /**
@@ -10,7 +15,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaCardDefault component.
  */
-const MediaCardDefault = ({ href, data }) => {
+const MediaCardDefault = ({ href, data, type }) => {
 	/** Format grenres. */
 	const formatGenres = (genres) => {
 		if (!isArray(genres)) return null;
@@ -33,15 +38,19 @@ const MediaCardDefault = ({ href, data }) => {
 
 	return (
 		<>
-			<Link href={href} className={styles.media_card_header}>
-				<figure className={styles.media_card_poster}>
-					<BlurImage {...posterConf} />
-				</figure>
-				<span className={styles.media_card_playicon}>
-					<PlayCircle />
-				</span>
-				<MediaCardRating rating={data?.rating} />
-			</Link>
+			<div className={styles.media_card_wrapper}>
+				<Link href={href} className={styles.media_card_header}>
+					<figure className={styles.media_card_poster}>
+						<BlurImage {...posterConf} />
+					</figure>
+					<span className={styles.media_card_playicon}>
+						<PlayCircle />
+					</span>
+					<MediaCardRating rating={data?.rating} />
+				</Link>
+				<MediaCardWatchlist id={data?.id} type={type} title={data?.title} />
+			</div>
+
 			<div className={styles.media_card_content}>
 				<h2 className={styles.media_card_title}>
 					<Link href={href}>{data?.title}</Link>
@@ -64,6 +73,7 @@ const MediaCardDefault = ({ href, data }) => {
  */
 MediaCardDefault.defaultProps = {
 	data: {},
+	type: 'movie',
 };
 
 /**
@@ -72,6 +82,7 @@ MediaCardDefault.defaultProps = {
 MediaCardDefault.propTypes = {
 	href: PropTypes.string.isRequired,
 	data: PropTypes.shape({
+		id: PropTypes.number,
 		title: PropTypes.string,
 		poster: PropTypes.string,
 		releaseDate: PropTypes.shape({
@@ -80,6 +91,7 @@ MediaCardDefault.propTypes = {
 		genres: PropTypes.arrayOf(PropTypes.shape({})),
 		rating: PropTypes.number,
 	}),
+	type: PropTypes.oneOf(['tv', 'movie', 'tvSeason']),
 };
 
 export default MediaCardDefault;

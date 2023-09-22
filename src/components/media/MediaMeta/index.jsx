@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
  *
  * @return {Element} The MediaMeta component.
  */
-const MediaMeta = ({ language, runtime, releaseDate, rating, share }) => (
+const MediaMeta = ({ language, runtime, releaseDate, rating, share, hideShare }) => (
 	<div className={styles.media_meta}>
 		<ul className={styles.media_meta_list}>
 			{language && (
@@ -24,9 +24,11 @@ const MediaMeta = ({ language, runtime, releaseDate, rating, share }) => (
 			)}
 			{runtime && <li className={styles.media_meta_runtime}>{runtime}</li>}
 			{releaseDate && <li className={styles.media_meta_date}>{releaseDate}</li>}
-			<li>
-				<MediaShare {...share} />
-			</li>
+			{!hideShare && (
+				<li>
+					<MediaShare {...share} />
+				</li>
+			)}
 		</ul>
 	</div>
 );
@@ -43,6 +45,7 @@ MediaMeta.defaultProps = {
 		url: '',
 		title: '',
 	},
+	hideShare: false,
 };
 
 /**
@@ -57,6 +60,7 @@ MediaMeta.propTypes = {
 		url: PropTypes.string,
 		title: PropTypes.string,
 	}),
+	hideShare: PropTypes.bool,
 };
 
 export default MediaMeta;

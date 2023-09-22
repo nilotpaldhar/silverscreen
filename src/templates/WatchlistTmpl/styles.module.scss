@@ -1,0 +1,38 @@
+.watchlist_tmpl {
+	// Content.
+	&_content {
+		@apply pt-10 pb-14;
+
+		@screen xl {
+			@apply pt-16 pb-20;
+		}
+	}
+
+	&_loader {
+		@apply grid grid-cols-2 gap-x-2 gap-y-6;
+
+		@screen sm {
+			@apply gap-x-4 gap-y-5;
+		}
+
+		@screen md {
+			@apply grid-cols-4 gap-x-4 gap-y-10;
+		}
+
+		@screen xl {
+			@apply grid-cols-5;
+		}
+
+		&_item {
+			@apply block rounded bg-dark-gray-900 w-full h-60 animate-pulse;
+
+			@screen md {
+				@apply h-64;
+			}
+
+			@screen xl {
+				@apply h-80;
+			}
+		}
+	}
+}
