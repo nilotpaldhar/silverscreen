@@ -7,6 +7,8 @@ export { default as ArrowNarrowDown } from '@icons/general/ArrowNarrowDown';
 export { default as ArrowNarrowLeft } from '@icons/general/ArrowNarrowLeft';
 export { default as ArrowNarrowRight } from '@icons/general/ArrowNarrowRight';
 export { default as ArrowNarrowUp } from '@icons/general/ArrowNarrowUp';
+export { default as Bookmark } from '@icons/general/Bookmark';
+export { default as BookmarkSolid } from '@icons/general/BookmarkSolid';
 export { default as CheckMark } from '@icons/general/CheckMark';
 export { default as ChevronDown } from '@icons/general/ChevronDown';
 export { default as ChevronLeft } from '@icons/general/ChevronLeft';

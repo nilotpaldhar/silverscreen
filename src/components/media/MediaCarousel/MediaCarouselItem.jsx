@@ -33,6 +33,7 @@ const MediaCarouselItem = ({ data }) => {
 		rating: data?.rating?.toFixed(1),
 		language: data?.language?.englishName,
 		releaseDate: data?.releaseDate?.dateString,
+		hideShare: true,
 	};
 
 	/** Button Config. */

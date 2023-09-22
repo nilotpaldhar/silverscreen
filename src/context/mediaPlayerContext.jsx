@@ -30,7 +30,7 @@ export const MediaPlayerProvider = ({ children }) => {
 export const useMediaPlayer = () => {
 	const context = useContext(MediaPlayerContext);
 	if (typeof context === 'undefined') {
-		throw new Error('useMediaPlayerContext must be used within a MediaPlayerProvider');
+		throw new Error('useMediaPlayer must be used within a MediaPlayerProvider');
 	}
 	return context;
 };

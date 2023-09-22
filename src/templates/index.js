@@ -1,6 +1,7 @@
 export { default as HomePageTmpl } from '@templates/HomePageTmpl';
 export { default as ErrorPageTmpl } from '@templates/ErrorPageTmpl';
 export { default as MediaRootTmpl } from '@templates/MediaRootTmpl';
+export { default as WatchlistTmpl } from '@templates/WatchlistTmpl';
 export { default as MediaGroupTmpl } from '@templates/MediaGroupTmpl';
 export { default as SearchPageTmpl } from '@templates/SearchPageTmpl';
 export { default as GenresRootTmpl } from '@templates/GenresRootTmpl';

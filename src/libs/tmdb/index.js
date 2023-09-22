@@ -4,6 +4,7 @@ export { default as getMediaProps } from '@libs/tmdb/media/getMediaProps';
 export { default as getMediaPaths } from '@libs/tmdb/media/getMediaPaths';
 export { default as getMediaRootProps } from '@libs/tmdb/media/getMediaRootProps';
 export { default as getMediaGroupProps } from '@libs/tmdb/media/getMediaGroupProps';
+export { default as getMediaCollection } from '@libs/tmdb/media/getMediaCollection';
 export { default as getMediaSeasonProps } from '@libs/tmdb/media/getMediaSeasonProps';
 export { default as getLatestMediaTrailers } from '@libs/tmdb/media/getLatestMediaTrailers';
 
