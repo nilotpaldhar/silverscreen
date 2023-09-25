@@ -1,4 +1,11 @@
 /**
+ * Prefix for local storage to avoid conflict.
+ *
+ * @type {string}
+ */
+export const LOCAL_STORAGE_PREFIX = 'sisn';
+
+/**
  * Media(movie/tv) pages to be generated initially.
  *
  * @type {number}

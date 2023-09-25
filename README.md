@@ -2,11 +2,11 @@
 
 <!-- PROJECT SHIELDS -->
 <p align="center">
-  <a href="https://github.com/nilotpaldhar/redcarpet/issues">
-    <img src="https://img.shields.io/github/issues/nilotpaldhar/redcarpet.svg?style=for-the-badge" alt="Issues">
+  <a href="https://github.com/nilotpaldhar/silverscreen/issues">
+    <img src="https://img.shields.io/github/issues/nilotpaldhar/silverscreen.svg?style=for-the-badge" alt="Issues">
   </a>
-  <a href="https://github.com/nilotpaldhar/redcarpet/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/nilotpaldhar/redcarpet.svg?style=for-the-badge" alt="License">
+  <a href="https://github.com/nilotpaldhar/silverscreen/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/nilotpaldhar/silverscreen.svg?style=for-the-badge" alt="License">
   </a>
    <a href="https://linkedin.com/in/nilotpaldhar">
     <img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555" alt="Linkedin">
@@ -16,23 +16,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/nilotpaldhar/redcarpet">
-    <img src="public/images/logos/site-logo-icon.png" alt="Logo" width="100" height="100">
+  <a href="https://github.com/nilotpaldhar/silverscreen">
+    <img src="https://www.dropbox.com/scl/fi/3z3iup1jgmevzo1dn0gf1/site-logo-icon.png?rlkey=74ytkgl0zel2yxlb0btpv2p39&raw=1" alt="Logo" width="100" height="100">
   </a>
 
-<h2 align="center">RedCarpet</h2>
+<h2 align="center">Silver Screen</h2>
 
   <p align="center">
     Search Engine for Movies and Television Shows
     <br />
-    <a href="https://github.com/nilotpaldhar/redcarpet#readme-top"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/nilotpaldhar/silverscreen#readme-top"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://redcarpet.vercel.app">Live Demo</a>
+    <a href="https://silverscreen.vercel.app">Live Demo</a>
     ·
-    <a href="https://github.com/nilotpaldhar/redcarpet/issues">Report Bug</a>
+    <a href="https://github.com/nilotpaldhar/silverscreen/issues">Report Bug</a>
     ·
-    <a href="https://github.com/nilotpaldhar/redcarpet/issues">Request Feature</a>
+    <a href="https://github.com/nilotpaldhar/silverscreen/issues">Request Feature</a>
   </p>
 </div>
 
@@ -76,13 +76,13 @@
 A movie-search engine that lets users browse a wide variety of films and television shows and helps get information regarding them. It makes use of TMDB API for all films' related metadata.
 
 <p align="center">
-  <img src = "public/images/preview/desktop.webp">
+  <img src = "https://www.dropbox.com/scl/fi/ohbum3dncic0ovzckhhwl/desktop.webp?rlkey=cwm80yi87dklhk6ydu5z90zl2&raw=1">
 </p>
 
 > **Fully Responsive**
 
 <p align="center">
-  <img src = "public/images/preview/mobile.webp">
+  <img src = "https://www.dropbox.com/scl/fi/ay0e68gsiww8rahcgnv0i/mobile.webp?rlkey=3ij9fhckg26boca76vjo7t8lw&raw=1">
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -113,7 +113,7 @@ A movie-search engine that lets users browse a wide variety of films and televis
 
 Here is a run through of how to set up the application:
 
-- **Step 1** : Clone this repository using **`git clone https://github.com/nilotpaldhar/redcarpet.git`** or downloading a ZIP file of the code.
+- **Step 1** : Clone this repository using **`git clone https://github.com/nilotpaldhar/silverscreen.git`** or downloading a ZIP file of the code.
 - **Step 2** : The repository, if downloaded as a .zip file will need to be extracted to your preferred location and opened.
 - **Step 3** : Go to the project root directory and install the dependencies using: **`yarn install`** or **`npm install`**
 - **Step 4** : Add Envirnoment Variables to your project:
@@ -152,7 +152,7 @@ Like 💖 this project? Support this effort by giving a star on GitHub, sharing 
 
 ## Licence
 
-You are welcome to use this application however you wish under the [MIT](https://github.com/nilotpaldhar/redcarpet/blob/main/LICENSE) license.
+You are welcome to use this application however you wish under the [MIT](https://github.com/nilotpaldhar/silverscreen/blob/main/LICENSE) license.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
