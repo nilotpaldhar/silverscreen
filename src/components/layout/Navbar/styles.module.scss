@@ -73,6 +73,10 @@
 	.toggle_m_menu {
 		@apply mr-3;
 
+		@screen sm {
+			@apply mr-5;
+		}
+
 		@screen lg {
 			@apply hidden;
 		}

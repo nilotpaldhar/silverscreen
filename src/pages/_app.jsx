@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+
+import { Rubik } from 'next/font/google';
+
 import { DefaultSeo } from 'next-seo';
 
 import { Layout } from '@components/layout';
@@ -15,6 +18,15 @@ import { config } from '@config/next-seo';
 /** Root Styles */
 import '@styles/tailwindcss/core.scss';
 import '@styles/global.scss';
+
+/** Font Configuration. */
+const rubik = Rubik({
+	subsets: ['latin'],
+	fallback: ['sans-serif'],
+	variable: '--font-rubik',
+	style: ['normal', 'italic'],
+	weight: ['300', '400', '500', '600', '700'],
+});
 
 /** Dynamic Imports. */
 const RouteProgress = dynamic(() => import('@components/feedback/RouteProgress'));
@@ -45,9 +57,11 @@ const App = ({ Component, pageProps }) => {
 				<RouteProgress />
 				<Notification />
 				<DefaultSeo {...defaultSeoConf} />
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
+				<div className={`${rubik.variable} ${rubik.className} h-full`}>
+					<Layout>
+						<Component {...pageProps} />
+					</Layout>
+				</div>
 			</MediaPlayerProvider>
 		</WatchlistProvider>
 	);

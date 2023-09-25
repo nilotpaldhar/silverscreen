@@ -1,5 +1,5 @@
 {
-	"name": "redcarpet",
+	"name": "silver-screen",
 	"version": "0.0.1",
 	"private": true,
 	"license": "MIT",
@@ -25,10 +25,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/nilotpaldhar/redcarpet"
+		"url": "https://github.com/nilotpaldhar/silverscreen"
 	},
 	"bugs": {
-		"url": "https://github.com/nilotpaldhar/redcarpet/issues"
+		"url": "https://github.com/nilotpaldhar/silverscreen/issues"
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.7.17",
