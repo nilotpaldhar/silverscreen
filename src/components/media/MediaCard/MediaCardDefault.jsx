@@ -5,8 +5,8 @@ import { PlayCircle } from '@icons';
 
 import { isArray } from 'lodash';
 
+import MediaWatchlistBtn from '@components/media/MediaWatchlistBtn';
 import MediaCardRating from './MediaCardRating';
-import MediaCardWatchlist from './MediaCardWatchlist';
 
 import styles from './styles.module.scss';
 
@@ -48,7 +48,9 @@ const MediaCardDefault = ({ href, data, type }) => {
 					</span>
 					<MediaCardRating rating={data?.rating} />
 				</Link>
-				<MediaCardWatchlist id={data?.id} type={type} title={data?.title} />
+				<div className={styles.media_card_watchlist}>
+					<MediaWatchlistBtn id={data?.id} title={data?.title} type={type} />
+				</div>
 			</div>
 
 			<div className={styles.media_card_content}>

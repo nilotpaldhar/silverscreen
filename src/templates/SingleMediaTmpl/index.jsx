@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
-import { Seo } from '@components/general';
-import { MediaHeader, MediaDetails, MediaTab } from '@components/media';
-import { isEmpty } from 'lodash';
+
+import Seo from '@components/general/Seo';
+import MediaHeader from '@components/media/MediaHeader';
+import MediaDetails from '@components/media/MediaDetails';
+
 import styles from './styles.module.scss';
 
 /**
@@ -16,9 +18,6 @@ const SingleMediaTmpl = ({ type, media, season }) => {
 		backdrop: media?.backdrop,
 		trailer: type === 'tvSeason' && season?.trailer ? season?.trailer : media?.trailer,
 	};
-
-	/** Check if videos & recommendations is not empty. */
-	const showMediaTab = !(isEmpty(media?.videos) && isEmpty(media?.recommendations));
 
 	/** Get page title for SEO. */
 	const getPageTitle = (mediaType, title, releaseYear, sessionNo) => {
@@ -60,11 +59,6 @@ const SingleMediaTmpl = ({ type, media, season }) => {
 			<div className={styles.single_media_tmpl}>
 				<MediaHeader {...mediaHeaderConf} />
 				<MediaDetails type={type} media={media} season={season} />
-				{showMediaTab && (
-					<section className={styles.single_media_tmpl_tabs}>
-						<MediaTab type={type} media={media} />
-					</section>
-				)}
 			</div>
 		</>
 	);

@@ -7,7 +7,9 @@ const handler = async (req, res) => {
 	const { watchlist } = req?.body || {};
 
 	const watchlistMovie = watchlist?.filter((w) => w?.type === 'movie')?.map((w) => w?.id);
-	const watchlistTv = watchlist?.filter((w) => w?.type === 'tv')?.map((w) => w?.id);
+	const watchlistTv = watchlist
+		?.filter((w) => w?.type === 'tv' || w?.type === 'tvSeason')
+		?.map((w) => w?.id);
 
 	/** Default error message. */
 	const defaultMesg = 'Failed to fetch resource.';

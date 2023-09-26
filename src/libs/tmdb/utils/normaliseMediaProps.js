@@ -73,13 +73,8 @@ const getTopCast = (cast = []) => {
 };
 
 /** Get Recommendated Media */
-const getRecommendatedMedia = (recommendations = []) =>
-	recommendations?.map((r) => ({
-		id: r?.id,
-		uid: generateMediaUid(r?.id, r?.name || r?.title),
-		title: r?.name || r?.title,
-		backdrop: getMediaImgUrl(r?.backdrop_path, 'w300') ?? '/images/placeholders/backdrop.jpg',
-	}));
+const getRecommendatedMedia = (type, recommendations = []) =>
+	recommendations?.map((r) => formatMediaListProps(type, r));
 
 /**
  * Normalise media props.
@@ -116,7 +111,7 @@ const normaliseMediaProps = (type = 'movie', data = null) => {
 		poster: getMediaImgUrl(data?.poster_path, 'w342') ?? '/images/placeholders/poster.jpg',
 		trailer: getMediaTrailer(data?.videos?.results),
 		videos: filterMediaVideos(data?.videos?.results),
-		recommendations: getRecommendatedMedia(data?.recommendations?.results),
+		recommendations: getRecommendatedMedia(type, data?.recommendations?.results),
 	};
 };
 

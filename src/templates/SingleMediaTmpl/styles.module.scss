@@ -9,17 +9,4 @@
 	@screen xl {
 		@apply pb-20;
 	}
-
-	// Media Tabs.
-	&_tabs {
-		@apply mt-10;
-
-		@screen md {
-			@apply mt-16;
-		}
-
-		@screen xl {
-			@apply mt-20;
-		}
-	}
 }
