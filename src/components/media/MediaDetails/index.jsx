@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
 import Link from '@components/general/Link';
@@ -10,6 +11,8 @@ import MediaDetailsInfo from '@components/media/MediaDetails/MediaDetailsInfo';
 
 import createCanonicalUrl from '@utils/createCanonicalUrl';
 import styles from './styles.module.scss';
+
+const MediaWatchlistBtn = dynamic(() => import('@components/media/MediaWatchlistBtn'));
 
 /**
  * Render the MediaDetails component.
@@ -48,17 +51,24 @@ const MediaDetails = ({ type, media, season }) => {
 		},
 	};
 
+	/** Watchlist Button. */
+	const watchlistBtn = <MediaWatchlistBtn id={media?.id} title={media?.title} type={type} />;
+
 	return (
 		<section className={styles.media_details}>
+			<div className={styles.media_details_watchlist}>{watchlistBtn}</div>
 			<Container fluidLarge={false}>
 				<div className="justify-center row">
 					<div className="col-12 xl:col-10">
 						<div className={styles.media_details_body}>
 							<div className="row">
 								<div className="col-12 md:col-4">
-									<figure className={styles.media_details_poster}>
-										<BlurImage {...posterConf} />
-									</figure>
+									<div className={styles.media_details_poster}>
+										<figure className={styles.media_details_poster_img}>
+											<BlurImage {...posterConf} />
+										</figure>
+										{watchlistBtn}
+									</div>
 								</div>
 								<div className="col-12 md:col-8">
 									<h1 className={styles.media_details_title}>

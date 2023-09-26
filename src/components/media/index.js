@@ -1,4 +1,3 @@
-export { default as MediaTab } from '@components/media/MediaTab';
 export { default as MediaCard } from '@components/media/MediaCard';
 export { default as MediaMeta } from '@components/media/MediaMeta';
 export { default as MediaBlock } from '@components/media/MediaBlock';
@@ -14,3 +13,4 @@ export { default as MediaTrailer } from '@components/media/MediaTrailer';
 export { default as MediaEpisodes } from '@components/media/MediaEpisodes';
 export { default as MediaCarousel } from '@components/media/MediaCarousel';
 export { default as MediaCollection } from '@components/media/MediaCollection';
+export { default as MediaWatchlistBtn } from '@components/media/MediaWatchlistBtn';

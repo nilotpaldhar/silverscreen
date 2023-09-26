@@ -12,7 +12,7 @@ const Notification = ({ position, gutter, duration }) => {
 		gutter,
 		toastOptions: {
 			duration,
-			className: 'text-sm',
+			className: 'text-sm font-sans',
 			style: {
 				borderRadius: 0,
 				lineHeight: 1.625,

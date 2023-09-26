@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
-import { Link } from '@components/general';
-import { MediaBlock, MediaCasts, MediaSlider, MediaEpisodes } from '@components/media';
+
+import Link from '@components/general/Link';
+import MediaBlock from '@components/media/MediaBlock';
+import MediaCasts from '@components/media/MediaCasts';
+import MediaSlider from '@components/media/MediaSlider';
+import MediaTrailer from '@components/media/MediaTrailer';
+import MediaEpisodes from '@components/media/MediaEpisodes';
+
 import SeasonLoader from './SeasonLoader';
 import styles from './styles.module.scss';
 
@@ -10,7 +16,19 @@ import styles from './styles.module.scss';
  * @return {Element} The MediaDetailsInfo component.
  */
 const MediaDetailsInfo = ({ type, media, season }) => {
-	const { uid, seasons, overview, tagline, genres, directors, creators, writers, topCasts } = media;
+	const {
+		uid,
+		seasons,
+		overview,
+		tagline,
+		genres,
+		directors,
+		creators,
+		writers,
+		topCasts,
+		videos,
+		recommendations,
+	} = media;
 	const { episodes, overview: seasonOverview } = season;
 
 	/** Media Overview. */
@@ -26,12 +44,6 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 	const sliderConf = {
 		spaceBetween: 10,
 		slidesPerView: 1.3,
-		loader: SeasonLoader,
-		collection: seasons?.collection,
-		componentProps: {
-			type: 'tvSeason',
-			hrefPrefix: `tv/${uid}`,
-		},
 		breakpoints: {
 			320: {
 				slidesPerView: 2.3,
@@ -61,7 +73,15 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 						{seasons?.count} {seasons?.label}
 					</MediaBlock.Header>
 					<MediaBlock.Body>
-						<MediaSlider {...sliderConf} />
+						<MediaSlider
+							{...sliderConf}
+							loader={SeasonLoader}
+							collection={seasons?.collection}
+							componentProps={{
+								type: 'tvSeason',
+								hrefPrefix: `tv/${uid}`,
+							}}
+						/>
 					</MediaBlock.Body>
 				</MediaBlock>
 			)}
@@ -155,6 +175,39 @@ const MediaDetailsInfo = ({ type, media, season }) => {
 					</MediaBlock.Body>
 				</MediaBlock>
 			)}
+
+			{/* Trailer & Teasers. */}
+			{videos?.length > 0 && (
+				<MediaBlock>
+					<MediaBlock.Header>VIDEOS: TRAILERS & TEASERS</MediaBlock.Header>
+					<MediaBlock.Body>
+						<div className="grid grid-cols-2 gap-3 lg:gap-5">
+							{videos?.map((video) => (
+								<div className="flex justify-center" key={video?.id}>
+									<MediaTrailer data={video} />
+								</div>
+							))}
+						</div>
+					</MediaBlock.Body>
+				</MediaBlock>
+			)}
+
+			{/* Recommendations */}
+			{recommendations?.length > 0 && (
+				<MediaBlock>
+					<MediaBlock.Header>RECOMMENDATIONS</MediaBlock.Header>
+					<MediaBlock.Body>
+						<MediaSlider
+							{...sliderConf}
+							collection={recommendations}
+							componentProps={{
+								type: type === 'movie' ? 'movie' : 'tv',
+								hrefPrefix: type === 'movie' ? 'movie' : 'tv',
+							}}
+						/>
+					</MediaBlock.Body>
+				</MediaBlock>
+			)}
 		</div>
 	);
 };
@@ -187,6 +240,8 @@ MediaDetailsInfo.propTypes = {
 		creators: PropTypes.arrayOf(PropTypes.shape({})),
 		writers: PropTypes.arrayOf(PropTypes.shape({})),
 		topCasts: PropTypes.arrayOf(PropTypes.shape({})),
+		videos: PropTypes.arrayOf(PropTypes.shape({})),
+		recommendations: PropTypes.arrayOf(PropTypes.shape({})),
 	}),
 	season: PropTypes.shape({
 		overview: PropTypes.string,

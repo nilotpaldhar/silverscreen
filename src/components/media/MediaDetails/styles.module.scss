@@ -22,7 +22,40 @@
 		@apply hidden;
 
 		@screen md {
-			@apply block overflow-hidden rounded;
+			@apply sticky top-6 flex flex-col space-y-2;
+		}
+
+		&_img {
+			@apply overflow-hidden rounded;
+		}
+	}
+
+	// Media Watchlist.
+	&_watchlist {
+		@apply block mb-3;
+
+		@screen md {
+			@apply hidden;
+		}
+	}
+
+	// Watchlist Button.
+	&_poster,
+	&_watchlist {
+		button {
+			@apply w-full flex items-center justify-center text-center gap-2 px-4 py-3 text-gray-100 bg-dark-gray-900 bg-opacity-50 transition duration-300;
+
+			&:hover {
+				@apply bg-opacity-100;
+			}
+
+			span:last-child {
+				@apply text-xs font-medium truncate;
+			}
+
+			span[role='img'] svg {
+				@apply w-4 h-4;
+			}
 		}
 	}
 
