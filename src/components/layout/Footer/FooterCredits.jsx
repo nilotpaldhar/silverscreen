@@ -1,8 +1,12 @@
-import Link from '@components/general/Link';
 import PropTypes from 'prop-types';
-import { Image } from '@components/general';
-import { removeSlashes } from '@utils';
+
+import Link from '@components/general/Link';
+import Image from '@components/general/Image';
+
+import removeSlashes from '@utils/removeSlashes';
+import openInNewTab from '@utils/openInNewTab';
 import tmdbLogo from '@public/images/logos/tmdb-logo.svg';
+
 import styles from './styles.module.scss';
 
 /**
@@ -19,17 +23,17 @@ const FooterCredits = ({ sitename }) => {
 
 	/** TMDB link with logo. */
 	const tmdbFullLink = (
-		<a className={styles.tmdb_link} href={tmdbHref} target="_blank" rel="noopener noreferrer">
+		<button type="button" className={styles.tmdb_link} onClick={() => openInNewTab(tmdbHref)}>
 			<span>The Movie Database</span>
 			(<Image src={tmdbLogo} alt="tmdb" width={60} height={8} />)
-		</a>
+		</button>
 	);
 
 	/** TMDB link(short). */
 	const tmdbShortLink = (
-		<a href={tmdbHref} target="_blank" rel="noopener noreferrer">
+		<button type="button" onClick={() => openInNewTab(tmdbHref)}>
 			TMDB
-		</a>
+		</button>
 	);
 
 	return (

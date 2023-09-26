@@ -16,6 +16,8 @@ const nextConfig = {
 	trailingSlash: false,
 	images: {
 		domains: getImageDomains(process.env.NEXT_PUBLIC_IMAGE_DOMAINS),
+		/** Temp Fix. */
+		unoptimized: true,
 	},
 };
 

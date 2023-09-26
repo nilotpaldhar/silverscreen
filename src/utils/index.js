@@ -1,5 +1,6 @@
 export { default as truncateStr } from '@utils/truncateStr';
 export { default as isValidDate } from '@utils/isValidDate';
+export { default as openInNewTab } from '@utils/openInNewTab';
 export { default as formatNumber } from '@utils/formatNumber';
 export { default as removeSlashes } from '@utils/removeSlashes';
 export { default as parseMediaUid } from '@utils/parseMediaUid';
