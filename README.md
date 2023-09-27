@@ -17,7 +17,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/nilotpaldhar/silverscreen">
-    <img src="public/images/logos/site-logo-icon.png" alt="Logo" width="100" height="100">
+    <img src="https://www.dropbox.com/scl/fi/2qrefg64jhs65nmc777jw/site-logo-icon.png?rlkey=jbe8edjdu1cgz615yilrvwbev&raw=1" alt="Logo" width="100" height="100">
   </a>
 
 <h2 align="center">Silver Screen</h2>
@@ -76,13 +76,13 @@
 A movie-search engine that lets users browse a wide variety of films and television shows and helps get information regarding them. It makes use of TMDB API for all films' related metadata.
 
 <p align="center">
-  <img src = "public/images/preview/desktop.png">
+  <img src = "https://www.dropbox.com/e/scl/fi/ed7aar0wwin5lv4daavha/desktop.png?rlkey=t4i1kizmvzma6tl37zsnnysd2&raw=1">
 </p>
 
 > **Fully Responsive**
 
 <p align="center">
-  <img src = "public/images/preview/mobile.png">
+  <img src = "https://www.dropbox.com/scl/fi/ekcoueh0mnt6t92kxpy1s/mobile.png?rlkey=3p95m4ldvd2rqbzgqlum9zqrg&raw=1">
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

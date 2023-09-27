@@ -36,7 +36,8 @@
 
 		a,
 		a:link,
-		a:visited {
+		a:visited,
+		button {
 			@apply font-medium text-gray-300 px-1;
 
 			&:hover {
