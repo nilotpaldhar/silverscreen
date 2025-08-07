@@ -28,8 +28,6 @@
     <a href="https://github.com/nilotpaldhar/silverscreen#readme-top"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://silverscreen.vercel.app">Live Demo</a>
-    ·
     <a href="https://github.com/nilotpaldhar/silverscreen/issues">Report Bug</a>
     ·
     <a href="https://github.com/nilotpaldhar/silverscreen/issues">Request Feature</a>
@@ -74,10 +72,6 @@
 ### Overview
 
 A movie-search engine that lets users browse a wide variety of films and television shows and helps get information regarding them. It makes use of TMDB API for all films' related metadata.
-
-<p align="center">
-  <img src = "https://www.dropbox.com/e/scl/fi/ed7aar0wwin5lv4daavha/desktop.png?rlkey=t4i1kizmvzma6tl37zsnnysd2&raw=1">
-</p>
 
 > **Fully Responsive**
 
